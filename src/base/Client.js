@@ -23,11 +23,6 @@ class Client extends Discord.Client {
         this.queue = new Map();
     }
 
-    /**
-     * Logs information 
-     * @param {string} info Information about error, warning or just information
-     * @param {number?} severity Severity of the info
-     */
     log(info, severity) {
         if(severity === 1) {
             console.log(chalk.bgYellowBright(`WARNING`), `${info}`)
@@ -78,28 +73,28 @@ class Client extends Discord.Client {
 
     sendErrorEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`<:error:811066653042278420> | **${info}**`)
+        .setDescription(`<:error:811066653042278420> **|** ${info}`)
         .setColor('#FF0000');
         return embed;
     }
 
     sendSuccessEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`<:check:811060052642496552> | **${info}**`)
+        .setDescription(`<:check:811060052642496552> **|** ${info}`)
         .setColor('GREEN');
         return embed;
     }
 
     sendWarningEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`:warning: | **${info}**`)
+        .setDescription(`:warning: **|** ${info}`)
         .setColor('YELLOW');
         return embed;
     }
 
     sendWaitEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`<a:loading:803081781707407361> | **${info}**`)
+        .setDescription(`<a:loading:803081781707407361> **|** ${info}`)
         .setColor('#87ceeb');
         return embed;
     }
