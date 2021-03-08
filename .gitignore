@@ -1,0 +1,9 @@
+.env
+node_modules
+yarn.lock
+yarn-error.log
+src/models
+beta
+src/events/voiceStateUpdate.js
+test.js
+src/config/config.js
