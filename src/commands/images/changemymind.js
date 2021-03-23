@@ -1,10 +1,10 @@
-const Command = require('command');
 const Discord = require("discord.js");
-const canvacord = require('canvacord');
+const Command = require("../../base/classes/Command");
+const img = require("../../base/modules/ImageGen");
 
-module.exports = class ChangeMyMindCommand extends Command {
-    constructor(client) {
-        super(client, {
+class ChangeMyMindCommand extends Command {
+    constructor() {
+        super({
             name: 'changemymind',
             aliases: ['cmm'],
             category: 'images',
@@ -15,14 +15,16 @@ module.exports = class ChangeMyMindCommand extends Command {
     }
 
     async run(client, message, args) {
-        const changemymind = await canvacord.Canvas.changemymind(args.join(' '));
-
-        const attachment = new Discord.MessageAttachment(changemymind, 'changemymind.png');
+        const attachment = new Discord.MessageAttachment(await img.changemymind(args.join(' ')), 'changemymind.png');
 
         let embed = new Discord.MessageEmbed()
         .setColor('#7289da')
         .attachFiles([attachment])
-        .setImage('attachment://changemymind.png');
+        .setImage('attachment://changemymind.png')
+        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+        .setTimestamp();
         message.channel.send(embed);
     }
 }
+
+module.exports = ChangeMyMindCommand;

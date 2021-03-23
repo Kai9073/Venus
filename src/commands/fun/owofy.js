@@ -1,8 +1,8 @@
-const Command = require('command');
+const Command = require('../../base/classes/Command');
 
 class OwofyCommand extends Command {
-    constructor(client) {
-        super(client, {
+    constructor() {
+        super({
             name: 'owofy',
             aliases: ['owo'],
             category: 'fun',
@@ -12,7 +12,7 @@ class OwofyCommand extends Command {
         });
     }
 
-    async run(client, message, args) {
+    run(client, message, args) {
         message.channel.send(args.join(' ').replace(/rr|uu|ll/g,"ww").replace(/(?<=a|e|i|o|u)[rlu]|[ru](?=a|e|i|o|u)/g,"w"));
     }
 }

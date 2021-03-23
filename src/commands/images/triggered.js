@@ -1,10 +1,10 @@
-const Command = require('command');
-const canvacord = require('canvacord');
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+const Command = require("../../base/classes/Command");
+const img = require("../../base/modules/ImageGen");
 
-module.exports = class TriggeredCommand extends Command {
-    constructor(client) {
-        super(client, {
+class TriggeredCommand extends Command {
+    constructor() {    
+        super({
             name: 'triggered',
             aliases: [],
             category: 'images',
@@ -14,15 +14,20 @@ module.exports = class TriggeredCommand extends Command {
     }
 
     async run(client, message, args) {
-        const user = message.mentions.members.first().user.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' });
-        const triggered = await canvacord.Canvas.trigger(user);
+        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : message.author;
+
+        const triggered = await img.trigger(user?.displayAvatarURL({ format: 'png', size: 512 }));
 
         const attachment = new Discord.MessageAttachment(triggered, 'triggered.gif');
 
         let embed = new Discord.MessageEmbed()
         .setColor('#7289da')
         .attachFiles([attachment])
-        .setImage('attachment://triggered.gif');
+        .setImage('attachment://triggered.gif')
+        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+        .setTimestamp();
         message.channel.send(embed);
     }
 }
+
+module.exports = TriggeredCommand;

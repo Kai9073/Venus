@@ -1,10 +1,10 @@
-const Command = require('command');
-const { MessageEmbed } = require('discord.js');
-const quotes = require('../../base/data/quotes.json');
+const { MessageEmbed } = require("discord.js");
+const Command = require("../../base/classes/Command");
+const quotes = require("../../base/data/quotes.json");
 
-module.exports = class QuoteCommand extends Command {
-    constructor(client) {
-        super(client, {
+class QuoteCommand extends Command {
+    constructor() {
+        super({
             name: 'quote',
             aliases: [],
             category: 'general',
@@ -19,6 +19,10 @@ module.exports = class QuoteCommand extends Command {
         .setAuthor(quote.author)
         .setDescription(quote.quote)
         .setColor('RANDOM')
+        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+        .setTimestamp();
         message.channel.send(embed);
     }
 }
+
+module.exports = QuoteCommand;

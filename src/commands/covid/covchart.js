@@ -1,26 +1,23 @@
-const covid = require('novelcovid');
-const Command = require('command');
-const { MessageEmbed, MessageAttachment } = require('discord.js');
-const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
+const Command = require("../../base/classes/Command");
+const { MessageAttachment, MessageEmbed } = require("discord.js");
+const { ChartJSNodeCanvas } = require("chartjs-node-canvas");
+const covid = require("novelcovid");
 
 const chartCallback = (ChartJS) => {
     ChartJS.plugins.register({
-        beforeInit: function(chart){
-			chart.legend.afterFit = function() { this.height += 35 }
-		},
         beforeDraw: (chart) => {
             const ctx = chart.ctx;
             ctx.save();
-            ctx.fillStyle = '#2F3136';
+            ctx.fillStyle = '#FFFFFF';
             ctx.fillRect(0, 0, chart.width, chart.height);
             ctx.restore();
         }
     });
 }
 
-module.exports = class CovidChartCommand extends Command {
-    constructor(client) {
-        super(client, {
+class CovChartCommand extends Command {
+    constructor() {
+        super({
             name: 'covchart',
             aliases: ['covidchart', 'coronachart', 'coronaviruschart'],
             category: 'covid',
@@ -32,20 +29,20 @@ module.exports = class CovidChartCommand extends Command {
     async run(client, message, args) {
         const m = await message.channel.send(client.sendWaitEmbed(`Generating chart...`));
         if(!args.length) {
-            let data = await covid.historical.all({ days: -1 }).catch(err => client.log(err, 2));
-            let dates = Object.keys(data.cases);
+            let data = await covid.historical.all({ days: -1 });
+            if(!data) return message.channel.send(client.sendErrorEmbed(`An error occurred.`));
 
             const labels = [];
             const deaths = [];
             const cases = [];
             const recovered = [];
 
-            for(let result of dates) {
-                labels.push(result);
+            for(let data of Object.keys(data.cases)) {
+                labels.push(data.cases.data[data]);
 
-                deaths.push(data.deaths[result]);
-                cases.push(data.cases[result]);
-                recovered.push(data.recovered[result]);
+                deaths.push(data.deaths[data]);
+                cases.push(data.cases[data]);
+                recovered.push(data.recovered[data]);
             }
 
             const canvas = new ChartJSNodeCanvas({ width: 800, height: 600, chartCallback: chartCallback });
@@ -83,6 +80,7 @@ module.exports = class CovidChartCommand extends Command {
                 }
             };
 
+            // @ts-ignore
             const image = await canvas.renderToBuffer(config);
 
             const attachment = new MessageAttachment(image, 'covchart.png');
@@ -95,23 +93,21 @@ module.exports = class CovidChartCommand extends Command {
             m.delete();
             message.channel.send(embed);
         } else {
-            let data = await covid.historical.countries({ country: args.join(' '), days: -1 });
+            let data = await covid.historical.countries({ country: args.join(' ') });
 
             if(!data.timeline) return message.channel.send(client.sendErrorEmbed(`That country doesn't seem to exist.`));
-
-            let dates = Object.keys(data.timeline.cases);
 
             const labels = [];
             const deaths = [];
             const cases = [];
             const recovered = [];
 
-            for(let result of dates) {
-                labels.push(result);
+            for(let data of Object.keys(data.timeline.cases)) {
+                labels.push(data.timeline.cases[data]);
 
-                deaths.push(data.timeline.deaths[result]);
-                cases.push(data.timeline.cases[result]);
-                recovered.push(data.timeline.recovered[result]);
+                deaths.push(data.timeline.deaths[data]);
+                cases.push(data.timeline.cases[data]);
+                recovered.push(data.timeline.recovered[data]);
             }
 
             const canvas = new ChartJSNodeCanvas({ width: 800, height: 600, chartCallback: chartCallback });
@@ -163,3 +159,4 @@ module.exports = class CovidChartCommand extends Command {
         }
     }
 }
+module.exports = CovChartCommand;

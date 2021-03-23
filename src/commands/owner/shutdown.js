@@ -1,15 +1,15 @@
-const Command = require('command');
+const Command = require("../../base/classes/Command");
 
-module.exports = class ShutdownCommand extends Command {
-    constructor(client) {
-        super(client, {
+class ShutdownCommand extends Command {
+    constructor() {
+        super({
             name: 'shutdown',
             aliases: ['off'],
             category: 'owner',
             description: 'Shutdown the whole bot or terminate the bot\'s process.',
             usage: 'shutdown',
             devOnly: true
-        });
+        })
     }
 
     async run(client, message, args) {
@@ -21,3 +21,5 @@ module.exports = class ShutdownCommand extends Command {
         }, 5000);
     }
 }
+
+module.exports = ShutdownCommand;

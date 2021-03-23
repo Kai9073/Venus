@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
-const config = require('../config/config.js');
 const chalk = require('chalk');
-const fs = require('fs');
-const path = require('path');
 const Utils = require('./utils/Utils');
-const Command = require('./classes/Command');
-const Player = require('../../beta/music/Player');
+const { sync } = require('glob');
+const { resolve } = require('path');
+const fs = require('fs');
+const moment = require('moment');
 
 class Client extends Discord.Client {
     constructor() {
@@ -19,75 +18,100 @@ class Client extends Discord.Client {
         this.utils = Utils;
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();
-        this.config = config;
-        this.queue = new Map();
     }
 
     log(info, severity) {
-        if(severity === 1) {
-            console.log(chalk.bgYellowBright(`WARNING`), `${info}`)
+        let type;
+        if(severity === 0) {
+            type = `[INFO]`;
+            console.log(chalk.green(`[INFO]`), info);
+        } else if(severity === 1) {
+            type = `[WARNING]`;
+            console.log(chalk.bgYellowBright(`[WARNING]`), info);
         } else if(severity === 2) {
-            console.log(chalk.bgRedBright(`ERROR`), `${info}`)
+            type = `[ERROR]`;
+            console.log(chalk.redBright(`[ERROR]`), info);
+        } else if(severity === 3) {
+            type = `[EMERGENCY]`;
+            console.log(chalk.bgRed(`[EMERGENCY]`), info);
         } else {
-            console.log(chalk.greenBright(`INFO`), `${info}`);
+            type = `[LOG]`;
+            console.log(chalk.blueBright(`[LOG]`), info);
         }
-    }
 
-    async loadCommands() {
-        this.log('Loading commands...');
-        // eslint-disable-next-line no-undef
-        fs.readdirSync(path.join(path.dirname(__dirname), `commands`)).forEach((dir) => {
-            // eslint-disable-next-line no-undef
-            const commands = fs.readdirSync(path.join(path.dirname(__dirname), `commands`, dir)).filter((files) => files.endsWith('.js'));
+        let date = `${new Date().getMonth()+1}-${new Date().getDate()}-${new Date().getFullYear()}`;
+        let data = `[${moment().format('MMMM Do YYYY, h:mm:ss a')}] ${type} ${info}\n`;
 
-            for(let command of commands) {
-                // eslint-disable-next-line no-undef
-                const Command = require(path.join(path.dirname(__dirname), `commands`, dir, command));
-                const cmd = new Command(this);
-                try {
-                    this.log(`Loaded the ${cmd.name} command!`);
-                    this.commands.set(cmd.name, cmd);
-                } catch(err) {
-                    this.log(`Failed to load ${cmd.name}: ${err}.`, 2);
-                    continue;
-                }
-            }
+        fs.appendFileSync(`src/logs/${date}.log`, data, (err) => {
+            if(err) console.log(err);
         });
     }
 
-    async loadEvents() {
-        this.log('Loading events...');
-        // eslint-disable-next-line no-undef
-        const events = fs.readdirSync(path.join(path.dirname(__dirname), `events`)).filter((files) => files.endsWith('.js'));
+    loadCommands() {
+        const commandFiles = sync(resolve('src/commands/**/*')).filter(file => file.endsWith(`.js`));
+        this.log(`Loading commands...`);
 
-        for(let event of events) {
-            // eslint-disable-next-line no-undef
-            const Event = require(path.join(path.dirname(__dirname), `events`, event));
-            const evt = new Event(this);
-            const eventName = event.replace('.js', '');
+        let i = 0;
 
-            this.log(`Loaded the ${eventName} event!`);
-            this.on(eventName, (...args) => evt.run(...args));
+        for(let command of commandFiles) {
+            let cmd = require(command);
+            cmd = new cmd();
+
+            try {
+                this.commands.set(cmd.name, cmd);
+                this.log(`[${i + 1}/${commandFiles.length}] Loaded the ${cmd.name} command.`);
+                i++;
+            } catch(err) {
+                this.log(`[${i + 1}/${commandFiles.length}] Failed to load the ${cmd.name} command.`);
+                i++;
+            }
         }
+
+        this.log(`Loaded ${i} commands out of ${commandFiles.length} commands.`, 0);
+    }
+
+    loadEvents() {
+        const eventFiles = sync(resolve('src/events/client/*'));
+        this.log(`Loading events...`);
+
+        let i = 0;
+
+        for(let event of eventFiles) {
+            let evt = require(event);
+            evt = new evt();
+
+            this.on(evt.name, (...args) => {
+                try {
+                    evt.run(this, ...args);
+                } catch(err) {
+                    this.log(`[${i + 1}/${eventFiles}] Failed to load the ${evt.name} event.`);
+                }
+            });
+
+            this.log(`[${i + 1}/${eventFiles.length}] Loaded the ${evt.name} event.`);
+            i++;
+        }
+
+        this.log(`Loaded ${i} events out of ${eventFiles.length} events.`, 0);
     }
 
     sendErrorEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`<:error:811066653042278420> **|** ${info}`)
+        .setDescription(`❌ | ${info}`)
         .setColor('#FF0000');
         return embed;
     }
 
     sendSuccessEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`<:check:811060052642496552> **|** ${info}`)
+        .setDescription(`✅ **|** ${info}`)
         .setColor('GREEN');
         return embed;
     }
 
     sendWarningEmbed(info) {
         let embed = new Discord.MessageEmbed()
-        .setDescription(`:warning: **|** ${info}`)
+        .setDescription(`⚠ **|** ${info}`)
         .setColor('YELLOW');
         return embed;
     }
@@ -100,9 +124,11 @@ class Client extends Discord.Client {
     }
 
     connect() {
+        this.log(`Starting the bot...`);
         this.loadCommands();
         this.loadEvents();
-        this.login(this.config.token).catch((err) => this.log(err, 2));
+        // eslint-disable-next-line no-undef
+        return this.login(process.env.TOKEN).catch((err) => this.log(err, 2));
     }
 }
 

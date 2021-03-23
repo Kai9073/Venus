@@ -1,16 +1,16 @@
-const { exec } = require('child_process');
-const Command = require('command');
+const { exec } = require("child_process");
+const Command = require("../../base/classes/Command");
 
-module.exports = class ExecCommand extends Command {
-    constructor(client) {
-        super(client, {
+class ExecCommand extends Command {
+    constructor() {
+        super({
             name: 'exec',
             aliases: ['shell'],
             category: 'owner',
             description: 'Execute bash commands.',
             usage: 'exec <command>',
             devOnly: true,
-            minimumRequiredArgs: 1,
+            minimumRequiredArgs: 1
         });
     }
 
@@ -28,3 +28,5 @@ module.exports = class ExecCommand extends Command {
         });
     }
 }
+
+module.exports = ExecCommand;

@@ -1,9 +1,9 @@
-const Command = require('command');
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require("discord.js");
+const Command = require("../../base/classes/Command");
 
-module.exports = class AvatarCommand extends Command {
-    constructor(client) {
-        super(client, {
+class AvatarCommand extends Command {
+    constructor() {
+        super({
             name: 'avatar',
             aliases: ['av', 'pfp', 'profilepic'],
             category: 'general',
@@ -13,14 +13,18 @@ module.exports = class AvatarCommand extends Command {
     }
 
     async run(client, message, args) {
-        let user = message.author || message.guild.members.cache.get(args[0]).user || message.mentions.members.first();
+        let user = message.guild?.members.cache.get(args[0]) ? message.guild.members.cache.get(args[0])?.user : message.mentions?.members?.first() ? message.mentions.members.first()?.user : message.author;
 
         if(!user) return message.channel.send(client.sendErrorEmbed(`That user doesn't seem to exist in this guild.`));
 
         let embed = new MessageEmbed()
-        .setAuthor(`${user.tag}'s Avatar`, user.displayAvatarURL({ format: 'png', dynamic: true }))
+        .setTitle(`${user.tag}'s Avatar`)
         .setImage(user.displayAvatarURL({ format: 'png', dynamic: true }))
-        .setColor('RANDOM');
+        .setColor('RANDOM')
+        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+        .setTimestamp();
         message.channel.send(embed);
     }
 }
+
+module.exports = AvatarCommand;

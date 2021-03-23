@@ -1,6 +1,6 @@
-require('module-alias/register');
+require('dotenv').config();
 
-const Client = require("./base/Client");
+const Client = require('./base/Client');
 
 const client = new Client();
 

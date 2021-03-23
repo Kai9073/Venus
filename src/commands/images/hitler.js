@@ -1,29 +1,29 @@
-const Command = require('command');
-const Discord = require('discord.js');
-const canvacord = require('canvacord');
+const { MessageEmbed, MessageAttachment } = require("discord.js");
+const img = require("../../base/modules/ImageGen");
+const Command = require("../../base/classes/Command");
 
 class HitlerCommand extends Command {
-    constructor(client) {
-        super(client, {
+    constructor() {
+        super({
             name: 'hitler',
             aliases: [],
             category: 'images',
             description: 'Generate a "Hitler" meme.',
-            usage: 'hitler [member]',
-            minimumRequiredArgs: 1
+            usage: 'hitler [member]'
         });
     }
 
     async run(client, message, args) {
-        const user = message.mentions.members.first().user.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' });
-        const hitler = await canvacord.Canvas.hitler(user);
+        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : message.author;
+        
+        const attachment = new MessageAttachment(await img.hitler(user?.displayAvatarURL({ format: 'png', size: 512 })), 'hitler.png');
     
-        const attachment = new Discord.MessageAttachment(hitler, 'hitler.png');
-    
-        let embed = new Discord.MessageEmbed()
+        let embed = new MessageEmbed()
         .setColor('#FF0000')
         .attachFiles([attachment])
-        .setImage('attachment://hitler.png');
+        .setImage('attachment://hitler.png')
+        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+        .setTimestamp();
         message.channel.send(embed);
     }
 }

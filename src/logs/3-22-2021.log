@@ -1,0 +1,1360 @@
+March 22nd 2021, 11:00:29 am [LOG] Starting the bot...
+March 22nd 2021, 11:00:31 am [LOG] Loading commands...
+March 22nd 2021, 11:00:31 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:00:31 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:00:31 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:00:31 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:00:31 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:00:31 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:00:32 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:00:32 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:00:32 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:00:32 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:00:44 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:00:44 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:00:44 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:00:44 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:00:44 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:00:44 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:00:45 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:00:45 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:00:45 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:00:45 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:00:45 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:00:45 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:00:45 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:00:45 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:00:45 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:00:45 am [LOG] Loading events...
+March 22nd 2021, 11:00:45 am [INFO] Loaded 1 events out of 2 events.
+March 22nd 2021, 11:00:48 am [INFO] Client has logged in.
+March 22nd 2021, 11:00:48 am [LOG] [1/2] Loaded the ready event.
+March 22nd 2021, 11:02:02 am [LOG] [2/2] Loaded the message event.
+March 22nd 2021, 11:02:07 am [LOG] [3/2] Loaded the message event.
+March 22nd 2021, 11:02:08 am [LOG] [4/2] Loaded the message event.
+March 22nd 2021, 11:02:21 am [LOG] [5/2] Loaded the message event.
+March 22nd 2021, 11:02:26 am [LOG] [6/2] Loaded the message event.
+March 22nd 2021, 11:05:41 am [LOG] Starting the bot...
+March 22nd 2021, 11:05:41 am [LOG] Loading commands...
+March 22nd 2021, 11:05:42 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:05:42 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:05:42 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:05:42 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:05:42 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:05:42 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:05:42 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:05:42 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:05:42 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:05:42 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:05:43 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:05:43 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:05:43 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:05:43 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:05:43 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:05:43 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:05:43 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:05:43 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:05:43 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:05:43 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:05:43 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:05:43 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:05:43 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:05:43 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:05:43 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:05:43 am [LOG] Loading events...
+March 22nd 2021, 11:05:43 am [INFO] Loaded 1 events out of 2 events.
+March 22nd 2021, 11:05:44 am [INFO] Client has logged in.
+March 22nd 2021, 11:05:44 am [LOG] [1/2] Loaded the ready event.
+March 22nd 2021, 11:05:52 am [LOG] [2/2] Loaded the message event.
+March 22nd 2021, 11:05:55 am [LOG] [3/2] Loaded the message event.
+March 22nd 2021, 11:06:05 am [LOG] [4/2] Loaded the message event.
+March 22nd 2021, 11:09:02 am [LOG] Starting the bot...
+March 22nd 2021, 11:09:03 am [LOG] Loading commands...
+March 22nd 2021, 11:09:03 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:09:03 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:09:03 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:09:03 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:09:03 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:09:03 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:09:03 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:09:03 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:09:03 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:09:03 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:09:04 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:09:04 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:09:04 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:09:04 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:09:04 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:09:04 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:09:04 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:09:04 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:09:04 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:09:04 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:09:04 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:09:04 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:09:04 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:09:04 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:09:04 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:09:04 am [LOG] Loading events...
+March 22nd 2021, 11:09:04 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:09:04 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:09:04 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:09:05 am [INFO] Client has logged in.
+March 22nd 2021, 11:12:05 am [LOG] Starting the bot...
+March 22nd 2021, 11:12:05 am [LOG] Loading commands...
+March 22nd 2021, 11:12:05 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:12:05 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:12:05 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:12:05 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:12:05 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:12:05 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:12:05 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:12:05 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:12:05 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:12:05 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:12:05 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:12:05 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:12:05 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:12:05 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:12:05 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:12:05 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:12:05 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:12:05 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:12:05 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:12:05 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:12:05 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:12:05 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:12:05 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:12:05 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:12:05 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:12:05 am [LOG] Loading events...
+March 22nd 2021, 11:12:05 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:12:05 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:12:05 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:12:06 am [INFO] Client has logged in.
+March 22nd 2021, 11:13:25 am [LOG] Starting the bot...
+March 22nd 2021, 11:13:25 am [LOG] Loading commands...
+March 22nd 2021, 11:13:25 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:13:25 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:13:25 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:13:25 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:13:26 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:13:26 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:13:26 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:13:26 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:13:26 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:13:26 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:13:26 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:13:26 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:13:26 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:13:26 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:13:26 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:13:26 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:13:26 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:13:26 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:13:26 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:13:26 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:13:26 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:13:26 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:13:26 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:13:26 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:13:26 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:13:26 am [LOG] Loading events...
+March 22nd 2021, 11:13:26 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:13:26 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:13:26 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:13:28 am [INFO] Client has logged in.
+March 22nd 2021, 11:13:34 am [LOG] Starting the bot...
+March 22nd 2021, 11:13:34 am [LOG] Loading commands...
+March 22nd 2021, 11:13:34 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:13:34 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:13:34 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:13:34 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:13:34 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:13:34 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:13:34 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:13:34 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:13:34 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:13:34 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:13:34 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:13:34 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:13:34 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:13:34 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:13:34 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:13:34 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:13:34 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:13:34 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:13:34 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:13:34 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:13:34 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:13:34 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:13:34 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:13:34 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:13:34 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:13:34 am [LOG] Loading events...
+March 22nd 2021, 11:13:34 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:13:34 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:13:34 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:13:36 am [INFO] Client has logged in.
+March 22nd 2021, 11:13:47 am [LOG] Starting the bot...
+March 22nd 2021, 11:13:50 am [LOG] Loading commands...
+March 22nd 2021, 11:13:50 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:13:50 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:13:50 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:13:50 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:13:50 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:13:50 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:13:50 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:13:50 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:13:50 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:13:50 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:14:08 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:14:08 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:14:08 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:14:08 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:14:08 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:14:08 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:14:08 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:14:08 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:14:08 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:14:08 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:14:08 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:14:08 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:14:08 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:14:08 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:14:08 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:14:08 am [LOG] Loading events...
+March 22nd 2021, 11:14:08 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:14:08 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:14:08 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:14:22 am [INFO] Client has logged in.
+March 22nd 2021, 11:22:32 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:32 am [LOG] Loading commands...
+March 22nd 2021, 11:22:32 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:32 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:32 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:32 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:32 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:32 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:32 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:32 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:32 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:32 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:32 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:32 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:32 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:32 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:32 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:32 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:32 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:32 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:32 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:32 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:32 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:32 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:32 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:32 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:32 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:32 am [LOG] Loading events...
+March 22nd 2021, 11:22:32 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:32 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:32 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:34 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:34 am [LOG] Loading commands...
+March 22nd 2021, 11:22:34 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:34 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:34 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:34 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:34 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:34 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:34 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:34 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:34 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:34 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:34 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:34 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:34 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:34 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:34 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:34 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:34 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:34 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:34 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:34 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:34 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:34 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:34 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:34 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:34 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:34 am [LOG] Loading events...
+March 22nd 2021, 11:22:34 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:34 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:34 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:35 am [INFO] Client has logged in.
+March 22nd 2021, 11:22:36 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:36 am [LOG] Loading commands...
+March 22nd 2021, 11:22:36 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:36 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:36 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:36 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:36 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:36 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:36 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:36 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:36 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:36 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:36 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:36 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:36 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:36 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:36 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:36 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:36 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:36 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:36 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:36 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:36 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:36 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:37 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:37 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:37 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:37 am [LOG] Loading events...
+March 22nd 2021, 11:22:37 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:37 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:37 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:39 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:39 am [LOG] Loading commands...
+March 22nd 2021, 11:22:39 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:39 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:39 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:39 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:39 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:39 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:39 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:39 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:39 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:39 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:39 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:39 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:39 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:39 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:39 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:39 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:39 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:39 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:39 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:39 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:39 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:39 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:39 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:39 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:39 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:39 am [LOG] Loading events...
+March 22nd 2021, 11:22:39 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:39 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:39 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:41 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:41 am [LOG] Loading commands...
+March 22nd 2021, 11:22:41 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:41 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:41 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:41 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:41 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:41 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:41 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:41 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:41 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:41 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:41 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:41 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:41 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:41 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:41 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:41 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:41 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:41 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:41 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:41 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:41 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:41 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:41 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:41 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:41 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:41 am [LOG] Loading events...
+March 22nd 2021, 11:22:41 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:41 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:41 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:46 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:46 am [LOG] Loading commands...
+March 22nd 2021, 11:22:46 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:46 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:46 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:46 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:46 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:46 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:46 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:46 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:46 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:46 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:46 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:46 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:46 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:46 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:46 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:46 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:46 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:46 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:46 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:46 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:46 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:46 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:46 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:46 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:46 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:46 am [LOG] Loading events...
+March 22nd 2021, 11:22:46 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:46 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:46 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:22:49 am [INFO] Client has logged in.
+March 22nd 2021, 11:22:56 am [LOG] Starting the bot...
+March 22nd 2021, 11:22:56 am [LOG] Loading commands...
+March 22nd 2021, 11:22:56 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:22:56 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:22:56 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:22:56 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:22:56 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:22:56 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:22:56 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:22:56 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:22:56 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:22:56 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:22:57 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:22:57 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:22:57 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:22:57 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:22:57 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:22:57 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:22:57 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:22:57 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:22:57 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:22:57 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:22:57 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:22:57 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:22:57 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:22:57 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:22:57 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:22:57 am [LOG] Loading events...
+March 22nd 2021, 11:22:57 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:22:57 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:22:57 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:23:11 am [INFO] Client has logged in.
+March 22nd 2021, 11:23:18 am [LOG] Starting the bot...
+March 22nd 2021, 11:23:18 am [LOG] Loading commands...
+March 22nd 2021, 11:23:18 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:23:18 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:23:18 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:23:18 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:23:18 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:23:18 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:23:18 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:23:18 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:23:18 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:23:18 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:23:18 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:23:18 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:23:18 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:23:25 am [LOG] Starting the bot...
+March 22nd 2021, 11:23:25 am [LOG] Loading commands...
+March 22nd 2021, 11:23:25 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:23:25 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:23:25 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:23:25 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:23:25 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:23:25 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:23:25 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:23:25 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:23:25 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:23:25 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:23:25 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:23:25 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:23:25 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:23:25 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:23:26 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:23:26 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:23:26 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:23:26 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:23:26 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:23:26 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:23:26 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:23:26 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:23:26 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:23:26 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:23:26 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:23:26 am [LOG] Loading events...
+March 22nd 2021, 11:23:26 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:23:26 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:23:26 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:23:27 am [INFO] Client has logged in.
+March 22nd 2021, 11:23:29 am [LOG] Starting the bot...
+March 22nd 2021, 11:23:29 am [LOG] Loading commands...
+March 22nd 2021, 11:23:29 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:23:29 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:23:29 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:23:29 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:23:29 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:23:29 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:23:29 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:23:29 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:23:29 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:23:29 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:23:29 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:23:29 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:23:29 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:23:29 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:23:29 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:23:29 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:23:29 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:23:29 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:23:29 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:23:29 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:23:29 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:23:29 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:23:29 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:23:29 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:23:29 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:23:29 am [LOG] Loading events...
+March 22nd 2021, 11:23:29 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:23:29 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:23:29 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:23:38 am [INFO] Client has logged in.
+March 22nd 2021, 11:23:59 am [LOG] Starting the bot...
+March 22nd 2021, 11:23:59 am [LOG] Loading commands...
+March 22nd 2021, 11:23:59 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:23:59 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:23:59 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:23:59 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:23:59 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:23:59 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:23:59 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:23:59 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:23:59 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:23:59 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:23:59 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:23:59 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:23:59 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:23:59 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:23:59 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:23:59 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:23:59 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:23:59 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:23:59 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:23:59 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:23:59 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:23:59 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:23:59 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:23:59 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:23:59 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:23:59 am [LOG] Loading events...
+March 22nd 2021, 11:23:59 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:23:59 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:23:59 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:24:02 am [INFO] Client has logged in.
+March 22nd 2021, 11:24:07 am [LOG] Starting the bot...
+March 22nd 2021, 11:24:07 am [LOG] Loading commands...
+March 22nd 2021, 11:24:07 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:24:07 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:24:07 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:24:07 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:24:07 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:24:07 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:24:07 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:24:07 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:24:07 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:24:07 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:24:07 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:24:07 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:24:07 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:24:07 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:24:07 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:24:07 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:24:07 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:24:07 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:24:07 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:24:07 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:24:07 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:24:07 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:24:07 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:24:07 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:24:07 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:24:07 am [LOG] Loading events...
+March 22nd 2021, 11:24:07 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:24:07 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:24:07 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:24:10 am [INFO] Client has logged in.
+March 22nd 2021, 11:24:24 am [LOG] Starting the bot...
+March 22nd 2021, 11:24:24 am [LOG] Loading commands...
+March 22nd 2021, 11:24:24 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:24:24 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:24:24 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:24:24 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:24:24 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:24:24 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:24:24 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:24:24 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:24:24 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:24:24 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:24:24 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:24:24 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:24:24 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:24:24 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:24:24 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:24:24 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:24:24 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:24:24 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:24:24 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:24:24 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:24:24 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:24:24 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:24:24 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:24:24 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:24:24 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:24:24 am [LOG] Loading events...
+March 22nd 2021, 11:24:24 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:24:24 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:24:24 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:24:26 am [INFO] Client has logged in.
+March 22nd 2021, 11:26:29 am [LOG] Starting the bot...
+March 22nd 2021, 11:26:29 am [LOG] Loading commands...
+March 22nd 2021, 11:26:29 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:26:29 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:26:29 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:26:29 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:26:29 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:26:29 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:26:29 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:26:29 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:26:29 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:26:29 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:26:32 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:26:32 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:26:32 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:26:32 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:26:32 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:26:32 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:26:32 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:26:32 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:26:32 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:26:32 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:26:32 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:26:32 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:26:32 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:26:32 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:26:32 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:26:32 am [LOG] Loading events...
+March 22nd 2021, 11:26:32 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:26:32 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:26:32 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:26:38 am [INFO] Client has logged in.
+March 22nd 2021, 11:27:11 am [LOG] Starting the bot...
+March 22nd 2021, 11:27:11 am [LOG] Loading commands...
+March 22nd 2021, 11:27:11 am [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 11:27:11 am [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 11:27:11 am [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 11:27:11 am [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 11:27:11 am [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 11:27:11 am [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 11:27:11 am [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 11:27:11 am [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 11:27:11 am [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 11:27:11 am [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 11:27:11 am [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 11:27:11 am [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 11:27:11 am [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 11:27:11 am [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 11:27:11 am [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 11:27:11 am [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 11:27:11 am [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 11:27:11 am [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 11:27:11 am [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 11:27:11 am [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 11:27:11 am [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 11:27:11 am [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 11:27:11 am [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 11:27:11 am [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 11:27:11 am [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 11:27:11 am [LOG] Loading events...
+March 22nd 2021, 11:27:11 am [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 11:27:11 am [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 11:27:11 am [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 11:27:13 am [INFO] Client has logged in.
+March 22nd 2021, 3:40:25 pm [LOG] Starting the bot...
+March 22nd 2021, 3:40:26 pm [LOG] Loading commands...
+March 22nd 2021, 3:40:27 pm [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 3:40:27 pm [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 3:40:27 pm [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 3:40:27 pm [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 3:40:27 pm [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 3:40:27 pm [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 3:40:27 pm [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 3:40:27 pm [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 3:40:28 pm [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 3:40:28 pm [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 3:40:45 pm [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 3:40:46 pm [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 3:40:46 pm [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 3:40:46 pm [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 3:40:46 pm [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 3:40:46 pm [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 3:40:46 pm [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 3:40:46 pm [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 3:40:46 pm [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 3:40:46 pm [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 3:40:46 pm [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 3:40:46 pm [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 3:40:46 pm [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 3:40:47 pm [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 3:40:47 pm [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 3:40:47 pm [LOG] Loading events...
+March 22nd 2021, 3:40:47 pm [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 3:40:47 pm [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 3:40:47 pm [INFO] Loaded 3 events out of 2 events.
+March 22nd 2021, 3:40:50 pm [INFO] Client has logged in.
+March 22nd 2021, 3:42:35 pm [LOG] Starting the bot...
+March 22nd 2021, 3:42:35 pm [LOG] Loading commands...
+March 22nd 2021, 3:42:35 pm [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 3:42:35 pm [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 3:42:35 pm [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 3:42:35 pm [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 3:42:35 pm [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 3:42:35 pm [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 3:42:35 pm [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 3:42:35 pm [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 3:42:35 pm [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 3:42:35 pm [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 3:42:35 pm [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 3:42:35 pm [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 3:42:35 pm [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 3:42:35 pm [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 3:42:35 pm [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 3:42:35 pm [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 3:42:35 pm [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 3:42:35 pm [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 3:42:35 pm [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 3:42:35 pm [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 3:42:35 pm [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 3:42:35 pm [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 3:42:35 pm [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 3:42:36 pm [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 3:42:36 pm [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 3:42:36 pm [LOG] Loading events...
+March 22nd 2021, 3:42:36 pm [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 3:42:36 pm [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 3:42:36 pm [INFO] Loaded 2 events out of 2 events.
+March 22nd 2021, 3:42:37 pm [INFO] Client has logged in.
+March 22nd 2021, 3:44:56 pm [LOG] Starting the bot...
+March 22nd 2021, 3:44:56 pm [LOG] Loading commands...
+March 22nd 2021, 3:44:56 pm [LOG] [1/24] Loaded the covchart command.
+March 22nd 2021, 3:44:56 pm [LOG] [2/24] Loaded the covid command.
+March 22nd 2021, 3:44:56 pm [LOG] [3/24] Loaded the owofy command.
+March 22nd 2021, 3:44:56 pm [LOG] [4/24] Loaded the reverse command.
+March 22nd 2021, 3:44:56 pm [LOG] [5/24] Loaded the avatar command.
+March 22nd 2021, 3:44:56 pm [LOG] [6/24] Loaded the embed command.
+March 22nd 2021, 3:44:56 pm [LOG] [7/24] Loaded the help command.
+March 22nd 2021, 3:44:56 pm [LOG] [8/24] Loaded the minecraft command.
+March 22nd 2021, 3:44:56 pm [LOG] [9/24] Loaded the ping command.
+March 22nd 2021, 3:44:56 pm [LOG] [10/24] Loaded the quote command.
+March 22nd 2021, 3:44:56 pm [LOG] [11/24] Loaded the affect command.
+March 22nd 2021, 3:44:56 pm [LOG] [12/24] Loaded the changemymind command.
+March 22nd 2021, 3:44:56 pm [LOG] [13/24] Loaded the clyde command.
+March 22nd 2021, 3:44:56 pm [LOG] [14/24] Loaded the hitler command.
+March 22nd 2021, 3:44:56 pm [LOG] [15/24] Loaded the jail command.
+March 22nd 2021, 3:44:56 pm [LOG] [16/24] Loaded the triggered command.
+March 22nd 2021, 3:44:56 pm [LOG] [17/24] Loaded the wanted command.
+March 22nd 2021, 3:44:56 pm [LOG] [18/24] Loaded the wasted command.
+March 22nd 2021, 3:44:56 pm [LOG] [19/24] Loaded the eval command.
+March 22nd 2021, 3:44:56 pm [LOG] [20/24] Loaded the exec command.
+March 22nd 2021, 3:44:56 pm [LOG] [21/24] Loaded the shutdown command.
+March 22nd 2021, 3:44:56 pm [LOG] [22/24] Loaded the djs command.
+March 22nd 2021, 3:44:56 pm [LOG] [23/24] Loaded the npm command.
+March 22nd 2021, 3:44:56 pm [LOG] [24/24] Loaded the youtube command.
+March 22nd 2021, 3:44:56 pm [INFO] Loaded 24 commands out of 24 commands.
+March 22nd 2021, 3:44:56 pm [LOG] Loading events...
+March 22nd 2021, 3:44:56 pm [LOG] [1/2] Loaded the message event.
+March 22nd 2021, 3:44:56 pm [LOG] [2/2] Loaded the ready event.
+March 22nd 2021, 3:44:56 pm [INFO] Loaded 2 events out of 2 events.
+March 22nd 2021, 3:45:10 pm [INFO] Client has logged in.
+[March 22nd 2021, 3:46:46 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:46:46 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:46:46 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:46:46 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:46:46 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:46:46 pm] [LOG] Loading events...
+[March 22nd 2021, 3:46:46 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:46:46 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:46:46 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:46:49 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:47:52 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:47:52 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:47:52 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:47:52 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:47:52 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:47:52 pm] [LOG] Loading events...
+[March 22nd 2021, 3:47:52 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:47:52 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:47:52 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:47:53 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:48:45 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:48:45 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:48:45 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:48:45 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:48:46 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:48:46 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:48:46 pm] [LOG] Loading events...
+[March 22nd 2021, 3:48:46 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:48:46 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:48:46 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:48:48 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:49:22 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:49:22 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:49:22 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:49:22 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:49:22 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:49:22 pm] [LOG] Loading events...
+[March 22nd 2021, 3:49:22 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:49:22 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:49:22 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:49:36 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:50:17 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:50:17 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:50:17 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:50:17 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:50:17 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:50:17 pm] [LOG] Loading events...
+[March 22nd 2021, 3:50:17 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:50:17 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:50:17 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:50:20 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:55:19 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:55:19 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:55:19 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:55:19 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:55:20 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:55:22 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:55:22 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:55:22 pm] [LOG] Loading events...
+[March 22nd 2021, 3:55:22 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:55:22 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:55:22 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:55:24 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:56:56 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:56:56 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:56:56 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:56:56 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:56:56 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:56:56 pm] [LOG] Loading events...
+[March 22nd 2021, 3:56:56 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:56:56 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:56:56 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:56:58 pm] [INFO] Client has logged in.
+[March 22nd 2021, 3:59:54 pm] [LOG] Starting the bot...
+[March 22nd 2021, 3:59:54 pm] [LOG] Loading commands...
+[March 22nd 2021, 3:59:54 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 3:59:54 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 3:59:54 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 3:59:55 pm] [LOG] Loading events...
+[March 22nd 2021, 3:59:55 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 3:59:55 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 3:59:55 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 3:59:58 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:00:44 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:00:44 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:00:44 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:00:44 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:00:45 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:00:45 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:00:45 pm] [LOG] Loading events...
+[March 22nd 2021, 4:00:45 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:00:45 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:00:45 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:00:48 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:02:30 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:02:30 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:02:30 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:02:30 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:02:30 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:02:30 pm] [LOG] Loading events...
+[March 22nd 2021, 4:02:30 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:02:30 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:02:30 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:02:36 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:03:58 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:03:58 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:03:58 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:03:58 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:03:58 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:03:58 pm] [LOG] Loading events...
+[March 22nd 2021, 4:03:58 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:03:58 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:03:58 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:04:00 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:04:46 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:04:46 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:04:46 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:04:46 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:04:46 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:04:46 pm] [LOG] Loading events...
+[March 22nd 2021, 4:04:46 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:04:46 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:04:46 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:04:51 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:09:04 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:09:04 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:09:04 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:09:04 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:09:05 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:09:05 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:09:05 pm] [LOG] Loading events...
+[March 22nd 2021, 4:09:05 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:09:05 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:09:05 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:09:06 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:09:49 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:09:49 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:09:49 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:09:49 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:09:49 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:09:49 pm] [LOG] Loading events...
+[March 22nd 2021, 4:09:49 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:09:49 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:09:49 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:09:51 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:11:31 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:11:31 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:11:31 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:11:31 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:11:31 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:11:31 pm] [LOG] Loading events...
+[March 22nd 2021, 4:11:31 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:11:31 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:11:31 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:11:33 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:11:57 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:11:57 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:11:57 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:11:57 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:11:58 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:11:58 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:11:58 pm] [LOG] Loading events...
+[March 22nd 2021, 4:11:58 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:11:58 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:11:58 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:11:59 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:11:59 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:11:59 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:11:59 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:11:59 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:11:59 pm] [LOG] Loading events...
+[March 22nd 2021, 4:11:59 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:11:59 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:11:59 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:12:04 pm] [INFO] Client has logged in.
+[March 22nd 2021, 4:24:45 pm] [LOG] Starting the bot...
+[March 22nd 2021, 4:24:45 pm] [LOG] Loading commands...
+[March 22nd 2021, 4:24:45 pm] [LOG] [1/24] Loaded the covchart command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [2/24] Loaded the covid command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [3/24] Loaded the owofy command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [4/24] Loaded the reverse command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [5/24] Loaded the avatar command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [6/24] Loaded the embed command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [7/24] Loaded the help command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [8/24] Loaded the minecraft command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [9/24] Loaded the ping command.
+[March 22nd 2021, 4:24:45 pm] [LOG] [10/24] Loaded the quote command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [11/24] Loaded the affect command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [12/24] Loaded the changemymind command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [13/24] Loaded the clyde command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [14/24] Loaded the hitler command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [15/24] Loaded the jail command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [16/24] Loaded the triggered command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [17/24] Loaded the wanted command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [18/24] Loaded the wasted command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [19/24] Loaded the eval command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [20/24] Loaded the exec command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [21/24] Loaded the shutdown command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [22/24] Loaded the djs command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [23/24] Loaded the npm command.
+[March 22nd 2021, 4:24:46 pm] [LOG] [24/24] Loaded the youtube command.
+[March 22nd 2021, 4:24:46 pm] [INFO] Loaded 24 commands out of 24 commands.
+[March 22nd 2021, 4:24:46 pm] [LOG] Loading events...
+[March 22nd 2021, 4:24:46 pm] [LOG] [1/2] Loaded the message event.
+[March 22nd 2021, 4:24:46 pm] [LOG] [2/2] Loaded the ready event.
+[March 22nd 2021, 4:24:46 pm] [INFO] Loaded 2 events out of 2 events.
+[March 22nd 2021, 4:24:50 pm] [INFO] Client has logged in.

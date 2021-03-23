@@ -1,8 +1,8 @@
-const Command = require('command');
+const Command = require("../../base/classes/Command");
 
-module.exports = class PingCommand extends Command {
-    constructor(client) {
-        super(client, {
+class PingCommand extends Command {
+    constructor() {
+        super({
             name: 'ping',
             aliases: ['pong', 'pingpong'],
             category: 'general',
@@ -17,3 +17,4 @@ module.exports = class PingCommand extends Command {
     }
 }
 
+module.exports = PingCommand;

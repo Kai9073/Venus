@@ -6,4 +6,5 @@ src/models
 beta
 src/events/voiceStateUpdate.js
 test.js
-src/config/config.js
+src/events/dispatcher.js
+src/commands/test
