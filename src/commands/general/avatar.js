@@ -19,7 +19,7 @@ class AvatarCommand extends Command {
 
         let embed = new MessageEmbed()
         .setTitle(`${user.tag}'s Avatar`)
-        .setImage(user.displayAvatarURL({ format: 'png', dynamic: true }))
+        .setImage(user.displayAvatarURL({ format: 'png', dynamic: true, size: 512 }))
         .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();

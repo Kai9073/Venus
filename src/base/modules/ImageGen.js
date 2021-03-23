@@ -2,6 +2,7 @@ const path = require('path');
 const Canvas = require('canvas');
 const fetch = require('node-fetch');
 const GIFEncoder = require('gifencoder');
+const { COPYFILE_EXCL } = require('constants');
 
 class ImageGen {
     constructor() {
@@ -212,7 +213,24 @@ class ImageGen {
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(bg, 0, 0);
-        ctx.drawImage(img1, )
+        ctx.drawImage(img1, 500, 75, 300, 300);
+        ctx.drawImage(img2, 800, 350, 300, 300)
+        
+        return canvas.toBuffer();
+    }
+
+    static async pixelate(img) {
+        const image = await Canvas.loadImage(img);
+
+        const canvas = Canvas.createCanvas(image.width, image.height);
+        const ctx = canvas.getContext('2d');
+        const pixels = 5 / 100;
+
+        ctx.drawImage(image, 0, 0, canvas.width * pixels, canvas.height * pixels);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(canvas, 0, 0, canvas.width * pixels, canvas.height * pixels, 0, 0, canvas.width, canvas.height);
+
+        return canvas.toBuffer();
     }
 }
 
