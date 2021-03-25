@@ -5,3 +5,5 @@ const Client = require('./base/Client');
 const client = new Client();
 
 client.connect();
+
+require('./structures/Message');

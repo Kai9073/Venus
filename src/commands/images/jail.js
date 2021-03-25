@@ -14,7 +14,7 @@ class JailCommand extends Command {
     }
 
     async run(client, message, args) {
-        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : message.author;
+        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
 
         const attachment = new Discord.MessageAttachment(await img.jail(user?.displayAvatarURL({ format: 'png', size: 512 })), 'jail.png');
 

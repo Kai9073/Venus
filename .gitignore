@@ -4,7 +4,7 @@ yarn.lock
 yarn-error.log
 src/models
 beta
-src/events/voiceStateUpdate.js
 test.js
-src/events/dispatcher.js
-src/commands/test
+src/logs
+src/structures
+src/dashboard

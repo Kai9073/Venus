@@ -13,7 +13,7 @@ class AvatarCommand extends Command {
     }
 
     async run(client, message, args) {
-        let user = message.guild?.members.cache.get(args[0]) ? message.guild.members.cache.get(args[0])?.user : message.mentions?.members?.first() ? message.mentions.members.first()?.user : message.author;
+        let user = message.guild?.members.cache.get(args[0]) ? message.guild.members.cache.get(args[0])?.user : message.mentions?.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
 
         if(!user) return message.channel.send(client.sendErrorEmbed(`That user doesn't seem to exist in this guild.`));
 

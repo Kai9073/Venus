@@ -187,12 +187,12 @@ class ImageGen {
 
         while(i < 9) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, Math.floor(Math.random() * 40) - 30, Math.floor(Math.random() * 40) - 30, canvas.width + 30, canvas.height + 30);
+            ctx.drawImage(img, Math.floor(Math.random() * 30) - 30, Math.floor(Math.random() * 30) - 30, canvas.width + 30, canvas.height + 30);
 
             ctx.fillStyle = '#FF000033';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.drawImage(bg, Math.floor(Math.random() * 20) - 20, 300 - 54 + Math.floor(Math.random() * 20) - 20, 300 + 20, 54 + 20);
+            ctx.drawImage(bg, Math.floor(Math.random() * 30) - 30, 300 - 54 + Math.floor(Math.random() * 30) - 30, 300 + 20, 54 + 20);
 
             GIF.addFrame(ctx);
             i++;

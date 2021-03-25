@@ -6,11 +6,9 @@ const covid = require("novelcovid");
 const chartCallback = (ChartJS) => {
     ChartJS.plugins.register({
         beforeDraw: (chart) => {
-            const ctx = chart.ctx;
-            ctx.save();
-            ctx.fillStyle = '#FFFFFF';
+            const { ctx } = chart.chart;
+            ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, chart.width, chart.height);
-            ctx.restore();
         }
     });
 }
@@ -30,19 +28,21 @@ class CovChartCommand extends Command {
         const m = await message.channel.send(client.sendWaitEmbed(`Generating chart...`));
         if(!args.length) {
             let data = await covid.historical.all({ days: -1 });
-            if(!data) return message.channel.send(client.sendErrorEmbed(`An error occurred.`));
+            if(!data.cases) return m.edit(client.sendErrorEmbed(`An error occurred.`));
+            
+            const dates = Object.keys(data.cases);
 
             const labels = [];
             const deaths = [];
             const cases = [];
             const recovered = [];
 
-            for(let data of Object.keys(data.cases)) {
-                labels.push(data.cases.data[data]);
+            for(let date of dates) {
+                labels.push(date);
 
-                deaths.push(data.deaths[data]);
-                cases.push(data.cases[data]);
-                recovered.push(data.recovered[data]);
+                deaths.push(data.deaths[date]);
+                cases.push(data.cases[date]);
+                recovered.push(data.recovered[date]);
             }
 
             const canvas = new ChartJSNodeCanvas({ width: 800, height: 600, chartCallback: chartCallback });
@@ -80,7 +80,6 @@ class CovChartCommand extends Command {
                 }
             };
 
-            // @ts-ignore
             const image = await canvas.renderToBuffer(config);
 
             const attachment = new MessageAttachment(image, 'covchart.png');
@@ -93,21 +92,23 @@ class CovChartCommand extends Command {
             m.delete();
             message.channel.send(embed);
         } else {
-            let data = await covid.historical.countries({ country: args.join(' ') });
+            let data = await covid.historical.countries({ country: args.join(' '), days: -1 });
 
-            if(!data.timeline) return message.channel.send(client.sendErrorEmbed(`That country doesn't seem to exist.`));
+            if(!data.timeline) return m.edit(client.sendErrorEmbed(`That country doesn't seem to exist.`));
+
+            const dates = Object.keys(data.timeline.cases);
 
             const labels = [];
             const deaths = [];
             const cases = [];
             const recovered = [];
 
-            for(let data of Object.keys(data.timeline.cases)) {
-                labels.push(data.timeline.cases[data]);
+            for(let date of dates) {
+                labels.push(date);
 
-                deaths.push(data.timeline.deaths[data]);
-                cases.push(data.timeline.cases[data]);
-                recovered.push(data.timeline.recovered[data]);
+                deaths.push(data.timeline.deaths[date]);
+                cases.push(data.timeline.cases[date]);
+                recovered.push(data.timeline.recovered[date]);
             }
 
             const canvas = new ChartJSNodeCanvas({ width: 800, height: 600, chartCallback: chartCallback });

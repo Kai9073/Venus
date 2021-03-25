@@ -16,7 +16,7 @@ class SlapCommand extends Command {
 
     async run(client, message, args) {
         let user = message.mentions.members.first(2).length === 2 ? message.mentions.members.first().user : message.author;
-        let user2 = message.mentions.members.first(2).length === 2 ? message.mentions.members.first(2)[1].user : message.mentions.members.first();
+        let user2 = message.mentions.members.first(2).length === 2 ? message.mentions.members.first(2)[1].user : message.mentions.members.first().user;
 
         if(!user2) return message.channel.send(client.sendErrorEmbed(`Please mention one more person.`));
 

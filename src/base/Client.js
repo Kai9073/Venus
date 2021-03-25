@@ -15,11 +15,17 @@ class Client extends Discord.Client {
             }
         });
 
+        this.queue = new Map();
         this.utils = Utils;
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();
     }
 
+    /**
+     * Logs information about things happening with the bot.
+     * @param {string} info Information about the event or something
+     * @param {0|1|2|3} severity How severe is that information
+     */
     log(info, severity) {
         let type;
         if(severity === 0) {
@@ -47,6 +53,9 @@ class Client extends Discord.Client {
         });
     }
 
+    /**
+     * Loads all commands found in the src/commands directory.
+     */
     loadCommands() {
         const commandFiles = sync(resolve('src/commands/**/*')).filter(file => file.endsWith(`.js`));
         this.log(`Loading commands...`);
@@ -70,6 +79,9 @@ class Client extends Discord.Client {
         this.log(`Loaded ${i} commands out of ${commandFiles.length} commands.`, 0);
     }
 
+    /**
+     * Loads all client events found in the src/events/client directory.
+     */
     loadEvents() {
         const eventFiles = sync(resolve('src/events/client/*'));
         this.log(`Loading events...`);
@@ -95,6 +107,12 @@ class Client extends Discord.Client {
         this.log(`Loaded ${i} events out of ${eventFiles.length} events.`, 0);
     }
 
+    /**
+     * Simple embed used to indicate an error happened.
+     * @param {string} info Information to be sent in discord 
+     * @returns {Discord.MessageEmbed} Discord Embed
+     * @example client.sendErrorEmbed(`Failed to send message.`);
+     */
     sendErrorEmbed(info) {
         let embed = new Discord.MessageEmbed()
         .setDescription(`❌ | ${info}`)
@@ -102,6 +120,12 @@ class Client extends Discord.Client {
         return embed;
     }
 
+    /**
+     * Simple embed used to indicate the bot successfully did something.
+     * @param {string} info Information to be sent in discord
+     * @returns {Discord.MessageEmbed} Discord Embed
+     * @example client.sendSuccessEmbed(`Successfully sent a message.`);
+     */
     sendSuccessEmbed(info) {
         let embed = new Discord.MessageEmbed()
         .setDescription(`✅ **|** ${info}`)
@@ -109,6 +133,12 @@ class Client extends Discord.Client {
         return embed;
     }
 
+    /**
+     * Simple embed used to indicate the bot is warning something.
+     * @param {string} info Information to be sent in discord
+     * @returns {Discord.MessageEmbed} Discord Embed
+     * @example client.sendWarningEmbed(`Bot can't send a message soon.`);
+     */
     sendWarningEmbed(info) {
         let embed = new Discord.MessageEmbed()
         .setDescription(`⚠ **|** ${info}`)
@@ -116,6 +146,12 @@ class Client extends Discord.Client {
         return embed;
     }
 
+    /**
+     * Simple embed used to indicate the bot is generating/making/executing a process.
+     * @param {string} info Information to be sent in discord
+     * @returns {Discord.MessageEmbed} Discord Embed
+     * @example client.sendWaitEmbed(`Bot is sending a message.`);
+     */
     sendWaitEmbed(info) {
         let embed = new Discord.MessageEmbed()
         .setDescription(`<a:loading:803081781707407361> **|** ${info}`)
@@ -123,12 +159,42 @@ class Client extends Discord.Client {
         return embed;
     }
 
+    /**
+     * Simple embed used to generate an embed easily.
+     * @param {string} info Information to be sent in discord
+     * @returns {Discord.MessageEmbed} Discord Embed
+     * @example client.sendCustomEmbed('❤', 'Thank you for using Venus-Bot', '#FF0000');
+     */
+    sendCustomEmbed(emoji, info, color = '#87CEEB') {
+        let embed = new Discord.MessageEmbed()
+        .setDescription(`${emoji} **|** ${info}`)
+        .setColor(color);
+        return embed;
+    }
+
+    resolveUser(usernameOrUserResolvable, multiple = false) {
+        if (usernameOrUserResolvable && typeof usernameOrUserResolvable === "string" && !parseInt(usernameOrUserResolvable)) {
+            const name = usernameOrUserResolvable.toUpperCase();
+            const arr = [];
+            this.users.cache.forEach(user => {
+                if (user.username.toUpperCase().indexOf(name) < 0) return;
+                return arr.push(user);
+            });
+            return multiple ? arr : arr[0];
+        } else {
+            return usernameOrUserResolvable ? (multiple ? [this.users.resolve(usernameOrUserResolvable)] : this.users.resolve(usernameOrUserResolvable)) : null;
+        }
+    }
+
+    /**
+     * Login to Discord.
+     */
     connect() {
         this.log(`Starting the bot...`);
         this.loadCommands();
         this.loadEvents();
         // eslint-disable-next-line no-undef
-        return this.login(process.env.TOKEN).catch((err) => this.log(err, 2));
+        this.login(process.env.TOKEN).catch((err) => this.log(err, 2));
     }
 }
 
