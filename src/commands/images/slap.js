@@ -28,7 +28,7 @@ class SlapCommand extends Command {
         .setImage('attachment://slap.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

@@ -18,9 +18,9 @@ class  EvalCommand extends Command {
             let ev = eval(message.content.replace('v.eval', '').replace('v.code', ''));
 
             ev = client.utils.cleanText(ev, client);
-            return message.channel.send(ev, { code: "xl", split: true });
+            return message.inlineReply(ev, { code: "xl", split: true });
         } catch(err) {
-            return message.channel.send(err, { code: "xl", split: true });
+            return message.inlineReply(err, { code: "xl", split: true });
         }
     }
 }

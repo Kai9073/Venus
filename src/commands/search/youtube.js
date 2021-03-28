@@ -1,4 +1,4 @@
-const ytsr = require("youtube-sr");
+const ytsr = require("youtube-sr").default;
 const { MessageEmbed } = require("discord.js");
 const Command = require("../../base/classes/Command");
 
@@ -28,7 +28,7 @@ class YoutubeCommand extends Command {
         .setImage(result.thumbnail.displayThumbnailURL("ultrares"))
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

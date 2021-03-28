@@ -25,7 +25,7 @@ class ClydeCommand extends Command {
         .setImage('attachment://clyde.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

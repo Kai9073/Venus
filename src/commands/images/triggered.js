@@ -15,6 +15,7 @@ class TriggeredCommand extends Command {
 
     async run(client, message, args) {
         let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
+        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
 
         const triggered = await img.trigger(user?.displayAvatarURL({ format: 'png', size: 512 }));
 
@@ -26,7 +27,7 @@ class TriggeredCommand extends Command {
         .setImage('attachment://triggered.gif')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

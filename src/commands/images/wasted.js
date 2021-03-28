@@ -15,7 +15,8 @@ class WastedCommand extends Command {
 
     async run(client, message, args) {
         let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
-
+        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
+        
         const attachment = new MessageAttachment(await img.wasted(user?.displayAvatarURL({ format: 'png', size: 512 })), 'wasted.png');
     
         let embed = new MessageEmbed()
@@ -24,7 +25,7 @@ class WastedCommand extends Command {
         .setImage('attachment://wasted.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

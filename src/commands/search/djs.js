@@ -18,9 +18,9 @@ class DJSCommand extends Command {
         data = await data.json();
 
         if(data) {
-            message.channel.send({ embed: data });
+            message.inlineReply({ embed: data });
         } else {
-            message.channel.send(client.sendErrorEmbed(`Can't find that documentation!`));
+            message.inlineReply(client.sendErrorEmbed(`Can't find that documentation!`));
         }
     }
 }

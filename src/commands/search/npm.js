@@ -56,7 +56,7 @@ class NPMCommand extends Command {
         .setThumbnail('https://i.imgur.com/8DKwbhj.png/')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

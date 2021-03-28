@@ -5,7 +5,6 @@ class Utils {
             .replace(/`/g, "`" + String.fromCharCode(8203))
             .replace(/@/g, "@" + String.fromCharCode(8203))
             .replace(new RegExp(client.token, "g"), "N0-T0k3n.f0R_Y0U")
-            // eslint-disable-next-line no-undef
             .replace(new RegExp(process.env.IMDB_API, "g"), "N0-4Pi_f0R-U");
         return text;
     }

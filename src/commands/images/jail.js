@@ -15,7 +15,8 @@ class JailCommand extends Command {
 
     async run(client, message, args) {
         let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
-
+        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
+        
         const attachment = new Discord.MessageAttachment(await img.jail(user?.displayAvatarURL({ format: 'png', size: 512 })), 'jail.png');
 
         let embed = new Discord.MessageEmbed()
@@ -24,7 +25,7 @@ class JailCommand extends Command {
         .setImage('attachment://jail.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

@@ -17,14 +17,14 @@ class ExecCommand extends Command {
     async run(client, message, args) {
         exec(message.content.replace('v.shell', '').replace('v.exec', ''), (error, stdout, stderr) => {
             if (error) {
-                message.channel.send(`${error.message}`, { code: 'xl' });
+                message.inlineReply(`${error.message}`, { code: 'xl' });
                 return;
             }
             if (stderr) {
-                message.channel.send(`${stderr}`, { code: 'xl' });
+                message.inlineReply(`${stderr}`, { code: 'xl' });
                 return;
             }
-            return message.channel.send(`${stdout}`, { code: 'xl' });
+            return message.inlineReply(`${stdout}`, { code: 'xl' });
         });
     }
 }

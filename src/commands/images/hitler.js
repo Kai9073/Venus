@@ -15,6 +15,7 @@ class HitlerCommand extends Command {
 
     async run(client, message, args) {
         let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
+        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
         
         const attachment = new MessageAttachment(await img.hitler(user?.displayAvatarURL({ format: 'png', size: 512 })), 'hitler.png');
     
@@ -24,7 +25,7 @@ class HitlerCommand extends Command {
         .setImage('attachment://hitler.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

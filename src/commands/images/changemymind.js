@@ -23,7 +23,7 @@ class ChangeMyMindCommand extends Command {
         .setImage('attachment://changemymind.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

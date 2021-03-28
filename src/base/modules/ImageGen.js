@@ -2,7 +2,7 @@ const path = require('path');
 const Canvas = require('canvas');
 const fetch = require('node-fetch');
 const GIFEncoder = require('gifencoder');
-const { COPYFILE_EXCL } = require('constants');
+const parser = require('@canvacord/emoji-parser');
 
 class ImageGen {
     constructor() {
@@ -10,7 +10,6 @@ class ImageGen {
     }
 
     static async affect(avatar) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'affect.png'));
         const img = await Canvas.loadImage(avatar);
 
@@ -24,7 +23,6 @@ class ImageGen {
     }
 
     static async changemymind(text) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'changemymind.jpg'));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -91,7 +89,6 @@ class ImageGen {
     }
 
     static async hitler(avatar) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'hitler.png'));
         const img = await Canvas.loadImage(avatar);
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -105,7 +102,6 @@ class ImageGen {
 
     static async jail(avatar) {
         let img = await Canvas.loadImage(await this.greyscale(avatar));
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'jail.png'));
         const canvas = Canvas.createCanvas(300, 300);
         const ctx = canvas.getContext('2d');
@@ -117,7 +113,6 @@ class ImageGen {
     }
 
     static async wanted(avatar) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wanted.jpg'));
         const img = await Canvas.loadImage(avatar);
 
@@ -151,7 +146,6 @@ class ImageGen {
     }
 
     static async wasted(avatar) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wasted.png'));
         const img = await Canvas.loadImage(await this.greyscale(avatar));
 
@@ -164,15 +158,32 @@ class ImageGen {
         return canvas.toBuffer();
     }
 
-    static async clyde(text) {
-        let clyde = await fetch(`https://nekobot.xyz/api/imagegen?type=clyde&text=${encodeURIComponent(text)}`);
-        clyde = await clyde.json();
+    static _shorten(str, maxChar = 60) {
+        return str.substring(0, maxChar);
+    }
 
-        return clyde.message;
+    static async clyde(text) {
+        let bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'clyde.png'));
+
+        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'MANROPE_REGULAR.ttf'), {
+            family: "Manrope",
+            weight: "regular",
+            style: "normal"
+        });
+
+        const canvas = Canvas.createCanvas(bg.width, bg.height);
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(bg, 0, 0);
+
+        ctx.font = '17px Manrope';
+        ctx.fillStyle = 'white';
+        await parser.fillTextWithTwemoji(ctx, await this._shorten(text, 60), 75, 50);
+
+        return canvas.toBuffer();
     }
 
     static async trigger(avatar) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'triggered.png'));
         const img  = await Canvas.loadImage(avatar);
 
@@ -204,7 +215,6 @@ class ImageGen {
     }
 
     static async slap(avatar1, avatar2) {
-        // eslint-disable-next-line no-undef
         const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'slap.png'));
         const img1 = await Canvas.loadImage(avatar1);
         const img2 = await Canvas.loadImage(avatar2);
@@ -214,7 +224,7 @@ class ImageGen {
 
         ctx.drawImage(bg, 0, 0);
         ctx.drawImage(img1, 500, 75, 300, 300);
-        ctx.drawImage(img2, 800, 350, 300, 300)
+        ctx.drawImage(img2, 800, 350, 300, 300);
         
         return canvas.toBuffer();
     }
@@ -229,6 +239,129 @@ class ImageGen {
         ctx.drawImage(image, 0, 0, canvas.width * pixels, canvas.height * pixels);
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(canvas, 0, 0, canvas.width * pixels, canvas.height * pixels, 0, 0, canvas.width, canvas.height);
+
+        return canvas.toBuffer();
+    }
+
+    static async circle(img) {
+        const image = await Canvas.loadImage(img);
+
+        const canvas = Canvas.createCanvas(image.width, image.height);
+        const ctx = canvas.getContext("2d");
+
+        ctx.drawImage(image, 0, 0);
+
+        ctx.globalCompositeOperation = "destination-in";
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        return canvas.toBuffer();
+    }
+
+    static async invert(img) {
+        const image = await Canvas.loadImage(img);
+        const canvas = await Canvas.createCanvas(image.width, image.height);
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0);
+
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+        for(let i = 0; i < imgData.data.length; i += 4) {
+            imgData.data[i] = 255 - imgData.data[i];
+            imgData.data[i + 1] = 255 - imgData.data[i + 1];
+            imgData.data[i + 2] = 255 - imgData.data[i + 2];
+            imgData.data[i + 3] = 255;
+        }
+
+        ctx.putImageData(imgData, 0, 0);
+
+        return canvas.toBuffer();
+    }
+
+    static async youtube(img, username, text) {
+        const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'youtube.png')));
+        const image = await Canvas.loadImage(await this.circle(img));
+
+        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
+            family: "Roboto",
+            weight: "regular",
+            style: "normal"
+        });
+
+        const canvas = Canvas.createCanvas(bg.width, bg.height);
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(bg, -3, -3, canvas.width + 5, canvas.height + 5);
+        ctx.drawImage(image, 15, 25, 65, 65);
+
+        const timeNumber = Math.floor(Math.random() * (59 - 1)) + 1;
+        const timeString = `${timeNumber + (timeNumber == 1 ? " minute" : " minutes")} ago`;
+
+        const name = this._shorten(username, 21);
+        const comment = this._shorten(text, 50);
+
+        ctx.font = '20px Roboto';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillText(name, 90, 50);
+
+        ctx.font = '15px Roboto';
+        ctx.fillStyle = '#909090';
+        ctx.fillText(timeString, ctx.measureText(name).width + 130, 50);
+
+        ctx.font = '20px Roboto';
+        ctx.fillStyle = '#FFFFFF';
+        await parser.fillTextWithTwemoji(ctx, comment, 90, 85);
+        
+        return canvas.toBuffer();
+    }
+
+    static async presentation(text) {
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'presentation.png'));
+
+        const canvas = Canvas.createCanvas(bg.width, bg.height);
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+
+        let x = text.length;
+        let fontSize = 70;
+        if (x <= 15) {
+            ctx.translate(175, 220);
+        } else if (x <= 30) {
+            fontSize = 50;
+            ctx.translate(175, 220);
+        } else if (x <= 70) {
+            fontSize = 40;
+            ctx.translate(185, 220);
+        } else if (x <= 85) {
+            fontSize = 32;
+            ctx.translate(185, 220);
+        } else if (x < 100) {
+            fontSize = 26;
+            ctx.translate(185, 220);
+        } else if (x < 120) {
+            fontSize = 21;
+            ctx.translate(185, 220);
+        } else if (x < 180) {
+            fontSize = 0.0032 * (x * x) - 0.878 * x + 80.545;
+            ctx.translate(185, 220);
+        } else if (x < 700) {
+            fontSize = 0.0000168 * (x * x) - 0.0319 * x + 23.62;
+            ctx.translate(170, 220);
+        } else {
+            fontSize = 10;
+            ctx.translate(170, 220);
+        }
+        ctx.font = `${fontSize}px Arial`;
+
+        const lines = await this._getLines({ text, ctx, maxWidth: 345 });
+        let i = 0;
+        do {
+            await parser.fillTextWithTwemoji(ctx, lines[i], 0, i * fontSize - 100);
+            i++;
+        } while (i < lines.length)
 
         return canvas.toBuffer();
     }

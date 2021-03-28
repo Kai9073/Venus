@@ -9,13 +9,13 @@ class PixelateCommand extends Command {
             aliases: ['pixel', 'japan'],
             category: 'images',
             description: 'Pixelate your profile picture.',
-            usage: 'pixelate [member]',
-            minimumRequiredArgs: 1
+            usage: 'pixelate [member]'
         });
     }
 
     async run(client, message, args) {
         let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
+        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
 
         const attachment = new Discord.MessageAttachment(await img.pixelate(user?.displayAvatarURL({ format: 'png', size: 512 })), 'pixelate.png');
 
@@ -25,7 +25,7 @@ class PixelateCommand extends Command {
         .setImage('attachment://pixelate.png')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
-        message.channel.send(embed);
+        message.inlineReply(embed);
     }
 }
 

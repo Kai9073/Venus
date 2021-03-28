@@ -161,7 +161,9 @@ class Client extends Discord.Client {
 
     /**
      * Simple embed used to generate an embed easily.
+     * @param {string} emoji Emoji
      * @param {string} info Information to be sent in discord
+     * @param {Discord.ColorResolvable} color Discord ColorResolvable 
      * @returns {Discord.MessageEmbed} Discord Embed
      * @example client.sendCustomEmbed('❤', 'Thank you for using Venus-Bot', '#FF0000');
      */
@@ -172,18 +174,13 @@ class Client extends Discord.Client {
         return embed;
     }
 
-    resolveUser(usernameOrUserResolvable, multiple = false) {
-        if (usernameOrUserResolvable && typeof usernameOrUserResolvable === "string" && !parseInt(usernameOrUserResolvable)) {
-            const name = usernameOrUserResolvable.toUpperCase();
-            const arr = [];
-            this.users.cache.forEach(user => {
-                if (user.username.toUpperCase().indexOf(name) < 0) return;
-                return arr.push(user);
-            });
-            return multiple ? arr : arr[0];
-        } else {
-            return usernameOrUserResolvable ? (multiple ? [this.users.resolve(usernameOrUserResolvable)] : this.users.resolve(usernameOrUserResolvable)) : null;
-        }
+    resolveUser(username, multiple = false) {
+        const name = username.toLowerCase();
+        const arr = [];
+        this.users.cache.forEach(user => {
+            if(user.username.toLowerCase().startsWith(name)) arr.push(user);
+        });
+        return multiple ? arr : arr[0];
     }
 
     /**
@@ -193,7 +190,6 @@ class Client extends Discord.Client {
         this.log(`Starting the bot...`);
         this.loadCommands();
         this.loadEvents();
-        // eslint-disable-next-line no-undef
         this.login(process.env.TOKEN).catch((err) => this.log(err, 2));
     }
 }

@@ -13,10 +13,9 @@ class ShutdownCommand extends Command {
     }
 
     async run(client, message, args) {
-        message.channel.send(`Goodbye :wave:`);
+        message.inlineReply(`Goodbye :wave:`);
         client.log('Shutting down...');
         setTimeout(() => {
-            // eslint-disable-next-line no-undef
             process.exit();
         }, 5000);
     }
