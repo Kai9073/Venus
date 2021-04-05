@@ -15,7 +15,7 @@ module.exports = class WantedCommand extends Command {
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
+        let user = message.mentions.users.first() || await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let wanted = await img.wanted(user.displayAvatarURL({ format: 'png', size: 512 }));

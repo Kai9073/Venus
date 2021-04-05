@@ -16,8 +16,8 @@ module.exports = class SlapCommand extends Command {
     }
 
     async run(message, args) {
-        let user = message.mentions.members.first(2).length === 2 ? message.mentions.members.first().user : message.author;
-        let user2 = message.mentions.members.first(2).length === 2 ? message.mentions.members.first(2)[1].user : message.mentions.members.first().user;
+        let user = message.mentions.members.first(2).length === 2 ? message.mentions.members.first() : message.author;
+        let user2 = message.mentions.members.first(2).length === 2 ? message.mentions.members.first(2)[1] : message.mentions.members.first();
         if(!user2) return message.channel.send(`❌ | Please mention another user!`);
 
         let slap = await img.slap(user.displayAvatarURL({ format: 'png', size: 512 }), user2.displayAvatarURL({ format: 'png', size: 512 }));

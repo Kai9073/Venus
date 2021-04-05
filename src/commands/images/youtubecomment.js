@@ -16,10 +16,10 @@ module.exports = class YoutubeCommentCommand extends Command {
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
-        if(!user) user = message.author;
+        let user = message.mentions.users.first() || message.author;
 
-        let youtube = await img.youtube(user.displayAvatarURL({ format: 'png', size: 512 }), user.username, args.join(' '));
+        let text = message.mentions.users.first() ? args.slice(1).join(' ') : args.join(' ');
+        let youtube = await img.youtube(user.displayAvatarURL({ format: 'png', size: 512 }), user.username, text);
         let attachment = new MessageAttachment(youtube, 'youtube.png');
 
         let embed = new MessageEmbed()

@@ -15,8 +15,7 @@ module.exports = class WastedCommand extends Command {
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
-        if(!user) user = message.author;
+        let user = message.mentions.users.first() || await message.resolveUser(args.join(' ')) || message.author;
 
         let wasted = await img.wasted(user.displayAvatarURL({ format: 'png', size: 512 }));
         let attachment = new MessageAttachment(wasted, 'wasted.png');

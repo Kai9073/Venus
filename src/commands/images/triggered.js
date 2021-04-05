@@ -15,7 +15,7 @@ module.exports = class TriggeredCommand extends Command {
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
+        let user = message.mentions.users.first() || await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let trigger = await img.trigger(user.displayAvatarURL({ format: 'png', size: 512 }));
