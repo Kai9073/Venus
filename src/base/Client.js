@@ -88,7 +88,7 @@ module.exports = class Client extends Discord.Client {
             i++;
         }
 
-        this.log(`[${i + 1}/${events.length}] Loaded events!`);
+        this.log(`[${i}/${events.length}] Loaded events!`);
     }
 
     async connect() {
