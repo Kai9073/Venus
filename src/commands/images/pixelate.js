@@ -1,32 +1,31 @@
-const Command = require('../../base/classes/Command');
-const Discord = require('discord.js');
-const img = require('../../base/modules/ImageGen');
+const Command = require('command');
+const img = require('@modules/ImageGen');
+const { MessageAttachment, MessageEmbed } = require('discord.js');
 
-class PixelateCommand extends Command {
-    constructor() {
-        super({
+module.exports = class PixelateCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'pixelate',
-            aliases: ['pixel', 'japan'],
+            aliases: ['pixel'],
             category: 'images',
-            description: 'Pixelate your profile picture.',
+            description: 'oh who is that',
             usage: 'pixelate [member]'
         });
     }
 
-    async run(client, message, args) {
-        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
-        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
+    async run(message, args) {
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        if(!user) user = message.author;
 
-        const attachment = new Discord.MessageAttachment(await img.pixelate(user?.displayAvatarURL({ format: 'png', size: 512 })), 'pixelate.png');
+        let pixelate = await img.pixelate(user.displayAvatarURL({ format: 'png', size: 512 }));
+        let attachment = new MessageAttachment(pixelate, 'pixelate.png');
 
-        let embed = new Discord.MessageEmbed()
-        .setColor('#FF0000')
+        let embed = new MessageEmbed()
         .attachFiles([attachment])
         .setImage('attachment://pixelate.png')
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.inlineReply(embed);
     }
 }
-
-module.exports = PixelateCommand;

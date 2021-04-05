@@ -1,33 +1,31 @@
-const Command = require('../../base/classes/Command');
+const Command = require('command');
+const img = require('@modules/ImageGen');
 const { MessageAttachment, MessageEmbed } = require('discord.js');
-const img = require('../../base/modules/ImageGen');
 
-class YoutubeCommand extends Command {
-    constructor() {
-        super({
+module.exports = class YoutubeCommentCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'youtubecomment',
-            aliases: ['ytcomment', 'comment'],
+            aliases: ['comment', 'ytcomment'],
             category: 'images',
-            description: 'Generate a youtube comment.',
-            usage: 'youtube [user] <comment>',
-            minimumRequiredArgs: 1
+            description: 'Create a youtube comment',
+            usage: 'youtubecomment [member] <text>'
         });
     }
 
-    async run(client, message, args) {
-        let user = message.mentions.members.first() ? message.mentions.members.first().user : client.resolveUser(args[0]);
+    async run(message, args) {
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args[0]) : message.author;
         if(!user) user = message.author;
 
-        const attachment = new MessageAttachment(await img.youtube(user.displayAvatarURL({ format: 'png', size: 512 }), user.username, args.join(' ')), 'youtubecomment.png');
-    
+        let youtube = await img.youtube(user.displayAvatarURL({ format: 'png', size: 512 }), user.username, args.join(' '));
+        let attachment = new MessageAttachment(youtube, 'youtube.png');
+
         let embed = new MessageEmbed()
-        .setColor('#FF0000')
         .attachFiles([attachment])
-        .setImage('attachment://youtubecomment.png')
+        .setImage('attachment://youtube.png')
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.inlineReply(embed);
     }
 }
-
-module.exports = YoutubeCommand;

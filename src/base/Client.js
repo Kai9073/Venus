@@ -1,31 +1,35 @@
-const Discord = require('discord.js');
-const chalk = require('chalk');
-const Utils = require('./utils/Utils');
-const { sync } = require('glob');
-const { resolve } = require('path');
-const fs = require('fs');
-const moment = require('moment');
+const Discord = require("discord.js");
+const glob = require("glob");
+const path = require("path");
+const chalk = require("chalk");
+const fs = require("fs");
+const moment = require("moment");
+const Utils = require('./Utils');
+const axios = require('axios');
 
-class Client extends Discord.Client {
+module.exports = class Client extends Discord.Client {
     constructor() {
         super({
             disableMentions: 'everyone',
             ws: {
-                intents: Discord.Intents.ALL
+                intents: Discord.Intents.ALL, 
+                properties: {
+                    $browser: 'Discord Android'
+                }
             }
         });
 
-        this.queue = new Map();
-        this.utils = Utils;
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();
+        this.utils = Utils;
+
+        this.on("raw", async (event) => {
+            if (event.t === "INTERACTION_CREATE") {
+                console.log(event.d);
+            }
+        })
     }
 
-    /**
-     * Logs information about things happening with the bot.
-     * @param {string} info Information about the event or something
-     * @param {0|1|2|3} severity How severe is that information
-     */
     log(info, severity) {
         let type;
         if(severity === 0) {
@@ -48,150 +52,48 @@ class Client extends Discord.Client {
         let date = `${new Date().getMonth()+1}-${new Date().getDate()}-${new Date().getFullYear()}`;
         let data = `[${moment().format('MMMM Do YYYY, h:mm:ss a')}] ${type} ${info}\n`;
 
-        fs.appendFileSync(`src/logs/${date}.log`, data, (err) => {
-            if(err) console.log(err);
-        });
+        fs.appendFileSync(`src/logs/${date}.log`, data);
     }
 
-    /**
-     * Loads all commands found in the src/commands directory.
-     */
-    loadCommands() {
-        const commandFiles = sync(resolve('src/commands/**/*')).filter(file => file.endsWith(`.js`));
-        this.log(`Loading commands...`);
+    registerCommands() {
+        const commands = glob.sync(path.resolve('src/commands/**/*')).filter(file => file.endsWith('.js'));
+        this.log(`[${commands.length}] Loading commands...`);
 
-        let i = 0;
+        for(let command of commands) {
+            const File = require(command);
+            const cmd = new File(this);
 
-        for(let command of commandFiles) {
-            let cmd = require(command);
-            cmd = new cmd();
-
-            try {
-                this.commands.set(cmd.name, cmd);
-                this.log(`[${i + 1}/${commandFiles.length}] Loaded the ${cmd.name} command.`);
-                i++;
-            } catch(err) {
-                this.log(`[${i + 1}/${commandFiles.length}] Failed to load the ${cmd.name} command.`);
-                i++;
-            }
+            this.commands.set(cmd.name, cmd);
         }
 
-        this.log(`Loaded ${i} commands out of ${commandFiles.length} commands.`, 0);
+        this.log(`[${this.commands.array().length}/${commands.length}] Loaded commands!`);
+
+        return this.commands;
     }
 
-    /**
-     * Loads all client events found in the src/events/client directory.
-     */
-    loadEvents() {
-        const eventFiles = sync(resolve('src/events/client/*'));
-        this.log(`Loading events...`);
-
+    registerEvents() {
+        const events = glob.sync(path.resolve('src/events/**/*.js'));
+        this.log(`[${events.length}] Loading events...`);
+        
         let i = 0;
 
-        for(let event of eventFiles) {
-            let evt = require(event);
-            evt = new evt();
+        for(let event of events) {
+            const File = require(event);
+            const evt = new File(this);
 
             this.on(evt.name, (...args) => {
-                try {
-                    evt.run(this, ...args);
-                } catch(err) {
-                    this.log(`[${i + 1}/${eventFiles}] Failed to load the ${evt.name} event.`);
-                }
+                evt.run(...args);
             });
 
-            this.log(`[${i + 1}/${eventFiles.length}] Loaded the ${evt.name} event.`);
             i++;
         }
 
-        this.log(`Loaded ${i} events out of ${eventFiles.length} events.`, 0);
+        this.log(`[${i + 1}/${events.length}] Loaded events!`);
     }
 
-    /**
-     * Simple embed used to indicate an error happened.
-     * @param {string} info Information to be sent in discord 
-     * @returns {Discord.MessageEmbed} Discord Embed
-     * @example client.sendErrorEmbed(`Failed to send message.`);
-     */
-    sendErrorEmbed(info) {
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`❌ | ${info}`)
-        .setColor('#FF0000');
-        return embed;
-    }
-
-    /**
-     * Simple embed used to indicate the bot successfully did something.
-     * @param {string} info Information to be sent in discord
-     * @returns {Discord.MessageEmbed} Discord Embed
-     * @example client.sendSuccessEmbed(`Successfully sent a message.`);
-     */
-    sendSuccessEmbed(info) {
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`✅ **|** ${info}`)
-        .setColor('GREEN');
-        return embed;
-    }
-
-    /**
-     * Simple embed used to indicate the bot is warning something.
-     * @param {string} info Information to be sent in discord
-     * @returns {Discord.MessageEmbed} Discord Embed
-     * @example client.sendWarningEmbed(`Bot can't send a message soon.`);
-     */
-    sendWarningEmbed(info) {
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`⚠ **|** ${info}`)
-        .setColor('YELLOW');
-        return embed;
-    }
-
-    /**
-     * Simple embed used to indicate the bot is generating/making/executing a process.
-     * @param {string} info Information to be sent in discord
-     * @returns {Discord.MessageEmbed} Discord Embed
-     * @example client.sendWaitEmbed(`Bot is sending a message.`);
-     */
-    sendWaitEmbed(info) {
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`<a:loading:803081781707407361> **|** ${info}`)
-        .setColor('#87ceeb');
-        return embed;
-    }
-
-    /**
-     * Simple embed used to generate an embed easily.
-     * @param {string} emoji Emoji
-     * @param {string} info Information to be sent in discord
-     * @param {Discord.ColorResolvable} color Discord ColorResolvable 
-     * @returns {Discord.MessageEmbed} Discord Embed
-     * @example client.sendCustomEmbed('❤', 'Thank you for using Venus-Bot', '#FF0000');
-     */
-    sendCustomEmbed(emoji, info, color = '#87CEEB') {
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`${emoji} **|** ${info}`)
-        .setColor(color);
-        return embed;
-    }
-
-    resolveUser(username, multiple = false) {
-        const name = username.toLowerCase();
-        const arr = [];
-        this.users.cache.forEach(user => {
-            if(user.username.toLowerCase().startsWith(name)) arr.push(user);
-        });
-        return multiple ? arr : arr[0];
-    }
-
-    /**
-     * Login to Discord.
-     */
-    connect() {
-        this.log(`Starting the bot...`);
-        this.loadCommands();
-        this.loadEvents();
-        this.login(process.env.TOKEN).catch((err) => this.log(err, 2));
+    async connect() {
+        await this.registerCommands();
+        this.registerEvents();
+        this.login(process.env.TOKEN);
     }
 }
-
-module.exports = Client;

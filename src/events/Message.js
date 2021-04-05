@@ -1,5 +1,5 @@
+const Event = require("../base/Event");
 const Discord = require('discord.js');
-const Event = require('../../base/classes/Event');
 
 const permissions = {
     ADMINISTRATOR: 'Administrator',
@@ -35,36 +35,31 @@ const permissions = {
     MANAGE_EMOJIS: 'Manage Emojis'
 }
 
-class Message extends Event {
-    constructor() {
-        super({
-            name: 'message'
-        });
+module.exports = class Message extends Event {
+    constructor(client) {
+        super(client, 'message');
     }
 
-    async run(client, message) {
-        if(!message.guild) return;
-        if(message.author.bot) return;
-    
+    async run(message) {
+        if(message.author.bot || !message.guild) return;
+
         let prefix = 'v!';
-    
+
         if(!message.content.startsWith(prefix)) return;
-    
+
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const cmd = args.shift().toLowerCase();
-    
-        if(cmd.length === 0) return;
-    
-        let command = client.commands.get(cmd) ?? client.commands.find(command => command.aliases && command.aliases.includes(cmd));
-    
+
+        const command = this.client.commands.get(cmd) ?? this.client.commands.find(command => command.aliases && command.aliases.includes(cmd));
+
         if(!command) return;
-        
-        if (!client.cooldown.has(command.name)) {
-            client.cooldown.set(command.name, new Discord.Collection());
+
+        if(!this.client.cooldown.has(command.name)) {
+            this.client.cooldown.set(command.name, new Discord.Collection());
         }
     
         const now = Date.now();
-        const timestamps = client.cooldown.get(command.name);
+        const timestamps = this.client.cooldown.get(command.name);
         const cooldownAmount = command.cooldown || 3000;
     
         if (timestamps.has(message.author.id)) {
@@ -72,7 +67,7 @@ class Message extends Event {
     
             if (now < expirationTime) {
                 const timeLeft = (expirationTime - now) / 1000;
-                return message.channel.send(client.sendErrorEmbed(`Please wait ${timeLeft} more second(s) before reusing the \`${command.name}\` command.`));
+                return message.channel.send(`❌ | Please wait ${timeLeft} more second(s) before reusing the \`${command.name}\` command.`);
             }
         }
     
@@ -86,7 +81,7 @@ class Message extends Event {
                 if(!message.member.hasPermission(command.authorPermission)) neededPerms.push(permissions[perm]); 
             }
 
-            if(neededPerms.length) return message.channel.send(client.sendErrorEmbed(`You don't have enough permissions. You need \`${neededPerms.join('`, `')}\``));
+            if(neededPerms.length) return message.channel.send(`❌ | You don't have enough permissions. You need \`${neededPerms.join('`, `')}\``);
         } else if(command.clientPermission) {
             let neededPerms = [];
     
@@ -94,24 +89,22 @@ class Message extends Event {
                 if(!message.member.hasPermission(perm)) neededPerms.push(permissions[perm]); 
             }
     
-            if(neededPerms.length) return message.channel.send(client.sendErrorEmbed(`You don't have enough permissions. You need \`${neededPerms.join('`, `')}\``));
+            if(neededPerms.length) return message.channel.send(`❌ | I don't have enough permissions. I need \`${neededPerms.join('`, `')}\``);
         }
     
         if(command.devOnly && command.devOnly === true) {
-            if(!['561866357218607114', '690822196972486656'].includes(message.author.id)) return message.channel.send(client.sendErrorEmbed(`This command can be used by owners only.`));
+            if(!['561866357218607114', '690822196972486656'].includes(message.author.id)) return message.channel.send(`❌ | This command can be used by the developers only.`);
         }
-    
-        if(((command.minimumRequiredArgs !== undefined) && args.length < command.minimumRequiredArgs)) {
-            let embed = new Discord.MessageEmbed()
-            .setTitle('Invalid Command Usage!')
-            .setDescription(`❌ You must input more arguments.`)
-            .addField('Usage:', `\`\`\`${command.usage}\`\`\``)
-            .setColor('#FF0000')
-            return message.channel.send(embed);
+
+        if(
+            (command.minArgs !== undefined && command.minArgs > args.length) || 
+            ((command.maxArgs !== undefined && command.maxArgs !== -1) && command.maxArgs < args.length)
+        ) return message.channel.send(`❌ | Syntax Error! Incorrect syntax provided! Use or try \`${message.guild.prefix}${command.name}\`.`);
+
+        try {
+            command.run(message, args);
+        } catch(err) {
+            message.channel.send(`❌ | Failed running the command.`);
         }
-        
-        if(command) command.run(client, message, args);
     }
 }
-
-module.exports = Message;

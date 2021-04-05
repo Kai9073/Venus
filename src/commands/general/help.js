@@ -1,75 +1,70 @@
-const { MessageEmbed } = require("discord.js");
-const Command = require("../../base/classes/Command");
-const ms = require("ms");
+const Command = require('command');
+const { MessageEmbed } = require('discord.js');
 
-class HelpCommand extends Command {
-    constructor() {
-        super({
+module.exports = class HelpCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'help',
-            aliases: ['h', 'commands', 'list'],
+            aliases: ['h', 'cmdlist', 'list'],
             category: 'general',
-            description: 'Shows the list of commands and information about the command.',
+            description: 'Returns a list of commands :pog:',
             usage: 'help [command]'
         });
-    
     }
 
-    async run(client, message, args) {
-        if(args[0]) {
-            let command = client.commands.get(args[0]);
-        
-            if(!command) return message.channel.send(client.sendErrorEmbed('Unknown Command: ' + args[0]));
-        
+    async run(message, args) {
+        if(args.length) {
+            const command = this.client.commands.get(args[0]) ?? this.client.commands.find(command => command.aliases && command.aliases.includes(args[0]));
+
+            if(!command) return message.inlineReply(`❌ | Command not found.`);
+
             let embed = new MessageEmbed()
-            .setAuthor(`${client.user?.tag}`, client.user?.displayAvatarURL())
-            .setTitle(`**${command.name}**`)
-            .setDescription(`${command.description}`)
-            .addField(`Category`, `${command.category}`, true)
-            .addField(`Usage`, `${command.usage}`, true)
-            .addField(`Cooldown`, `${ms(command.cooldown || 3000)}`, true)
-            .setFooter(`<> - required | [] - optional`)
-            .setColor(`#7289da`);
-        
-            if(command.aliases) {
-                embed.addField(`Aliases`, command.aliases.join(', '));
-            }
-        
-            return message.channel.send(embed);
+            .setAuthor(this.client.user.tag, this.client.user.displayAvatarURL())
+            .setTitle(command.name)
+            .setDescription(command.description)
+            .addField('Aliases', `\`${command.aliases.join('`, `') || 'None'}\``, true)
+            .addField('Category', this.client.utils.toProperCase(command.category), true)
+            .addField('Usage', `${message.guild.prefix}${command.usage}`, true)
+            .addField('Cooldown', `${command.cooldown || '3s'}`, true)
+            .addField('Dev Only?', `${command.devOnly === true ? 'Yes' : 'No'}`, true)
+            // .addField('Permissions Required (Author)', `\`${command.authorPermission.join('`, `') ?? 'None'}\``)
+            // .addField('Permissions Required (Client)', `\`${command.clientPermission.join('`, `') ?? 'None'}\``)
+            .setColor('RANDOM')
+            .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+            .setTimestamp();
+            message.inlineReply(embed);
         } else {
-            let commands = client.commands;
-        
+            const commands = this.client.commands;
+
             let embed = new MessageEmbed()
-            .setAuthor(`${client.user?.tag}`, client.user?.displayAvatarURL())
-            .setDescription(`Hi, I'm Venus. My prefix in this server is \`i.\`. To find more information about a command, use \`help [command]\`. `)
-            //.setDescription(`Venus is a customizable multipurpose bot. It contains a wide-range of commands from fun commands to a music system. Venus is free and easy to use!`)
-            .setColor(`#7289da`);
-        
-            let data = {};
-            for(let info of commands.array()) {
-                let category = info.category;
-                let name = info.name;
-                
-                // @ts-ignore
-                if(!data[category]) {
-                    // @ts-ignore
-                    data[category] = [];
+            .setTitle('Help Panel')
+            .setDescription(`Hi, I'm Venus. The prefix for this server is \`${message.guild.prefix}\`. To find more information about a command, use \`${message.guild.prefix}help [command]\`.`)
+            .setColor('RANDOM')
+            .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+            .setTimestamp();
+
+            let obj = {};
+
+            for(let command of commands.array()) {
+                let category = this.client.utils.toProperCase(command.category) || 'Unknown';
+                let name = command.name;
+
+                if(!obj[category]) {
+                    obj[category] = [];
                 }
-                
-                // @ts-ignore
-                data[category].push(name);
+
+                obj[category].push(name);
             }
-        
-            for(let [key, value] of Object.entries(data)) {
+
+            for(let [key, value] of Object.entries(obj)) {
                 let category = key;
-        
-                let categoryCmds = value.join('`, `');
-        
-                embed.addField(`${category.toUpperCase()} - [${value.length}]`, `\`${categoryCmds}\``);
+                
+                let categoryCmds = `\`${value.join('`, `')}\``;
+
+                embed.addField(`${category}`, categoryCmds);
             }
-        
-            message.channel.send(embed);
+
+            message.inlineReply(embed);
         }
     }
 }
-
-module.exports = HelpCommand;

@@ -1,32 +1,31 @@
-const Command = require("../../base/classes/Command");
-const Discord = require("discord.js");
-const img = require("../../base/modules/ImageGen");
+const Command = require('command');
+const img = require('@modules/ImageGen');
+const { MessageAttachment, MessageEmbed } = require('discord.js');
 
-class JailCommand extends Command {
-    constructor() {
-        super({
+module.exports = class JailCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'jail',
-            aliases: ['prison'],
+            aliases: ['prison', 'arrest', 'nab'],
             category: 'images',
-            description: 'Generate a "jail" meme.',
+            description: 'arrest him',
             usage: 'jail [member]'
-        }); 
+        });
     }
 
-    async run(client, message, args) {
-        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
-        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
-        
-        const attachment = new Discord.MessageAttachment(await img.jail(user?.displayAvatarURL({ format: 'png', size: 512 })), 'jail.png');
+    async run(message, args) {
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        if(!user) user = message.author;
 
-        let embed = new Discord.MessageEmbed()
-        .setColor('#FF0000')
+        let jail = await img.jail(user.displayAvatarURL({ format: 'png', size: 512 }));
+        let attachment = new MessageAttachment(jail, 'jail.png');
+
+        let embed = new MessageEmbed()
         .attachFiles([attachment])
         .setImage('attachment://jail.png')
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.inlineReply(embed);
     }
 }
-
-module.exports = JailCommand;

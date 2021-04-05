@@ -1,27 +1,24 @@
-const Command = require("../../base/classes/Command");
+const Command = require('command');
 
-class EmbedCommand extends Command {
-    constructor() {
-        super({
+module.exports = class EmbedCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'embed',
-            aliases: [],
+            aliases: ['em', 'jsonembed'],
             category: 'general',
-            description: 'Send a embed using JSON Format.',
-            usage: 'embed <JSON Embed>',
-            minimumRequiredArgs: 1
+            description: '{"description":"Generate your own embed by using JSON"}',
+            usage: 'embed <JSON Embed>'
         });
     }
 
-    async run(client, message, args) {
+    async run(message, args) {
         try {
-            const embed = JSON.parse(args.join(" "));
-            const { content = '' } = embed;
+            const json = JSON.parse(args.join(' '));
+            const { content = '' } = json;
 
-            message.channel.send(content, { embed: embed });
+            message.inlineReply(content, { embed: json });
         } catch(err) {
-            message.channel.send(client.sendErrorEmbed(`Invalid JSON Body: ${err.message}.`));
+            message.inlineReply('❌ | Invalid JSON Body.');
         }
     }
 }
-
-module.exports = EmbedCommand;

@@ -1,30 +1,30 @@
-const Discord = require("discord.js");
-const Command = require("../../base/classes/Command");
-const img = require("../../base/modules/ImageGen");
+const Command = require('command');
+const img = require('@modules/ImageGen');
+const { MessageAttachment, MessageEmbed } = require('discord.js');
 
-class ChangeMyMindCommand extends Command {
-    constructor() {
-        super({
+module.exports = class ChangeMyMindCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'changemymind',
             aliases: ['cmm'],
             category: 'images',
-            description: 'Generate a "Change My Mind" meme.',
-            usage: 'changemymind <message>',
-            minimumRequiredArgs: 1
+            description: 'Venus is great, change my mind',
+            usage: 'changemymind <text>',
+            minArgs: 1,
+            maxArgs: -1
         });
     }
 
-    async run(client, message, args) {
-        const attachment = new Discord.MessageAttachment(await img.changemymind(args.join(' ')), 'changemymind.png');
+    async run(message, args) {
+        let changemymind = await img.changemymind(args.join(' '));
+        let attachment = new MessageAttachment(changemymind, 'changemymind.png');
 
-        let embed = new Discord.MessageEmbed()
-        .setColor('#7289da')
+        let embed = new MessageEmbed()
         .attachFiles([attachment])
         .setImage('attachment://changemymind.png')
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.inlineReply(embed);
     }
 }
-
-module.exports = ChangeMyMindCommand;

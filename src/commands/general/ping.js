@@ -1,20 +1,18 @@
-const Command = require("../../base/classes/Command");
+const Command = require('command');
 
-class PingCommand extends Command {
-    constructor() {
-        super({
+module.exports = class PingCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'ping',
-            aliases: ['pong', 'pingpong'],
+            aliases: ['pong', 'pingpong', 'pongping'],
             category: 'general',
-            description: 'Fetches the bot\'s latency.',
+            description: 'Ping pong 🏓',
             usage: 'ping'
         });
     }
 
-    async run(client, message, args) {
-        const m = await message.channel.send('**:ping_pong: Pinging...**');
-        m.edit(`**:ping_pong: Ping!**\n**Websocket Latency:** \`${client.ws.ping}ms\`\n**Message Latency:** \`${m.createdTimestamp - message.createdTimestamp}ms\``);
+    async run(message, args) {
+        const msg = await message.inlineReply('🏓 Pinging...');
+        msg.edit(`🏓 Pong!\nWS Ping: \`${this.client.ws.ping}ms\`\nMessage Latency: \`${msg.createdTimestamp - message.createdTimestamp}ms\``);
     }
-}
-
-module.exports = PingCommand;
+}  

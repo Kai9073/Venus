@@ -1,8 +1,10 @@
+# big and important files
 .env
 node_modules
 yarn.lock
 yarn-error.log
-src/models
+
 beta
 test.js
 src/logs
+old

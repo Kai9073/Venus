@@ -2,14 +2,14 @@ const Command = require('command');
 const img = require('@modules/ImageGen');
 const { MessageAttachment, MessageEmbed } = require('discord.js');
 
-module.exports = class TriggeredCommand extends Command {
+module.exports = class GrayscaleCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'triggered',
-            aliases: ['trigger'],
+            name: 'grayscale',
+            aliases: ['greyscale', 'gray', 'grey'],
             category: 'images',
-            description: 'Apply triggered effect on your pfp',
-            usage: 'triggered [member]'
+            description: 'greyscale your or someones pfp',
+            usage: 'grayscale'
         });
     }
 
@@ -17,12 +17,12 @@ module.exports = class TriggeredCommand extends Command {
         let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
         if(!user) user = message.author;
 
-        let trigger = await img.trigger(user.displayAvatarURL({ format: 'png', size: 512 }));
-        let attachment = new MessageAttachment(trigger, 'trigger.gif');
+        let grayscale = await img.greyscale(user.displayAvatarURL({ format: 'png', size: 512 }));
+        let attachment = new MessageAttachment(grayscale, 'grayscale.png');
 
         let embed = new MessageEmbed()
         .attachFiles([attachment])
-        .setImage('attachment://trigger.gif')
+        .setImage('attachment://grayscale.png')
         .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();

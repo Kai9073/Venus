@@ -4,13 +4,13 @@ const fetch = require('node-fetch');
 const GIFEncoder = require('gifencoder');
 const parser = require('@canvacord/emoji-parser');
 
-class ImageGen {
+module.exports = class ImageGen {
     constructor() {
         throw new Error(`The ${this.constructor.name} class may not be instantiated!`);
     }
 
     static async affect(avatar) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'affect.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'affect.png'));
         const img = await Canvas.loadImage(avatar);
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -23,7 +23,7 @@ class ImageGen {
     }
 
     static async changemymind(text) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'changemymind.jpg'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'changemymind.jpg'));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -64,7 +64,7 @@ class ImageGen {
         const lines = this._getLines({ text, ctx, maxWidth: 345 });
         let i = 0;
         do {
-            ctx.fillText(lines[i], 10, i * fontSize - 5);
+            await parser.fillTextWithTwemoji(ctx, lines[i], 10, i * fontSize - 5);
             i++;
         } while (i < lines.length)
 
@@ -89,7 +89,7 @@ class ImageGen {
     }
 
     static async hitler(avatar) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'hitler.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'hitler.png'));
         const img = await Canvas.loadImage(avatar);
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -102,7 +102,7 @@ class ImageGen {
 
     static async jail(avatar) {
         let img = await Canvas.loadImage(await this.greyscale(avatar));
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'jail.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'jail.png'));
         const canvas = Canvas.createCanvas(300, 300);
         const ctx = canvas.getContext('2d');
 
@@ -113,7 +113,7 @@ class ImageGen {
     }
 
     static async wanted(avatar) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wanted.jpg'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'wanted.jpg'));
         const img = await Canvas.loadImage(avatar);
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -146,7 +146,7 @@ class ImageGen {
     }
 
     static async wasted(avatar) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wasted.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'wasted.png'));
         const img = await Canvas.loadImage(await this.greyscale(avatar));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -163,9 +163,9 @@ class ImageGen {
     }
 
     static async clyde(text) {
-        let bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'clyde.png'));
+        let bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'clyde.png'));
 
-        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'MANROPE_REGULAR.ttf'), {
+        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'MANROPE_REGULAR.ttf'), {
             family: "Manrope",
             weight: "regular",
             style: "normal"
@@ -184,7 +184,7 @@ class ImageGen {
     }
 
     static async trigger(avatar) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'triggered.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'triggered.png'));
         const img  = await Canvas.loadImage(avatar);
 
         const GIF = new GIFEncoder(300, 300);
@@ -203,7 +203,7 @@ class ImageGen {
             ctx.fillStyle = '#FF000033';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.drawImage(bg, Math.floor(Math.random() * 30) - 30, 300 - 54 + Math.floor(Math.random() * 30) - 30, 300 + 20, 54 + 20);
+            ctx.drawImage(bg, Math.floor(Math.random() * 20) - 20, 300 - 54 + Math.floor(Math.random() * 20) - 20, 300 + 20, 54 + 20);
 
             GIF.addFrame(ctx);
             i++;
@@ -215,7 +215,7 @@ class ImageGen {
     }
 
     static async slap(avatar1, avatar2) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'slap.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'slap.png'));
         const img1 = await Canvas.loadImage(avatar1);
         const img2 = await Canvas.loadImage(avatar2);
 
@@ -281,7 +281,7 @@ class ImageGen {
     }
 
     static async youtube(img, username, text) {
-        const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'youtube.png')));
+        const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(__dirname), 'assets', 'img', 'youtube.png')));
         const image = await Canvas.loadImage(await this.circle(img));
 
         Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
@@ -318,7 +318,7 @@ class ImageGen {
     }
 
     static async presentation(text) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'presentation.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'presentation.png'));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -352,7 +352,7 @@ class ImageGen {
             ctx.translate(170, 220);
         } else {
             fontSize = 10;
-            ctx.translate(170, 220);
+            ctx.translate(170, 210);
         }
         ctx.font = `${fontSize}px Arial`;
 
@@ -366,5 +366,3 @@ class ImageGen {
         return canvas.toBuffer();
     }
 }
-
-module.exports = ImageGen;

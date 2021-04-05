@@ -1,32 +1,31 @@
-const { MessageAttachment, MessageEmbed } = require("discord.js");
-const Command = require("../../base/classes/Command");
-const img = require("../../base/modules/ImageGen");
+const Command = require('command');
+const img = require('@modules/ImageGen');
+const { MessageAttachment, MessageEmbed } = require('discord.js');
 
-class WantedCommand extends Command {
-    constructor() {
-        super({
+module.exports = class WantedCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'wanted',
             aliases: [],
             category: 'images',
-            description: 'Generate a wanted image with your friend\'s profile picture, maybe.',
+            description: 'you are wanted',
             usage: 'wanted [member]'
         });
     }
 
-    async run(client, message, args) {
-        let user = message.mentions.members?.first() ? message.mentions.members.first()?.user : args.length ? client.resolveUser(args.join(' ')) : message.author;
-        if(!user) return message.inlineReply(client.sendErrorEmbed(`User doesn't exist.`));
+    async run(message, args) {
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        if(!user) user = message.author;
 
-        const attachment = new MessageAttachment(await img.wanted(user?.displayAvatarURL({ format: 'png', size: 512 })), 'wanted.png');
-    
+        let wanted = await img.wanted(user.displayAvatarURL({ format: 'png', size: 512 }));
+        let attachment = new MessageAttachment(wanted, 'wanted.png');
+
         let embed = new MessageEmbed()
-        .setColor('#FF0000')
         .attachFiles([attachment])
         .setImage('attachment://wanted.png')
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.inlineReply(embed);
     }
 }
-
-module.exports = WantedCommand;

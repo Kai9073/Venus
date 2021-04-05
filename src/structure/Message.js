@@ -1,6 +1,6 @@
-const { APIMessage, Structures } = require("discord.js");
+const { Structures, APIMessage } = require('discord.js');
 
-class Message extends Structures.get("Message") {
+class Message extends Structures.get('Message') {
     async inlineReply(content, options) {
         const mentionRepliedUser = typeof ((options || content || {}).allowedMentions || {}).repliedUser === "undefined" ? true : ((options || content).allowedMentions).repliedUser;
         delete ((options || content || {}).allowedMentions || {}).repliedUser;
@@ -25,6 +25,15 @@ class Message extends Structures.get("Message") {
             .post({ data, files })
             .then(d => this.client.actions.MessageCreate.handle(d).message);
     }
+
+    async resolveUser(name, multiple = false) {
+        let username = name.toLowerCase();
+        const arr = [];
+        this.guild.members.cache.forEach(user => {
+            if(user.user.username.toLowerCase().startsWith(username)) arr.push(user.user);
+        });
+        return multiple ? arr : arr[0];
+    }
 }
 
-Structures.extend("Message", () => Message);
+Structures.extend('Message', () => Message);

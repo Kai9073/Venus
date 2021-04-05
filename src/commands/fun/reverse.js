@@ -1,20 +1,19 @@
-const Command = require("../../base/classes/Command");
+const Command = require('command');
 
-class ReverseCommand extends Command {
-    constructor() {
-        super({
+module.exports = class ReverseCommand extends Command {
+    constructor(client) {
+        super(client, {
             name: 'reverse',
             aliases: [],
             category: 'fun',
-            description: 'Reverse text.',
+            description: '.dedivorp txet eht esreveR',
             usage: 'reverse <text>',
-            minimumRequiredArgs: 1
+            minArgs: 1,
+            maxArgs: -1
         });
     }
 
-    async run(client, message, args) {
-        message.channel.send(client.utils.reverse(args.join(' ')));
+    async run(message, args) {
+        message.inlineReply(args.join(' ').split('').reverse().join(''));
     }
 }
-
-module.exports = ReverseCommand;
