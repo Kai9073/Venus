@@ -9,12 +9,13 @@ module.exports = class WantedCommand extends Command {
             aliases: [],
             category: 'images',
             description: 'you are wanted',
-            usage: 'wanted [member]'
+            usage: 'wanted [member]',
+            maxArgs: 1
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let wanted = await img.wanted(user.displayAvatarURL({ format: 'png', size: 512 }));

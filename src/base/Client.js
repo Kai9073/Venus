@@ -1,9 +1,9 @@
-const Discord = require("discord.js");
-const glob = require("glob");
-const path = require("path");
-const chalk = require("chalk");
-const fs = require("fs");
-const moment = require("moment");
+const Discord = require('discord.js');
+const glob = require('glob');
+const path = require('path');
+const chalk = require('chalk');
+const fs = require('fs');
+const moment = require('moment');
 const Utils = require('./Utils');
 const axios = require('axios');
 
@@ -21,10 +21,10 @@ module.exports = class Client extends Discord.Client {
 
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();
-        this.utils = Utils;
+        this.utils = new Utils(this);
 
-        this.on("raw", async (event) => {
-            if (event.t === "INTERACTION_CREATE") {
+        this.on('raw', async (event) => {
+            if (event.t === 'INTERACTION_CREATE') {
                 console.log(event.d);
             }
         })

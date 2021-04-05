@@ -9,12 +9,14 @@ module.exports = class YoutubeCommentCommand extends Command {
             aliases: ['comment', 'ytcomment'],
             category: 'images',
             description: 'Create a youtube comment',
-            usage: 'youtubecomment [member] <text>'
+            usage: 'youtubecomment [member] <text>',
+            minArgs: 1,
+            maxArgs: 2
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args[0]) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let youtube = await img.youtube(user.displayAvatarURL({ format: 'png', size: 512 }), user.username, args.join(' '));

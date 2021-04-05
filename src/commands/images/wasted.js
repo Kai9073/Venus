@@ -9,12 +9,13 @@ module.exports = class WastedCommand extends Command {
             aliases: ['dead'],
             category: 'images',
             description: 'lets add the wasted overlay on your pfp',
-            usage: 'wasted [member]'
+            usage: 'wasted [member]',
+            maxArgs: 1
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let wasted = await img.wasted(user.displayAvatarURL({ format: 'png', size: 512 }));

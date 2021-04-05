@@ -9,12 +9,13 @@ module.exports = class GrayscaleCommand extends Command {
             aliases: ['greyscale', 'gray', 'grey'],
             category: 'images',
             description: 'greyscale your or someones pfp',
-            usage: 'grayscale'
+            usage: 'grayscale',
+            maxArgs: 1
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let grayscale = await img.greyscale(user.displayAvatarURL({ format: 'png', size: 512 }));

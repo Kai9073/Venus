@@ -18,7 +18,7 @@ const chartCallback = (ChartJS) => {
 
 const chart = new ChartJSNodeCanvas({ width: 1200, height: 600, chartCallback: chartCallback });
 
-module.exports = class CovidChartCommand extends Command {
+module.exports = class CovidTimelineCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'covidtimeline',

@@ -9,12 +9,13 @@ module.exports = class JailCommand extends Command {
             aliases: ['prison', 'arrest', 'nab'],
             category: 'images',
             description: 'arrest him',
-            usage: 'jail [member]'
+            usage: 'jail [member]',
+            maxArgs: 1
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let jail = await img.jail(user.displayAvatarURL({ format: 'png', size: 512 }));

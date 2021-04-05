@@ -9,12 +9,13 @@ module.exports = class HitlerCommand extends Command {
             aliases: ['adolf', 'adolfthitler'],
             category: 'images',
             description: 'Worse than hitler',
-            usage: 'hitler [member]'
+            usage: 'hitler [member]',
+            maxArgs: 1
         });
     }
 
     async run(message, args) {
-        let user = message.mentions.users.first() ? message.mentions.users.first().user : args.length ? await message.resolveUser(args.join(' ')) : message.author;
+        let user = message.mentions.users.first() ? message.mentions.users.first().user : await message.resolveUser(args.join(' '));
         if(!user) user = message.author;
 
         let hitler = await img.hitler(user.displayAvatarURL({ format: 'png', size: 512 }));

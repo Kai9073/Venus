@@ -120,7 +120,7 @@ module.exports = class ImageGen {
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(bg, 0, 0, bg.width, bg.height);
-        ctx.drawImage(img, 195, 265, 235, 295);
+        ctx.drawImage(img, 194, 265, 237, 299);
 
         return canvas.toBuffer();
     }
@@ -149,7 +149,7 @@ module.exports = class ImageGen {
         const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'wasted.png'));
         const img = await Canvas.loadImage(await this.greyscale(avatar));
 
-        const canvas = Canvas.createCanvas(bg.width, bg.height);
+        const canvas = Canvas.createCanvas(img.width, img.height);
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -284,7 +284,7 @@ module.exports = class ImageGen {
         const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(__dirname), 'assets', 'img', 'youtube.png')));
         const image = await Canvas.loadImage(await this.circle(img));
 
-        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
+        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
             family: "Roboto",
             weight: "regular",
             style: "normal"
@@ -294,7 +294,7 @@ module.exports = class ImageGen {
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(bg, -3, -3, canvas.width + 5, canvas.height + 5);
-        ctx.drawImage(image, 15, 25, 65, 65);
+        ctx.drawImage(image, 15, 25, 60, 60);
 
         const timeNumber = Math.floor(Math.random() * (59 - 1)) + 1;
         const timeString = `${timeNumber + (timeNumber == 1 ? " minute" : " minutes")} ago`;
