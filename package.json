@@ -34,7 +34,6 @@
   },
   "_moduleAliases": {
     "command": "./src/base/Command.js",
-    "slashcommand": "./src/base/SlashCommand.js",
     "event": "./src/base/Event.js",
     "@base": "./src/base",
     "@modules": "./src/modules"

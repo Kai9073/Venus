@@ -15,7 +15,7 @@ module.exports = class EvalCommand extends Command {
     }
 
     async run(message, args) {
-        let code = message.content.replace(`v!${this.name} `, '').replace(`v!evaluate `, '');
+        let code = message.content.replace(`${message.guild.prefix}${this.name} `, '').replace(`${message.guild.prefix}evaluate `, '');
         try {
             let ev = eval(code);
 
