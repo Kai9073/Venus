@@ -1,6 +1,6 @@
 const Command = require('command');
-const Discord = require('discord.js');
 const covid = require('novelcovid');
+const Discord = require('discord.js');
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 
 const chartCallback = (ChartJS) => {
@@ -18,36 +18,30 @@ const chartCallback = (ChartJS) => {
 
 const chart = new ChartJSNodeCanvas({ width: 1200, height: 600, chartCallback: chartCallback });
 
-module.exports = class CovidTimelineCommand extends Command {
+module.exports = class CovidVaccineCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'covidtimeline',
-            aliases: ['covid19timeline', 'coronatimeline', 'coronavirustimeline', 'covtimeline'],
+            name: 'covidvaccine',
+            aliases: ['covid19vaccine', 'coronavaccine', 'coronavirusvaccine', 'covvaccine'],
             category: 'covid',
-            description: 'Get statistics about this stupid virus but in timelines lmao',
-            usage: 'covidtimeline [country]'
+            description: 'Get statistics about the covid vaccine rollout but in a chart',
+            usage: 'covidvaccine [country]'
         });
     }
 
     async run(message, args) {
         if(!args.length || (args[0] && Number.isInteger(parseInt(args[0]))) && !args[1]) {
-            const data = await covid.historical.all({ days: parseInt(days) || -1 });
+            const data = await covid.vaccine.all({ days: parseInt(args[0]) || -1 });
 
             if(!data) return message.inlineReply('❌ | Something went wrong...');
 
             let labels = [];
-            let cases = [];
-            let active = [];
-            let recovered = [];
-            let deaths = [];
+            let vaccinated = [];
     
-            for(let date of Object.keys(data.cases)) {
+            for(let date of Object.keys(data)) {
                 labels.push(date);
     
-                cases.push(data.cases[date]);
-                active.push(data.cases[date] - data.recovered[date] - data.deaths[date]);
-                recovered.push(data.recovered[date]);
-                deaths.push(data.deaths[date]);
+                vaccinated.push(data[date]);
             }
     
             const config = {
@@ -56,35 +50,11 @@ module.exports = class CovidTimelineCommand extends Command {
                     labels,
                     datasets: [
                         {
-                            label: 'Cases',
-                            data: cases,
+                            label: 'Vaccinated',
+                            data: vaccinated,
                             color: '#FFFFFF',
                             backgroundColor: '#FFFFFF',
                             borderColor: '#FFFFFF',
-                            fill: false
-                        },
-                        {
-                            label: 'Active',
-                            data: active,
-                            color: '#FAE29F',
-                            backgroundColor: '#FAE29F',
-                            borderColor: '#FAE29F',
-                            fill: false
-                        },
-                        {
-                            label: 'Recovered',
-                            data: recovered,
-                            color: '#7FD99F',
-                            backgroundColor: '#7FD99F',
-                            borderColor: '#7FD99F',
-                            fill: false
-                        },
-                        {
-                            label: 'Deaths',
-                            data: deaths,
-                            color: '#E26363',
-                            backgroundColor: '#E26363',
-                            borderColor: '#E26363',
                             fill: false
                         }
                     ]
@@ -137,23 +107,17 @@ module.exports = class CovidTimelineCommand extends Command {
             message.inlineReply(embed);
         } else if((args[0] && isNaN(parseInt(args[0]))) || args[1]) {
             const country = args.slice(0, args.length - 1);
-            const data = await covid.historical.countries({ country: country.join(' ') || args[0], days: args[1] ? parseInt(args[args.length - 1]) : -1 });
+            const data = await covid.vaccine.country({ country: country.join(' ') || args[0], days: args[1] ? parseInt(args[args.length - 1]) : -1 });
 
             if(!data.timeline) return message.channel.send(`❌ | That country doesn't seem to exist.`);
     
             let labels = [];
-            let cases = [];
-            let active = [];
-            let recovered = [];
-            let deaths = [];
+            let vaccinated = [];
     
-            for(let date of Object.keys(data.timeline.cases)) {
+            for(let date of Object.keys(data.timeline)) {
                 labels.push(date);
     
-                cases.push(data.timeline.cases[date]);
-                active.push(data.timeline.cases[date] - data.timeline.recovered[date] - data.timeline.deaths[date]);
-                recovered.push(data.timeline.recovered[date]);
-                deaths.push(data.timeline.deaths[date]);
+                vaccinated.push(data.timeline[date]);
             }
     
             const config = {
@@ -162,35 +126,11 @@ module.exports = class CovidTimelineCommand extends Command {
                     labels,
                     datasets: [
                         {
-                            label: 'Cases',
-                            data: cases,
+                            label: 'Vaccinated',
+                            data: vaccinated,
                             color: '#FFFFFF',
                             backgroundColor: '#FFFFFF',
                             borderColor: '#FFFFFF',
-                            fill: false
-                        },
-                        {
-                            label: 'Active',
-                            data: active,
-                            color: '#FAE29F',
-                            backgroundColor: '#FAE29F', 
-                            borderColor: '#FAE29F',
-                            fill: false
-                        },
-                        {
-                            label: 'Recovered',
-                            data: recovered,
-                            color: '#7FD99F',
-                            backgroundColor: '#7FD99F',
-                            borderColor: '#7FD99F',
-                            fill: false
-                        },
-                        {
-                            label: 'Deaths',
-                            data: deaths,
-                            color: '#E26363',
-                            backgroundColor: '#E26363',
-                            borderColor: '#E26363',
                             fill: false
                         }
                     ]

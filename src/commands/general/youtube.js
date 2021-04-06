@@ -2,7 +2,7 @@ const Command = require('command');
 const ytsr = require('youtube-sr').default;
 const { MessageEmbed } = require('discord.js');
 
-module.exports = class TCommand extends Command {
+module.exports = class YoutubeCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'youtube',
