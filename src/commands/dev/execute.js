@@ -6,7 +6,7 @@ module.exports = class ExecuteCommand extends Command {
         super(client, {
             name: 'execute',
             aliases: ['exec', 'shell'],
-            category: 'images',
+            category: 'dev',
             description: 'Execute a shell command.',
             usage: 'execute <command>',
             minArgs: 1,
