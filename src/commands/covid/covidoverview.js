@@ -65,7 +65,7 @@ module.exports = class CovidOverviewCommand extends Command {
 
             let embed = new Discord.MessageEmbed()
             .setTitle('Global Overview')
-            .setDescription('Data provided by John Hopkins University.')
+            .setDescription('Data provided by Worldometers.')
             .attachFiles([attachment])
             .setImage('attachment://chart.png')
             .setColor('GREEN')
@@ -109,7 +109,7 @@ module.exports = class CovidOverviewCommand extends Command {
 
             let embed = new Discord.MessageEmbed()
             .setTitle(`${data.country} Overview`)
-            .setDescription('Data provided by John Hopkins University.')
+            .setDescription('Data provided by Worldometers.')
             .attachFiles([attachment])
             .setImage('attachment://chart.png')
             .setColor('GREEN')

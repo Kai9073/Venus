@@ -24,6 +24,7 @@ module.exports = class CovidCommand extends Command {
 
             let embed = new MessageEmbed()
             .setTitle('COVID-19 Global Statistics')
+            .setDescription('Data provided by Worldometers.')
             .setThumbnail('https://images-ext-1.discordapp.net/external/l_sfF6n50PGj5oKATrkLYY0RNOkO0fAiDu-_HF2rwmc/https/i2x.ai/wp-content/uploads/2018/01/flag-global.jpg')
             .addField('Total Cases', `${data.cases.toLocaleString()}\n(+${data.todayCases.toLocaleString()})`, true)
             .addField('Active Cases', `${data.active.toLocaleString()}\n(${data.todayActive >= 0 ? '+' : '-'}${data.todayActive.toLocaleString()})`, true)
@@ -47,6 +48,7 @@ module.exports = class CovidCommand extends Command {
 
             let embed = new MessageEmbed()
             .setTitle(`COVID-19 ${data.country} Statistics`)
+            .setDescription('Data provided by Worldometers.')
             .setThumbnail(data.countryInfo.flag)
             .addField('Total Cases', `${data.cases.toLocaleString()}\n(+${data.todayCases.toLocaleString()})`, true)
             .addField('Active Cases', `${data.active.toLocaleString()}\n(${data.todayActive >= 0 ? '+' : '-'}${data.todayActive.toLocaleString()})`, true)

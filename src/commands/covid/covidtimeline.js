@@ -65,7 +65,7 @@ module.exports = class CovidTimelineCommand extends Command {
                             label: 'Active',
                             data: active,
                             color: '#FAE29F',
-                            backgroundColor: '#FAE29F', // , , 
+                            backgroundColor: '#FAE29F',
                             borderColor: '#FAE29F',
                             fill: false
                         },
@@ -171,7 +171,7 @@ module.exports = class CovidTimelineCommand extends Command {
                             label: 'Active',
                             data: active,
                             color: '#FAE29F',
-                            backgroundColor: '#FAE29F', // , , 
+                            backgroundColor: '#FAE29F', 
                             borderColor: '#FAE29F',
                             fill: false
                         },
