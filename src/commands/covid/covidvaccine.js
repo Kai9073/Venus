@@ -25,7 +25,7 @@ module.exports = class CovidVaccineCommand extends Command {
             aliases: ['covid19vaccine', 'coronavaccine', 'coronavirusvaccine', 'covvaccine'],
             category: 'covid',
             description: 'Get statistics about the covid vaccine rollout but in a chart',
-            usage: 'covidvaccine [country]'
+            usage: 'covidvaccine [lastDays] | covidvaccine <country> [lastDays]'
         });
     }
 

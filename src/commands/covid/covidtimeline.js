@@ -25,7 +25,7 @@ module.exports = class CovidTimelineCommand extends Command {
             aliases: ['covid19timeline', 'coronatimeline', 'coronavirustimeline', 'covtimeline'],
             category: 'covid',
             description: 'Get statistics about this stupid virus but in timelines lmao',
-            usage: 'covidtimeline [country]'
+            usage: 'covidtimeline [lastDays] | covidtimeline <country> [lastDays]'
         });
     }
 
