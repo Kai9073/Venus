@@ -97,7 +97,7 @@ module.exports = class CovidVaccineCommand extends Command {
             const attachment = new Discord.MessageAttachment(canvas, 'chart.png');
 
             let embed = new Discord.MessageEmbed()
-            .setTitle('Global Timeline')
+            .setTitle('Global Vaccination Timeline')
             .setDescription('Data provided by John Hopkins University.')
             .attachFiles([attachment])
             .setImage('attachment://chart.png')
@@ -173,7 +173,7 @@ module.exports = class CovidVaccineCommand extends Command {
             const attachment = new Discord.MessageAttachment(canvas, 'chart.png');
 
             let embed = new Discord.MessageEmbed()
-            .setTitle(`${data.country} Timeline`)
+            .setTitle(`${data.country} Vaccination Timeline`)
             .setDescription('Data provided by John Hopkins University.')
             .attachFiles([attachment])
             .setImage('attachment://chart.png')
