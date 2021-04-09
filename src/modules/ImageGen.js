@@ -365,4 +365,14 @@ module.exports = class ImageGen {
 
         return canvas.toBuffer();
     }
+
+    static async hex(hex) {
+        const canvas = Canvas.createCanvas(1200, 600);
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = hex;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        return canvas.toBuffer();
+    }
 }

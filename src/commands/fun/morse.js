@@ -14,7 +14,7 @@ module.exports = class MorseCommand extends Command {
     }
 
     async run(message, args) {
-        if(!args.length) {
+        if(!args.length || !/^decode|encode$/.test(args[0].split("\n")[0].toLowerCase())) {
             message.inlineReply('❌ | Use `encode`/`decode` subcommands.');
         } else if(args[0].toLowerCase() === 'encode') {
             const text = args.slice(1).join(' ').split('');
@@ -26,12 +26,15 @@ module.exports = class MorseCommand extends Command {
             message.inlineReply(arr.join(' '));
         } else if(args[0].toLowerCase() === 'decode') {
             const text = args.slice(1).join(' ').split(' ');
+
+            if(/[A-Za-z]/.test(text.join(' '))) return message.inlineReply('❌ | Use the `encode` subcommand to encode a string to morse code.');
+
             const arr = [];
             
             for(let char of text) {
                 let table = Object.values(morse);
                 const index = table.findIndex(x => x === char);
-                if(index !== -1) { arr.push(Object.keys(morse)[index]); console.log('nice')}
+                if(index !== -1) arr.push(Object.keys(morse)[index]);
             }
 
             message.inlineReply(arr.join(''));
