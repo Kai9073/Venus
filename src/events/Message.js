@@ -99,7 +99,7 @@ module.exports = class Message extends Event {
         if(
             (command.minArgs !== undefined && command.minArgs > args.length) || 
             ((command.maxArgs !== undefined && command.maxArgs !== -1) && command.maxArgs < args.length)
-        ) return message.channel.send(`❌ | Syntax Error! Incorrect syntax provided! Use or try \`${message.guild.prefix}${command.name}\`.`);
+        ) return message.channel.send(`❌ | Syntax Error! Incorrect syntax provided! Use or try \`${message.guild.prefix}${command.usage}\`.`);
 
         try {
             command.run(message, args);
