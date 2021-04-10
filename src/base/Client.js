@@ -5,7 +5,6 @@ const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
 const Utils = require('./Utils');
-const axios = require('axios');
 
 module.exports = class Client extends Discord.Client {
     constructor() {
