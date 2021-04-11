@@ -1,5 +1,5 @@
 const ytdl = require('discord-ytdl-core');
-const ytsr = require('youtube-sr');
+const ytsr = require('youtube-sr').default;
 
 module.exports = class Player {
     constructor(client, textChannel, voiceChannel, guild) {
@@ -18,5 +18,9 @@ module.exports = class Player {
             },
             volume: 75
         }
+    }
+
+    static validateQuery(query) {
+        return ytsr.validate(query, 'VIDEO') ? 'YTVideo' : 'YTKeywords';
     }
 }
