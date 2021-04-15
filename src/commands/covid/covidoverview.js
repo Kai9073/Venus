@@ -24,7 +24,7 @@ module.exports = class CovidOverviewCommand extends Command {
             name: 'covidoverview',
             aliases: ['covid19overview', 'coronaoverview', 'coronavirusoverview', 'covoverview'],
             category: 'covid',
-            description: 'Get statistics about this stupid virus but in overviews lmao',
+            description: 'Get statistics about this virus but in overviews lmao',
             usage: 'covidoverview [country]'
         });
     }
