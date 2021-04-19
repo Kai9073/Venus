@@ -13,6 +13,6 @@ module.exports = class UptimeCommand extends Command {
     }
 
     async run(message, args) {
-        message.inlineReply(`Bot has been online for **${ms(this.client.uptime, { verbose: true, compact: true })}**.`);
+        message.inlineReply(`Bot has been online for **${ms(this.client.uptime, { compact: true })}**.`);
     }
 }

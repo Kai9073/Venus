@@ -15,15 +15,7 @@ const playerOps = {
     leaveOnEmpty: true,
     leaveOnEmptyCooldown: 15000,
     autoSelfDeaf: true,
-    quality: 'high',
-    ytdlRequestOptions: {
-        requestOptions: {
-            headers: {
-                cookie: 'PREF=tz=Asia.Manila&f6=400; SID=8gdY4_-49s549sGk9he9gd2SCkbQF3Dhq_doJelB3UwWvvoluU8ulUZ084JIA6zS5cihOw.; APISID=ntBShT9nCpb2DEV7/ASSjXJShYhtsgzZn4; SAPISID=V-W_XcHwUPrc_Yr2/A2OSVQ_C2lE5xrp14; __Secure-3PAPISID=V-W_XcHwUPrc_Yr2/A2OSVQ_C2lE5xrp14; SIDCC=AJi4QfEqs_oCuF0BU_wEBg1euZook0gCRZPM41qSw1xgkKbTo86zMnsM9BzQus-_XGvQqHnR6LA',
-                'x-youtube-identity-token': 'QUFFLUhqbFJFMFpDWjJPaGlmY3BmOGtJOHZBT1l1UXo2QXw\u003d'
-            }
-        }
-    }
+    quality: 'high'
 }
 
 module.exports = class Client extends Discord.Client {
