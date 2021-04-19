@@ -15,6 +15,6 @@ module.exports = class StopCommand extends Command {
         let player = await this.client.player.getQueue(message);
         if(!player) return message.inlineReply('❌ | There is no queue for this guild.');
         this.client.player.stop(message);
-        message.inlineReply('⏹ | Stopped.')
+        message.inlineReply('⏹ | Stopped.');
     }
 }

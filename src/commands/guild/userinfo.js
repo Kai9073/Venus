@@ -22,7 +22,7 @@ const statuses = {
     online: 'Online',
     idle: 'Idle',
     dnd: 'Do Not Disturb',
-    invisible: 'Offline' 
+    offline: 'Offline'
 }
 
 module.exports = class UserInfoCommand extends Command {
@@ -47,7 +47,7 @@ module.exports = class UserInfoCommand extends Command {
 
         let embed = new MessageEmbed()
         .setTitle(`${user.tag}'s Info`)
-        .addField('User', [
+        .addField('General', [
             `**❯ Username:** ${user.username}`,
             `**❯ Discriminator:** ${user.discriminator}`,
             `**❯ ID:** ${user.id}`,
@@ -55,7 +55,7 @@ module.exports = class UserInfoCommand extends Command {
             `**❯ Time Created:** ${moment(user.createdAt).format('LLLL')} (${moment(user.createdAt).fromNow()})`,
             `**❯ Status:** ${statuses[user.presence.status]}`
         ])
-        .addField('Guild User', [
+        .addField('Guild', [
             `**❯ Joined At:** ${moment(guildUser.joinedAt).format('LLLL')} (${moment(guildUser.joinedAt).fromNow()})`,
             `**❯ Highest Role:** ${guildUser.roles.highest.id === message.guild.id ? 'None' : guildUser.roles.highest.name}`,
 			`**❯ Hoist Role:** ${guildUser.roles.hoist ? guildUser.roles.hoist.name : 'None'}`,

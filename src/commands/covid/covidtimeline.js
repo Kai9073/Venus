@@ -31,7 +31,7 @@ module.exports = class CovidTimelineCommand extends Command {
 
     async run(message, args) {
         if(!args.length || (args[0] && Number.isInteger(parseInt(args[0]))) && !args[1]) {
-            const data = await covid.historical.all({ days: parseInt(days) || -1 });
+            const data = await covid.historical.all({ days: parseInt(args[0]) || -1 });
 
             if(!data) return message.inlineReply('❌ | Something went wrong...');
 

@@ -375,4 +375,29 @@ module.exports = class ImageGen {
 
         return canvas.toBuffer();
     }
+
+    static async guildIcon(name, size) {
+        let str = name
+        .replace(/'s /g, " ")
+        .replace(/\w+/g, e => e[0])
+        .replace(/\s/g, "");
+
+        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
+            family: "Roboto",
+            weight: "regular",
+            style: "normal"
+        });
+
+        const canvas = Canvas.createCanvas(size, size);
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = "#7289DA";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = `${size / 4}px Roboto`;
+        await parser.fillTextWithTwemoji(ctx, str, canvas.width / 4, canvas.height / 1.7);
+
+        return canvas.toBuffer();
+    }
 }
