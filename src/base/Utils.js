@@ -41,6 +41,20 @@ class Utils {
         return str.replace(/([^\W_]+[^\s-]*) */g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     }
 
+    toRandomCase(str) {
+        str = str.split('');
+        let arr = [];
+
+        for(let char of str) {
+            let num = Math.floor(Math.random() * 2);
+
+            if(num === 0) arr.push(char.toLowerCase());
+            else if(num === 1) arr.push(char.toUpperCase());
+        }
+        
+        return arr.join('');
+    }
+
     trimArray(arr, maxLen = 10) {
         if (arr.length > maxLen) {
             const len = arr.length - maxLen;

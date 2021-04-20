@@ -1,22 +1,22 @@
 const Command = require('command');
 
-module.exports = class StopCommand extends Command {
+module.exports = class ResumeCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'stop',
-            aliases: ['dc', 'leave', 'getout', 'fuckoff', 'shutup', 'sadap', 'stfu', 'gtfo'],
+            name: 'resume',
+            aliases: ['continue', 'go'],
             category: 'music',
-            description: 'Stop the music playing and leave vc',
-            usage: 'stop'
+            description: '-ok im back',
+            usage: 'resume'
         });
     }
 
     async run(message, args) {
         let player = await this.client.player.getQueue(message);
         if(!player) return message.inlineReply('❌ | There is no queue for this guild.');
-        if (!message.member.voice.channel) return message.channel.send(`❌ | You're not in a voice channel !`);
+        if(!message.member.voice.channel) return message.inlineReply(`❌ | You are not in a voice channel!`);
         if(message.member.voice.channel.id !== player.firstMessage.member.voice.channel.id) return message.inlineReply(`❌ | You are currently in the wrong voice channel. Please join <#!${player.queue.voiceChannel.id}>.`);
-        let success = this.client.player.stop(message);
-        if(success) message.inlineReply('⏹ | Stopped.');
+        let success = this.client.player.resume(message);
+        if(success) message.inlineReply('▶ | Resumed.');
     }
 }

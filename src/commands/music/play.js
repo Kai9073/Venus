@@ -22,7 +22,7 @@ module.exports = class PlayCommand extends Command {
         if (!player) {
             if(!message.member.voice.channel) return message.inlineReply(`❌ | Please join a voice channel!`);
         } else {
-            if(voiceChannel.id !== player.firstMessage.member.voice.channel.id) return message.inlineReply(`❌ | You are currently in the wrong voice channel. Please join the ${player.queue.voiceChannel.name}`);
+            if(voiceChannel.id !== player.firstMessage.member.voice.channel.id) return message.inlineReply(`❌ | You are currently in the wrong voice channel. Please join <#!${player.queue.voiceChannel.id}>.`);
         }
 
         if(voiceChannel.full && !player) return message.inlineReply(`❌ | I can't join the voice channel, it's full!`);
