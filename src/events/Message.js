@@ -43,7 +43,7 @@ module.exports = class Message extends Event {
     async run(message) {
         if(message.author.bot || !message.guild) return;
 
-        let prefix = 'v!';
+        let prefix = this.client.user.username === 'Venus' ? 'v.' : 'v!';
 
         if(!message.content.startsWith(prefix)) return;
 

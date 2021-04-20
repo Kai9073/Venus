@@ -1,5 +1,5 @@
 const Command = require('command');
-const covid = require('novelcovid');
+const axios = require('axios').default;
 const Discord = require('discord.js');
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 
@@ -18,6 +18,17 @@ const chartCallback = (ChartJS) => {
 
 const chart = new ChartJSNodeCanvas({ width: 1200, height: 600, chartCallback: chartCallback });
 
+const vaccine = {};
+vaccine.all = async (opts = {}) => {
+    let { data } = await axios.get(`https://disease.sh/v3/covid-19/vaccine/coverage${opts.days ? `?lastdays=${opts.days}` : ''}`);
+    return data;
+}
+
+vaccine.countries = async (opts = {}) => {
+    let { data } = await axios.get(`https://disease.sh/v3/covid-19/vaccine/coverage/countries${opts.country ? `/${opts.country}` : ''}${opts.days ? `?lastdays=${opts.days}` : ''}`);
+    return data;
+}
+
 module.exports = class CovidVaccineCommand extends Command {
     constructor(client) {
         super(client, {
@@ -31,7 +42,7 @@ module.exports = class CovidVaccineCommand extends Command {
 
     async run(message, args) {
         if(!args.length || (args[0] && Number.isInteger(parseInt(args[0]))) && !args[1]) {
-            const data = await covid.vaccine.all({ days: parseInt(args[0]) || -1 });
+            const data = await vaccine.all({ days: parseInt(args[0]) || -1 });
 
             if(!data) return message.inlineReply('❌ | Something went wrong...');
 
@@ -107,7 +118,7 @@ module.exports = class CovidVaccineCommand extends Command {
             message.inlineReply(embed);
         } else if((args[0] && isNaN(parseInt(args[0]))) || args[1]) {
             const country = args.slice(0, args.length - 1);
-            const data = await covid.vaccine.country({ country: country.join(' ') || args[0], days: args[1] ? parseInt(args[args.length - 1]) : -1 });
+            const data = await vaccine.countries({ country: country.join(' ') || args[0], days: args[1] ? parseInt(args[args.length - 1]) : -1 });
 
             if(!data.timeline) return message.channel.send(`❌ | That country doesn't seem to exist.`);
     
