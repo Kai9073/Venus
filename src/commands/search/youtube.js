@@ -8,7 +8,7 @@ module.exports = class YoutubeCommand extends Command {
         super(client, {
             name: 'youtube',
             aliases: ['yt', 'ytvideo', 'youtubesearch', 'ytsearch'],
-            category: 'general',
+            category: 'search',
             description: 'Search stuff like eminem illuminati lmao',
             usage: 'youtube <query>',
             minArgs: 1,
@@ -30,7 +30,7 @@ module.exports = class YoutubeCommand extends Command {
             .addField('Views', data.views.toLocaleString(), true)
             .addField('Likes', data.likes.toLocaleString(), true)
             .addField('Dislikes', data.dislikes.toLocaleString(), true)
-            .addField('Tags', data.tags.length < 10 ? data.tags.join(', ') : data.tags.length > 10 ? this.client.utils.trimArray(data.tags, 5).join(', ') : 'None', true)
+            .addField('Tags', data.tags.length < 10 ? data.tags.join(', ') : data.tags.length > 5 ? this.client.utils.trimArray(data.tags, 5).join(', ') : 'None', true)
             .setImage(data.thumbnail.displayThumbnailURL())
             .setColor('RANDOM')
             .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())

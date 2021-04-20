@@ -8,7 +8,7 @@ module.exports = class IMDBCommand extends Command {
         super(client, {
             name: 'imdb',
             aliases: ['movieinfo', 'showinfo'],
-            category: 'general',
+            category: 'search',
             description: 'Get information about the specified show, movie, or series.',
             usage: 'imdb <(movie|show|series) title | imdb id>',
             minArgs: 1,
