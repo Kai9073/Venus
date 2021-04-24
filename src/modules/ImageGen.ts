@@ -1,6 +1,5 @@
 import path from 'path';
 import Canvas from 'canvas';
-import fetch from 'node-fetch';
 import GIFEncoder from 'gifencoder';
 import parser from '@canvacord/emoji-parser';
 
