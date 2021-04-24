@@ -7,12 +7,12 @@ interface CommandOps {
     category: string;
     description: string;
     usage: string;
-    cooldown: number;
-    minArgs: number;
-    maxArgs: number;
-    devOnly: boolean;
-    authorPermission: PermissionString[];
-    clientPermission: PermissionString[];
+    cooldown?: number;
+    minArgs?: number;
+    maxArgs?: number;
+    devOnly?: boolean;
+    authorPermission?: PermissionString[];
+    clientPermission?: PermissionString[];
 }
 
 export default class Command {
@@ -22,12 +22,12 @@ export default class Command {
     readonly category: string;
     readonly description: string;
     readonly usage: string;
-    readonly cooldown: number;
-    readonly minArgs: number;
-    readonly maxArgs: number;
-    readonly devOnly: boolean;
-    readonly authorPermission: PermissionString[];
-    readonly clientPermission: PermissionString[];
+    readonly cooldown?: number;
+    readonly minArgs?: number;
+    readonly maxArgs?: number;
+    readonly devOnly?: boolean;
+    readonly authorPermission?: PermissionString[];
+    readonly clientPermission?: PermissionString[];
     constructor(client: Client, ops: CommandOps) {
         this.client = client;
         this.name = ops.name;
