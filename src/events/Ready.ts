@@ -1,7 +1,8 @@
-const Event = require('event');
+import Client from '../base/Client';
+import Event from '../base/Event';
 
-module.exports = class Ready extends Event {
-    constructor(client) {
+export default class Ready extends Event {
+    constructor(client: Client) {
         super(client, 'ready');
     }
 
