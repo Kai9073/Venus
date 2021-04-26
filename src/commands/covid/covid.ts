@@ -43,12 +43,12 @@ export default class CovidCommand extends Command {
                 .setColor(data.recovered > data.deaths ? 'GREEN' : data.deaths > data.recovered ? '#FFFF00' : 'GREEN')
                 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                 .setTimestamp();
-                message.channel.send(embed);
+                message.reply(embed);
             } else {
                 const { data } = await axios.get(`https://disease.sh/v3/covid-19/countries/${args.join(' ')}`);
                 const { data: yesterdayData } = await axios.get(`https://disease.sh/v3/covid-19/countries/${args.join(' ')}?yesterday=true`);
     
-                if(!data.cases || !yesterdayData.cases) message.channel.send(`❌ | That country doesn't seem to exist.`);
+                if(!data.cases || !yesterdayData.cases) message.reply(`❌ | That country doesn't seem to exist.`);
     
                 data.todayActive = data.active - yesterdayData.active;
                 data.todayCritical = data.critical - yesterdayData.critical; 
@@ -73,10 +73,10 @@ export default class CovidCommand extends Command {
                 .setColor(data.recovered > data.deaths ? 'GREEN' : data.deaths > data.recovered ? '#FFFF00' : 'GREEN')
                 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                 .setTimestamp();
-                message.channel.send(embed);
+                message.reply(embed);
             }
         } catch(err) {
-            message.channel.send('❌ | An error occurred...');
+            message.reply('❌ | An error occurred...');
         }
     }
 }

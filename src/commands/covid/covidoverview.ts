@@ -73,11 +73,11 @@ export default class CovidOverviewCommand extends Command {
                 .setColor('GREEN')
                 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                 .setTimestamp();
-                message.channel.send(embed);
+                message.reply(embed);
             } else {
                 const { data } = await axios.get(`https://disease.sh/v3/covid-19/countries/`);
     
-                if(!data) return message.channel.send(`❌ | That country doesn't seem to exist.`);
+                if(!data) return message.reply(`❌ | That country doesn't seem to exist.`);
     
                 const config = {
                     type: 'pie',
@@ -117,10 +117,10 @@ export default class CovidOverviewCommand extends Command {
                 .setColor('GREEN')
                 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                 .setTimestamp();
-                message.channel.send(embed);
+                message.reply(embed);
             }
         } catch(err) {
-            message.channel.send('❌ | An error occurred...');
+            message.reply('❌ | An error occurred...');
         }
     }
 }
