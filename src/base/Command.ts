@@ -1,5 +1,5 @@
-import { Message, PermissionString } from "discord.js";
-import Client from "./Client";
+import { Message, PermissionString } from 'discord.js';
+import Client from './Client';
 
 interface CommandOps {
     name: string;

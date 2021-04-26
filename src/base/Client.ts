@@ -28,9 +28,8 @@ export default class Client extends Discord.Client {
     //readonly player: Player;
     constructor() {
         super({
-            disableMentions: 'everyone',
+            intents: Discord.Intents.ALL,
             ws: {
-                intents: Discord.Intents.ALL, 
                 properties: {
                     $browser: 'Discord Android'
                 }
