@@ -41,7 +41,6 @@ export default class Message extends Event {
         super(client, 'message');
     }
 
-    // @ts-ignore
     async run(message: Discord.Message) {
         if(message.author.bot || !message.guild) return;
 

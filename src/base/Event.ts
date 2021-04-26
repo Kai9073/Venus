@@ -8,7 +8,7 @@ export default class Event {
         this.name = name;
     }
 
-    async run(...args: any) {
+    async run(...args: any): Promise<any> {
         throw new Error(`${this.name} doesn't have a run method.`);
     }
 }

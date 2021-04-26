@@ -43,7 +43,7 @@ export default class Command {
         this.clientPermission = ops.clientPermission;
     }
 
-    async run(message: Message, args: string[]) {
+    async run(message: Message, args: string[]): Promise<any> {
         throw new Error(`${this.name} doesn't have a run method.`);
     }
 }

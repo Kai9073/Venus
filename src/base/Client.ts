@@ -7,6 +7,8 @@ import moment from 'moment';
 import Utils from './Utils';
 // import { Player, PlayerOptions, Playlist, Queue, Track } from 'discord-player';
 import Command from './Command';
+import Message from '../structures/Message';
+import Guild from '../structures/Guild';
 
 // const playerOps: PlayerOptions = {
 //     enableLive: false,
@@ -34,6 +36,9 @@ export default class Client extends Discord.Client {
                 }
             }
         });
+
+        Discord.Structures.extend('Message', () => Message);
+        Discord.Structures.extend('Guild', () => Guild);
 
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();
@@ -123,11 +128,12 @@ export default class Client extends Discord.Client {
     }
 
     registerCommands() {
-        const commands = glob.sync(path.resolve('src/commands/**/*')).filter(file => file.endsWith('.js'));
+        const commands = glob.sync(path.resolve('build/commands/**/*.js'));
         this.log(`[${commands.length}] Loading commands...`);
 
         for(let command of commands) {
-            const File = require(command);
+            const File = require(command).default;
+            console.log(File)
             const cmd = new File(this);
 
             this.commands.set(cmd.name, cmd);
@@ -139,13 +145,13 @@ export default class Client extends Discord.Client {
     }
 
     registerEvents() {
-        const events = glob.sync(path.resolve('src/events/**/*.js'));
+        const events = glob.sync(path.resolve('build/events/**/*.js'));
         this.log(`[${events.length}] Loading events...`);
         
         let i = 0;
 
         for(let event of events) {
-            const File = require(event);
+            const File = require(event).default;
             const evt = new File(this);
 
             this.on(evt.name, (...args) => {
@@ -159,8 +165,8 @@ export default class Client extends Discord.Client {
     }
 
     async connect() {
-        //await this.registerCommands();
-        //this.registerEvents();
+        await this.registerCommands();
+        this.registerEvents();
         return this.login(process.env.TOKEN);
     }
 }
