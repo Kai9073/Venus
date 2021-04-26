@@ -80,7 +80,8 @@ export default class Message extends Event {
             let neededPerms = [];
     
             for(let perm of command.authorPermission) {
-                if(!message.member?.hasPermission(command.authorPermission)) neededPerms.push(permissions[perm]); 
+                // @ts-ignore
+                if(!message.member?.permissions.has(perm)) neededPerms.push(permissions[perm]);
             }
 
             if(neededPerms.length) return message.channel.send(`❌ | You don't have enough permissions. You need \`${neededPerms.join('`, `')}\``);
@@ -88,7 +89,8 @@ export default class Message extends Event {
             let neededPerms = [];
     
             for(let perm of command.clientPermission) {
-                if(!message.member?.hasPermission(perm)) neededPerms.push(permissions[perm]); 
+                // @ts-ignore
+                if(!message.member?.permissions.has(perm)) neededPerms.push(permissions[perm]); 
             }
     
             if(neededPerms.length) return message.channel.send(`❌ | I don't have enough permissions. I need \`${neededPerms.join('`, `')}\``);
