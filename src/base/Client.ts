@@ -133,7 +133,6 @@ export default class Client extends Discord.Client {
 
         for(let command of commands) {
             const File = require(command).default;
-            console.log(File)
             const cmd = new File(this);
 
             this.commands.set(cmd.name, cmd);
