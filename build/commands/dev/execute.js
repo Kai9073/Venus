@@ -23,12 +23,12 @@ class ExecuteCommand extends Command_1.default {
             const command = args.join(' ');
             child_process_1.default.exec(command, (error, stdout, stderr) => {
                 if (error) {
-                    return message.reply(error.message, { code: 'xl' });
+                    return message.reply(error.message, { code: 'xl', split: true });
                 }
                 if (stderr) {
-                    return message.reply(stderr, { code: 'xl' });
+                    return message.reply(stderr, { code: 'xl', split: true });
                 }
-                return message.reply(stdout, { code: 'xl' });
+                return message.reply(stdout, { code: 'xl', split: true });
             });
         }
         catch (err) {
