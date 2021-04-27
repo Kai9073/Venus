@@ -9,7 +9,7 @@ export default class Utils {
         this.client = client;
     }
     
-    cleanText(text: string) {
+    cleanText(text: any) {
         if (typeof text !== 'string') text = util.inspect(text, { depth: 1 });
         text = text
             .replace(/`/g, '`' + String.fromCharCode(8203))
@@ -70,9 +70,8 @@ export default class Utils {
 		return arr;
     }
 
-    formatBytes(bytes: any, precision: number) {
+    formatBytes(bytes: any, precision: number = 1) {
         if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
-        if (typeof precision === 'undefined') precision = 1;
         let units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'];
         let number = Math.floor(Math.log(bytes) / Math.log(1024));
         return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];

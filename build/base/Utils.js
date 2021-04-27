@@ -60,11 +60,9 @@ class Utils {
         }
         return arr;
     }
-    formatBytes(bytes, precision) {
+    formatBytes(bytes, precision = 1) {
         if (isNaN(parseFloat(bytes)) || !isFinite(bytes))
             return '-';
-        if (typeof precision === 'undefined')
-            precision = 1;
         let units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'];
         let number = Math.floor(Math.log(bytes) / Math.log(1024));
         return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) + ' ' + units[number];
