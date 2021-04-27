@@ -1,4 +1,5 @@
 import Client from './Client';
+import util from 'util';
 
 type TimeFormat = 'mm:ss' | 'hh:mm:ss' | 'dd:hh:mm:ss';
 
@@ -9,7 +10,7 @@ export default class Utils {
     }
     
     cleanText(text: string) {
-        if (typeof text !== 'string') text = require('util').inspect(text, { depth: 1 });
+        if (typeof text !== 'string') text = util.inspect(text, { depth: 1 });
         text = text
             .replace(/`/g, '`' + String.fromCharCode(8203))
             .replace(/@/g, '@' + String.fromCharCode(8203))
