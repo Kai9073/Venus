@@ -21,7 +21,7 @@ class EmbedCommand extends Command_1.default {
             message.reply(content, { embed: json });
         }
         catch (err) {
-            message.reply('❌ | Invalid JSON Body.');
+            message.reply('❌ | Invalid JSON body.');
         }
     }
 }

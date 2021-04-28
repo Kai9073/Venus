@@ -67,7 +67,7 @@ class ImageGen {
         const lines = this._getLines({ text, ctx, maxWidth: 345 });
         let i = 0;
         do {
-            await emoji_parser_1.default.fillTextWithTwemoji(ctx, lines[i], 10, i * fontSize - 5);
+            await emoji_parser_1.fillTextWithTwemoji(ctx, lines[i], 10, i * fontSize - 5);
             i++;
         } while (i < lines.length);
         return canvas.toBuffer();
@@ -157,7 +157,7 @@ class ImageGen {
         ctx.drawImage(bg, 0, 0);
         ctx.font = '17px Manrope';
         ctx.fillStyle = 'white';
-        await emoji_parser_1.default.fillTextWithTwemoji(ctx, await this._shorten(text, 60), 75, 50);
+        await emoji_parser_1.fillTextWithTwemoji(ctx, await this._shorten(text, 60), 75, 50);
         return canvas.toBuffer();
     }
     static async trigger(avatar) {
@@ -254,7 +254,7 @@ class ImageGen {
         ctx.fillText(timeString, ctx.measureText(name).width + 130, 50);
         ctx.font = '20px Roboto';
         ctx.fillStyle = '#FFFFFF';
-        await emoji_parser_1.default.fillTextWithTwemoji(ctx, comment, 90, 85);
+        await emoji_parser_1.fillTextWithTwemoji(ctx, comment, 90, 85);
         return canvas.toBuffer();
     }
     static async presentation(text) {
@@ -303,7 +303,7 @@ class ImageGen {
         const lines = await this._getLines({ text, ctx, maxWidth: 345 });
         let i = 0;
         do {
-            await emoji_parser_1.default.fillTextWithTwemoji(ctx, lines[i], 0, i * fontSize - 100);
+            await emoji_parser_1.fillTextWithTwemoji(ctx, lines[i], 0, i * fontSize - 100);
             i++;
         } while (i < lines.length);
         return canvas.toBuffer();
@@ -331,7 +331,7 @@ class ImageGen {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "#FFFFFF";
         ctx.font = `${size / 4}px Roboto`;
-        await emoji_parser_1.default.fillTextWithTwemoji(ctx, str, canvas.width / 4, canvas.height / 1.7);
+        await emoji_parser_1.fillTextWithTwemoji(ctx, str, canvas.width / 4, canvas.height / 1.7);
         return canvas.toBuffer();
     }
 }

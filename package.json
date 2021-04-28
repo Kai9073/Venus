@@ -4,7 +4,7 @@
   "description": "A bot.",
   "main": "build/index.js",
   "scripts": {
-    "build": "rimraf build && tsc && node .",
+    "build": "tsc && node .",
     "test": "nodemon ."
   },
   "author": "theidiotcoder",
