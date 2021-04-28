@@ -1,4 +1,4 @@
-import Discord from 'discord.js';
+import Discord, { User } from 'discord.js';
 import glob from 'glob';
 import path from 'path';
 import chalk from 'chalk';
@@ -7,8 +7,6 @@ import moment from 'moment';
 import Utils from './Utils';
 // import { Player, PlayerOptions, Playlist, Queue, Track } from 'discord-player';
 import Command from './Command';
-import Message from '../structures/Message';
-import Guild from '../structures/Guild';
 
 // const playerOps: PlayerOptions = {
 //     enableLive: false,
@@ -35,9 +33,6 @@ export default class Client extends Discord.Client {
                 }
             }
         });
-
-        Discord.Structures.extend('Message', () => Message);
-        Discord.Structures.extend('Guild', () => Guild);
 
         this.commands = new Discord.Collection();
         this.cooldown = new Discord.Collection();

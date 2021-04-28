@@ -39,7 +39,7 @@ class UserInfoCommand extends Command_1.default {
     }
     async run(message, args) {
         // @ts-ignore
-        let user = message.mentions.users.first() || this.client.users.cache.get(args[0]) || await message.resolveUser(args.join(' ')) || message.author;
+        let user = message.mentions.users.first() || this.client.users.cache.get(args[0]) /*|| await message.resolveUser(args.join(' '))*/ || message.author;
         if (!args.length)
             user = message.author;
         if (!user || user === undefined || user === null)

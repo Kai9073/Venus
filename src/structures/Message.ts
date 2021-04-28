@@ -1,6 +1,6 @@
 import { Structures, User } from 'discord.js';
 
-export default class Message extends Structures.get('Message') {
+class Message extends Structures.get('Message') {
     async resolveUser(name: string, multiple = false) {
         let username = name.toLowerCase();
         const arr: User[] = [];
@@ -10,3 +10,5 @@ export default class Message extends Structures.get('Message') {
         return multiple ? arr : arr[0];
     }
 }
+
+Structures.extend('Message', () => Message);

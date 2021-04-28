@@ -12,4 +12,4 @@ class Message extends discord_js_1.Structures.get('Message') {
         return multiple ? arr : arr[0];
     }
 }
-exports.default = Message;
+discord_js_1.Structures.extend('Message', () => Message);

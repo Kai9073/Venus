@@ -6,4 +6,4 @@ class Guild extends discord_js_1.Structures.get('Guild') {
         return 'v.';
     }
 }
-exports.default = Guild;
+discord_js_1.Structures.extend('Guild', () => Guild);

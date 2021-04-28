@@ -10,8 +10,6 @@ const chalk_1 = __importDefault(require("chalk"));
 const fs_1 = __importDefault(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const Utils_1 = __importDefault(require("./Utils"));
-const Message_1 = __importDefault(require("../structures/Message"));
-const Guild_1 = __importDefault(require("../structures/Guild"));
 // const playerOps: PlayerOptions = {
 //     enableLive: false,
 //     leaveOnEnd: true,
@@ -33,8 +31,6 @@ class Client extends discord_js_1.default.Client {
                 }
             }
         });
-        discord_js_1.default.Structures.extend('Message', () => Message_1.default);
-        discord_js_1.default.Structures.extend('Guild', () => Guild_1.default);
         this.commands = new discord_js_1.default.Collection();
         this.cooldown = new discord_js_1.default.Collection();
         this.utils = new Utils_1.default(this);
