@@ -7,6 +7,7 @@ import moment from 'moment';
 import Utils from './Utils';
 // import { Player, PlayerOptions, Playlist, Queue, Track } from 'discord-player';
 import Command from './Command';
+import Event from './Event';
 
 // const playerOps: PlayerOptions = {
 //     enableLive: false,
@@ -127,7 +128,10 @@ export default class Client extends Discord.Client {
 
         for(let command of commands) {
             const File = require(command).default;
+            const isClass = this.utils.isClass(File);
+            if(!isClass) throw new Error(`${command} isn't exporting class.`);
             const cmd = new File(this);
+            if(cmd instanceof Command) throw new Error(`${command} isn't a Command instance.`);
 
             this.commands.set(cmd.name, cmd);
         }
@@ -145,7 +149,10 @@ export default class Client extends Discord.Client {
 
         for(let event of events) {
             const File = require(event).default;
+            const isClass = this.utils.isClass(File);
+            if(!isClass) throw new Error(`${event} isn't exporting class.`);
             const evt = new File(this);
+            if(!(evt instanceof Event)) throw new Error(`${event} isn't a Command instance.`);
 
             this.on(evt.name, (...args) => {
                 evt.run(...args);
