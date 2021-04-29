@@ -67,5 +67,8 @@ class Utils {
         let number = Math.floor(Math.log(bytes) / Math.log(1024));
         return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) + ' ' + units[number];
     }
+    isClass(input) {
+        return typeof input === 'function' && typeof input.prototype === 'object' && input.toString().substring(0, 5) === 'class';
+    }
 }
 exports.default = Utils;

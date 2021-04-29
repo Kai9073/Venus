@@ -131,7 +131,7 @@ export default class Client extends Discord.Client {
             const isClass = this.utils.isClass(File);
             if(!isClass) throw new Error(`${command} isn't exporting class.`);
             const cmd = new File(this);
-            if(cmd instanceof Command) throw new Error(`${command} isn't a Command instance.`);
+            if(!(cmd instanceof Command)) throw new Error(`${command} isn't a Command instance.`);
 
             this.commands.set(cmd.name, cmd);
         }

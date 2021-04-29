@@ -10,6 +10,9 @@ const chalk_1 = __importDefault(require("chalk"));
 const fs_1 = __importDefault(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const Utils_1 = __importDefault(require("./Utils"));
+// import { Player, PlayerOptions, Playlist, Queue, Track } from 'discord-player';
+const Command_1 = __importDefault(require("./Command"));
+const Event_1 = __importDefault(require("./Event"));
 // const playerOps: PlayerOptions = {
 //     enableLive: false,
 //     leaveOnEnd: true,
@@ -122,7 +125,12 @@ class Client extends discord_js_1.default.Client {
         this.log(`[${commands.length}] Loading commands...`);
         for (let command of commands) {
             const File = require(command).default;
+            const isClass = this.utils.isClass(File);
+            if (!isClass)
+                throw new Error(`${command} isn't exporting class.`);
             const cmd = new File(this);
+            if (!(cmd instanceof Command_1.default))
+                throw new Error(`${command} isn't a Command instance.`);
             this.commands.set(cmd.name, cmd);
         }
         this.log(`[${this.commands.size}/${commands.length}] Loaded commands!`);
@@ -134,7 +142,12 @@ class Client extends discord_js_1.default.Client {
         let i = 0;
         for (let event of events) {
             const File = require(event).default;
+            const isClass = this.utils.isClass(File);
+            if (!isClass)
+                throw new Error(`${event} isn't exporting class.`);
             const evt = new File(this);
+            if (!(evt instanceof Event_1.default))
+                throw new Error(`${event} isn't a Command instance.`);
             this.on(evt.name, (...args) => {
                 evt.run(...args);
             });
