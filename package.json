@@ -1,6 +1,6 @@
 {
   "name": "venus-bot",
-  "version": "1.1.0",
+  "version": "2.0.0-dev",
   "description": "A bot.",
   "main": "build/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "chalk": "^4.1.0",
     "chart.js": "^2.9.4",
     "chartjs-node-canvas": "^3.1.0",
-    "discord-player": "^3.4.0",
+    "discord-player": "^4.0.5",
     "discord.js": "discordjs/discord.js",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",

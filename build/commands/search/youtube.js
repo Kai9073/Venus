@@ -41,7 +41,7 @@ class YoutubeCommand extends Command_1.default {
             message.reply(embed);
         }
         catch (err) {
-            message.reply(`❌ | No data is retrieved.`);
+            message.reply('❌ | An error occurred...');
         }
     }
 }

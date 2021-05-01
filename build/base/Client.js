@@ -10,21 +10,20 @@ const chalk_1 = __importDefault(require("chalk"));
 const fs_1 = __importDefault(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const Utils_1 = __importDefault(require("./Utils"));
-// import { Player, PlayerOptions, Playlist, Queue, Track } from 'discord-player';
+const discord_player_1 = require("discord-player");
 const Command_1 = __importDefault(require("./Command"));
 const Event_1 = __importDefault(require("./Event"));
-// const playerOps: PlayerOptions = {
-//     enableLive: false,
-//     leaveOnEnd: true,
-//     leaveOnEndCooldown: 15000,
-//     leaveOnStop: true,
-//     leaveOnEmpty: true,
-//     leaveOnEmptyCooldown: 15000,
-//     autoSelfDeaf: true,
-//     quality: 'high'
-// }
+const playerOps = {
+    enableLive: false,
+    leaveOnEnd: true,
+    leaveOnEndCooldown: 15000,
+    leaveOnStop: true,
+    leaveOnEmpty: true,
+    leaveOnEmptyCooldown: 15000,
+    autoSelfDeaf: true,
+    quality: 'high'
+};
 class Client extends discord_js_1.default.Client {
-    //readonly player: Player;
     constructor() {
         super({
             intents: discord_js_1.default.Intents.ALL,
@@ -37,62 +36,7 @@ class Client extends discord_js_1.default.Client {
         this.commands = new discord_js_1.default.Collection();
         this.cooldown = new discord_js_1.default.Collection();
         this.utils = new Utils_1.default(this);
-        // this.player = new Player(this, playerOps);
-        // this.player
-        //     .on('trackStart', (message: Discord.Message, track: Track) => {
-        //         let embed = new Discord.MessageEmbed()
-        //         .setColor('RANDOM')
-        //         .setTitle(`Now Playing - [${track.duration}]`)
-        //         .setDescription(`[${track.title}](${track.url})`)
-        //         .setThumbnail(track.thumbnail)
-        //         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
-        //         .setTimestamp();
-        //         message.channel.send(embed)
-        //     })
-        //     .on('error', (error: string, message: Discord.Message) => {
-        //         switch(error) {
-        //             case 'LiveVideo':
-        //                 message.channel.send(`❌ | Live Videos are currently not supported!`);
-        //             case 'NotConnected':
-        //                 message.channel.send(`❌ | Not connected.`);
-        //             case 'NotPlaying':
-        //                 message.channel.send(`❌ | Bot isn't playing anything.`);
-        //             case 'ParseError':
-        //                 message.channel.send(`❌ | There's an error while parsing the playlist!`);
-        //             case 'UnableToJoin':
-        //                 message.channel.send(`❌ | I'm unable to join the voice channel!`);
-        //             case 'VideoUnavailable':
-        //                 message.channel.send(`❌ | This video is unavailable!`);
-        //             default: 
-        //                 message.channel.send(`❌ | An error occurred...`);
-        //         }
-        //     })
-        //     .on('trackAdd', (message: Discord.Message, queue: Queue, track: Track) => {
-        //         let embed = new Discord.MessageEmbed()
-        //         .setColor('RANDOM')
-        //         .setTitle('Added song to queue!')
-        //         .setDescription(`[${track.title}](${track.url})`)
-        //         .setThumbnail(track.thumbnail)
-        //         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
-        //         .setTimestamp();
-        //         message.channel.send(embed);
-        //     })
-        //     .on('queueCreate', (message: Discord.Message, queue: Queue) => {
-        //         message.channel.send('✅ | Initialized queue!');
-        //     })
-        //     .on('playlistAdd', (message: Discord.Message, queue: Queue, playlist: Playlist) => {
-        //         let embed = new Discord.MessageEmbed()
-        //         .setColor('RANDOM')
-        //         .setTitle('Added playlist to queue!')
-        //         .setDescription(`[${playlist.title}](${playlist.url})`)
-        //         .setThumbnail(playlist.thumbnail)
-        //         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
-        //         .setTimestamp();
-        //         message.channel.send(embed);
-        //     })
-        //     .on('queueEnd', (message: Discord.Message, queue: Queue) => {
-        //         message.channel.send(`⚠ | I have left due to empty queue.`);
-        //     });
+        this.player = new discord_player_1.Player(this, playerOps);
     }
     log(info, severity) {
         let type;
@@ -136,9 +80,9 @@ class Client extends discord_js_1.default.Client {
         this.log(`[${this.commands.size}/${commands.length}] Loaded commands!`);
         return this.commands;
     }
-    registerEvents() {
-        const events = glob_1.default.sync(path_1.default.resolve('build/events/**/*.js'));
-        this.log(`[${events.length}] Loading events...`);
+    registerDiscordEvents() {
+        const events = glob_1.default.sync(path_1.default.resolve('build/events/discord/**/*.js'));
+        this.log(`[${events.length}] Loading discord events...`);
         let i = 0;
         for (let event of events) {
             const File = require(event).default;
@@ -147,17 +91,37 @@ class Client extends discord_js_1.default.Client {
                 throw new Error(`${event} isn't exporting class.`);
             const evt = new File(this);
             if (!(evt instanceof Event_1.default))
-                throw new Error(`${event} isn't a Command instance.`);
+                throw new Error(`${event} isn't a Event instance.`);
             this.on(evt.name, (...args) => {
                 evt.run(...args);
             });
             i++;
         }
-        this.log(`[${i}/${events.length}] Loaded events!`);
+        this.log(`[${i}/${events.length}] Loaded discord events!`);
+    }
+    registerPlayerEvents() {
+        const events = glob_1.default.sync(path_1.default.resolve('build/events/player/*.js'));
+        this.log(`[${events.length}] Loading player events...`);
+        let i = 0;
+        for (let event of events) {
+            const File = require(event).default;
+            const isClass = this.utils.isClass(File);
+            if (!isClass)
+                throw new Error(`${event} isn't exporting class.`);
+            const evt = new File(this);
+            if (!(evt instanceof Event_1.default))
+                throw new Error(`${event} isn't a Event instance.`);
+            this.player.on(evt.name, (...args) => {
+                evt.run(...args);
+            });
+            i++;
+        }
+        this.log(`[${i}/${events.length}] Loaded player events!`);
     }
     async connect() {
         await this.registerCommands();
-        this.registerEvents();
+        this.registerDiscordEvents();
+        this.registerPlayerEvents();
         return this.login(process.env.TOKEN);
     }
 }

@@ -1,5 +1,5 @@
-import Client from '../base/Client';
-import Event from '../base/Event';
+import Client from '../../base/Client';
+import Event from '../../base/Event';
 
 export default class Ready extends Event {
     constructor(client: Client) {

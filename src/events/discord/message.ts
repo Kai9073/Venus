@@ -1,6 +1,6 @@
-import Event from '../base/Event';
+import Event from '../../base/Event';
 import Discord from 'discord.js';
-import Client from '../base/Client';
+import Client from '../../base/Client';
 
 const permissions = {
     ADMINISTRATOR: 'Administrator',
