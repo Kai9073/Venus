@@ -5,5 +5,3 @@ yarn-error.log
 test.js
 src/logs
 legacy
-src/events/player
-src/commands/music
