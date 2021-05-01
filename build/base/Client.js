@@ -10,20 +10,21 @@ const chalk_1 = __importDefault(require("chalk"));
 const fs_1 = __importDefault(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const Utils_1 = __importDefault(require("./Utils"));
-const discord_player_1 = require("discord-player");
+// import { Player } from 'discord-player';
 const Command_1 = __importDefault(require("./Command"));
 const Event_1 = __importDefault(require("./Event"));
-const playerOps = {
-    enableLive: false,
-    leaveOnEnd: true,
-    leaveOnEndCooldown: 15000,
-    leaveOnStop: true,
-    leaveOnEmpty: true,
-    leaveOnEmptyCooldown: 15000,
-    autoSelfDeaf: true,
-    quality: 'high'
-};
+// const playerOps = {
+//     enableLive: false,
+//     leaveOnEnd: true,
+//     leaveOnEndCooldown: 15000,
+//     leaveOnStop: true,
+//     leaveOnEmpty: true,
+//     leaveOnEmptyCooldown: 15000,
+//     autoSelfDeaf: true,
+//     quality: 'high'
+// }
 class Client extends discord_js_1.default.Client {
+    // readonly player: Player;
     constructor() {
         super({
             intents: discord_js_1.default.Intents.ALL,
@@ -36,7 +37,7 @@ class Client extends discord_js_1.default.Client {
         this.commands = new discord_js_1.default.Collection();
         this.cooldown = new discord_js_1.default.Collection();
         this.utils = new Utils_1.default(this);
-        this.player = new discord_player_1.Player(this, playerOps);
+        // this.player = new Player(this, playerOps);
     }
     log(info, severity) {
         let type;
@@ -62,7 +63,7 @@ class Client extends discord_js_1.default.Client {
         }
         let date = `${new Date().getMonth() + 1}-${new Date().getDate()}-${new Date().getFullYear()}`;
         let data = `[${moment_1.default().format('MMMM Do YYYY, h:mm:ss a')}] ${type} ${info}\n`;
-        fs_1.default.appendFileSync(`src/logs/${date}.log`, data);
+        fs_1.default.appendFileSync(`build/logs/${date}.log`, data);
     }
     registerCommands() {
         const commands = glob_1.default.sync(path_1.default.resolve('build/commands/**/*.js'));
@@ -99,29 +100,27 @@ class Client extends discord_js_1.default.Client {
         }
         this.log(`[${i}/${events.length}] Loaded discord events!`);
     }
-    registerPlayerEvents() {
-        const events = glob_1.default.sync(path_1.default.resolve('build/events/player/*.js'));
-        this.log(`[${events.length}] Loading player events...`);
-        let i = 0;
-        for (let event of events) {
-            const File = require(event).default;
-            const isClass = this.utils.isClass(File);
-            if (!isClass)
-                throw new Error(`${event} isn't exporting class.`);
-            const evt = new File(this);
-            if (!(evt instanceof Event_1.default))
-                throw new Error(`${event} isn't a Event instance.`);
-            this.player.on(evt.name, (...args) => {
-                evt.run(...args);
-            });
-            i++;
-        }
-        this.log(`[${i}/${events.length}] Loaded player events!`);
-    }
+    // registerPlayerEvents() {
+    //     const events = glob.sync(path.resolve('build/events/player/*.js'));
+    //     this.log(`[${events.length}] Loading player events...`);
+    //     let i = 0;
+    //     for(let event of events) {
+    //         const File = require(event).default;
+    //         const isClass = this.utils.isClass(File);
+    //         if(!isClass) throw new Error(`${event} isn't exporting class.`);
+    //         const evt = new File(this);
+    //         if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
+    //         this.player.on(evt.name, (...args) => {
+    //             evt.run(...args);
+    //         });
+    //         i++;
+    //     }
+    //     this.log(`[${i}/${events.length}] Loaded player events!`);
+    // }
     async connect() {
         await this.registerCommands();
         this.registerDiscordEvents();
-        this.registerPlayerEvents();
+        // this.registerPlayerEvents();
         return this.login(process.env.TOKEN);
     }
 }
