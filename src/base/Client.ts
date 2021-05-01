@@ -109,33 +109,33 @@ export default class Client extends Discord.Client {
         this.log(`[${i}/${events.length}] Loaded discord events!`);
     }
 
-    registerPlayerEvents() {
-        const events = glob.sync(path.resolve('build/events/player/*.js'));
-        this.log(`[${events.length}] Loading player events...`);
+    // registerPlayerEvents() {
+    //     const events = glob.sync(path.resolve('build/events/player/*.js'));
+    //     this.log(`[${events.length}] Loading player events...`);
         
-        let i = 0;
+    //     let i = 0;
 
-        for(let event of events) {
-            const File = require(event).default;
-            const isClass = this.utils.isClass(File);
-            if(!isClass) throw new Error(`${event} isn't exporting class.`);
-            const evt = new File(this);
-            if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
+    //     for(let event of events) {
+    //         const File = require(event).default;
+    //         const isClass = this.utils.isClass(File);
+    //         if(!isClass) throw new Error(`${event} isn't exporting class.`);
+    //         const evt = new File(this);
+    //         if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
 
-            this.player.on(evt.name, (...args) => {
-                evt.run(...args);
-            });
+    //         this.player.on(evt.name, (...args) => {
+    //             evt.run(...args);
+    //         });
 
-            i++;
-        }
+    //         i++;
+    //     }
 
-        this.log(`[${i}/${events.length}] Loaded player events!`);
-    }
+    //     this.log(`[${i}/${events.length}] Loaded player events!`);
+    // }
 
     async connect() {
         await this.registerCommands();
         this.registerDiscordEvents();
-        this.registerPlayerEvents();
+        // this.registerPlayerEvents();
         return this.login(process.env.TOKEN);
     }
 }
