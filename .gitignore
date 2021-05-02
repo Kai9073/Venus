@@ -3,5 +3,3 @@ node_modules
 yarn.lock
 yarn-error.log
 test.js
-src/logs
-legacy

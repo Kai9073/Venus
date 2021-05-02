@@ -60,11 +60,6 @@ export default class Client extends Discord.Client {
             type = `[LOG]`;
             console.log(chalk.blueBright(`[LOG]`), info);
         }
-
-        let date = `${new Date().getMonth()+1}-${new Date().getDate()}-${new Date().getFullYear()}`;
-        let data = `[${moment().format('MMMM Do YYYY, h:mm:ss a')}] ${type} ${info}\n`;
-
-        fs.appendFileSync(`build/logs/${date}.log`, data);
     }
 
     registerCommands() {

@@ -72,7 +72,7 @@ class CovidOverviewCommand extends Command_1.default {
                 message.reply(embed);
             }
             else {
-                const { data } = await axios_1.default.get(`https://disease.sh/v3/covid-19/countries/`);
+                const { data } = await axios_1.default.get(`https://disease.sh/v3/covid-19/countries/${args.join(' ')}`);
                 if (!data)
                     return message.reply(`❌ | That country doesn't seem to exist.`);
                 const config = {
