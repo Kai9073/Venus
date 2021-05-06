@@ -2,29 +2,16 @@ import Discord from 'discord.js';
 import glob from 'glob';
 import path from 'path';
 import chalk from 'chalk';
-import fs from 'fs';
-import moment from 'moment';
 import Utils from './Utils';
-// import { Player } from 'discord-player';
 import Command from './Command';
 import Event from './Event';
-
-// const playerOps = {
-//     enableLive: false,
-//     leaveOnEnd: true,
-//     leaveOnEndCooldown: 15000,
-//     leaveOnStop: true,
-//     leaveOnEmpty: true,
-//     leaveOnEmptyCooldown: 15000,
-//     autoSelfDeaf: true,
-//     quality: 'high'
-// }
+import { Player } from 'discord-player';
 
 export default class Client extends Discord.Client {
     readonly commands: Discord.Collection<string, Command>;
     readonly cooldown: Discord.Collection<string, Discord.Collection<string, number>>;
     readonly utils: Utils;
-    // readonly player: Player;
+    readonly player: Player;
     constructor() {
         super({
             intents: Discord.Intents.ALL,
@@ -39,10 +26,16 @@ export default class Client extends Discord.Client {
         this.cooldown = new Discord.Collection();
         this.utils = new Utils(this);
 
-        // this.player = new Player(this, playerOps);
+        this.player = new Player(this, {
+            enableLive: true,
+            leaveOnEmpty: true,
+            leaveOnEnd: true,
+            leaveOnStop: true,
+            autoSelfDeaf: true
+        });
     }
 
-    log(info: string, severity?: 0 | 1 | 2| 3) {
+    log(info: any, severity?: 0 | 1 | 2| 3) {
         let type;
         if(severity === 0) {
             type = `[INFO]`;
@@ -66,17 +59,19 @@ export default class Client extends Discord.Client {
         const commands = glob.sync(path.resolve('build/commands/**/*.js'));
         this.log(`[${commands.length}] Loading commands...`);
 
-        for(let command of commands) {
-            const File = require(command).default;
+        let i;
+
+        for(i = 0; i < commands.length; i++) {
+            const File = require(commands[i]).default;
             const isClass = this.utils.isClass(File);
-            if(!isClass) throw new Error(`${command} isn't exporting class.`);
+            if(!isClass) throw new Error(`${commands[i]} isn't exporting class.`);
             const cmd = new File(this);
-            if(!(cmd instanceof Command)) throw new Error(`${command} isn't a Command instance.`);
+            if(!(cmd instanceof Command)) throw new Error(`${commands[i]} isn't a Command instance.`);
 
             this.commands.set(cmd.name, cmd);
         }
 
-        this.log(`[${this.commands.size}/${commands.length}] Loaded commands!`);
+        this.log(`[${i}/${commands.length}] Loaded commands!`);
 
         return this.commands;
     }
@@ -85,52 +80,48 @@ export default class Client extends Discord.Client {
         const events = glob.sync(path.resolve('build/events/discord/**/*.js'));
         this.log(`[${events.length}] Loading discord events...`);
         
-        let i = 0;
+        let i;
 
-        for(let event of events) {
-            const File = require(event).default;
+        for(i = 0; i < events.length; i++) {
+            const File = require(events[i]).default;
             const isClass = this.utils.isClass(File);
-            if(!isClass) throw new Error(`${event} isn't exporting class.`);
+            if(!isClass) throw new Error(`${events[i]} isn't exporting class.`);
             const evt = new File(this);
-            if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
+            if(!(evt instanceof Event)) throw new Error(`${events[i]} isn't a Event instance.`);
 
             this.on(evt.name, (...args) => {
                 evt.run(...args);
             });
-
-            i++;
         }
 
         this.log(`[${i}/${events.length}] Loaded discord events!`);
     }
 
-    // registerPlayerEvents() {
-    //     const events = glob.sync(path.resolve('build/events/player/*.js'));
-    //     this.log(`[${events.length}] Loading player events...`);
-        
-    //     let i = 0;
+    registerPlayerEvents() {
+        const events = glob.sync(path.resolve('build/events/player/*.js'));
+        this.log(`[${events.length}] Loading player events...`);
 
-    //     for(let event of events) {
-    //         const File = require(event).default;
-    //         const isClass = this.utils.isClass(File);
-    //         if(!isClass) throw new Error(`${event} isn't exporting class.`);
-    //         const evt = new File(this);
-    //         if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
+        let i;
 
-    //         this.player.on(evt.name, (...args) => {
-    //             evt.run(...args);
-    //         });
+        for(i = 0; i < events.length; i++) {
+            const File = require(events[i]).default;
+            const isClass = this.utils.isClass(File);
+            if(!isClass) throw new Error(`${events[i]} isn't exporting class.`);
+            const evt = new File(this);
+            if(!(evt instanceof Event)) throw new Error(`${events[i]} isn't a Event instance.`);
 
-    //         i++;
-    //     }
+            this.player.on(evt.name, (...args) => {
+                evt.run(...args);
+            });
+        }
 
-    //     this.log(`[${i}/${events.length}] Loaded player events!`);
-    // }
+        this.log(`[${i}/${events.length}] Loaded player events!`);
+    }
 
     async connect() {
         await this.registerCommands();
         this.registerDiscordEvents();
-        // this.registerPlayerEvents();
+        this.registerPlayerEvents();
         return this.login(process.env.TOKEN);
     }
 }

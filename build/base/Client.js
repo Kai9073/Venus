@@ -7,24 +7,11 @@ const discord_js_1 = __importDefault(require("discord.js"));
 const glob_1 = __importDefault(require("glob"));
 const path_1 = __importDefault(require("path"));
 const chalk_1 = __importDefault(require("chalk"));
-const fs_1 = __importDefault(require("fs"));
-const moment_1 = __importDefault(require("moment"));
 const Utils_1 = __importDefault(require("./Utils"));
-// import { Player } from 'discord-player';
 const Command_1 = __importDefault(require("./Command"));
 const Event_1 = __importDefault(require("./Event"));
-// const playerOps = {
-//     enableLive: false,
-//     leaveOnEnd: true,
-//     leaveOnEndCooldown: 15000,
-//     leaveOnStop: true,
-//     leaveOnEmpty: true,
-//     leaveOnEmptyCooldown: 15000,
-//     autoSelfDeaf: true,
-//     quality: 'high'
-// }
+const discord_player_1 = require("discord-player");
 class Client extends discord_js_1.default.Client {
-    // readonly player: Player;
     constructor() {
         super({
             intents: discord_js_1.default.Intents.ALL,
@@ -37,7 +24,13 @@ class Client extends discord_js_1.default.Client {
         this.commands = new discord_js_1.default.Collection();
         this.cooldown = new discord_js_1.default.Collection();
         this.utils = new Utils_1.default(this);
-        // this.player = new Player(this, playerOps);
+        this.player = new discord_player_1.Player(this, {
+            enableLive: true,
+            leaveOnEmpty: true,
+            leaveOnEnd: true,
+            leaveOnStop: true,
+            autoSelfDeaf: true
+        });
     }
     log(info, severity) {
         let type;
@@ -61,66 +54,64 @@ class Client extends discord_js_1.default.Client {
             type = `[LOG]`;
             console.log(chalk_1.default.blueBright(`[LOG]`), info);
         }
-        let date = `${new Date().getMonth() + 1}-${new Date().getDate()}-${new Date().getFullYear()}`;
-        let data = `[${moment_1.default().format('MMMM Do YYYY, h:mm:ss a')}] ${type} ${info}\n`;
-        fs_1.default.appendFileSync(`build/logs/${date}.log`, data);
     }
     registerCommands() {
         const commands = glob_1.default.sync(path_1.default.resolve('build/commands/**/*.js'));
         this.log(`[${commands.length}] Loading commands...`);
-        for (let command of commands) {
-            const File = require(command).default;
+        let i;
+        for (i = 0; i < commands.length; i++) {
+            const File = require(commands[i]).default;
             const isClass = this.utils.isClass(File);
             if (!isClass)
-                throw new Error(`${command} isn't exporting class.`);
+                throw new Error(`${commands[i]} isn't exporting class.`);
             const cmd = new File(this);
             if (!(cmd instanceof Command_1.default))
-                throw new Error(`${command} isn't a Command instance.`);
+                throw new Error(`${commands[i]} isn't a Command instance.`);
             this.commands.set(cmd.name, cmd);
         }
-        this.log(`[${this.commands.size}/${commands.length}] Loaded commands!`);
+        this.log(`[${i}/${commands.length}] Loaded commands!`);
         return this.commands;
     }
     registerDiscordEvents() {
         const events = glob_1.default.sync(path_1.default.resolve('build/events/discord/**/*.js'));
         this.log(`[${events.length}] Loading discord events...`);
-        let i = 0;
-        for (let event of events) {
-            const File = require(event).default;
+        let i;
+        for (i = 0; i < events.length; i++) {
+            const File = require(events[i]).default;
             const isClass = this.utils.isClass(File);
             if (!isClass)
-                throw new Error(`${event} isn't exporting class.`);
+                throw new Error(`${events[i]} isn't exporting class.`);
             const evt = new File(this);
             if (!(evt instanceof Event_1.default))
-                throw new Error(`${event} isn't a Event instance.`);
+                throw new Error(`${events[i]} isn't a Event instance.`);
             this.on(evt.name, (...args) => {
                 evt.run(...args);
             });
-            i++;
         }
         this.log(`[${i}/${events.length}] Loaded discord events!`);
     }
-    // registerPlayerEvents() {
-    //     const events = glob.sync(path.resolve('build/events/player/*.js'));
-    //     this.log(`[${events.length}] Loading player events...`);
-    //     let i = 0;
-    //     for(let event of events) {
-    //         const File = require(event).default;
-    //         const isClass = this.utils.isClass(File);
-    //         if(!isClass) throw new Error(`${event} isn't exporting class.`);
-    //         const evt = new File(this);
-    //         if(!(evt instanceof Event)) throw new Error(`${event} isn't a Event instance.`);
-    //         this.player.on(evt.name, (...args) => {
-    //             evt.run(...args);
-    //         });
-    //         i++;
-    //     }
-    //     this.log(`[${i}/${events.length}] Loaded player events!`);
-    // }
+    registerPlayerEvents() {
+        const events = glob_1.default.sync(path_1.default.resolve('build/events/player/*.js'));
+        this.log(`[${events.length}] Loading player events...`);
+        let i;
+        for (i = 0; i < events.length; i++) {
+            const File = require(events[i]).default;
+            const isClass = this.utils.isClass(File);
+            if (!isClass)
+                throw new Error(`${events[i]} isn't exporting class.`);
+            const evt = new File(this);
+            if (!(evt instanceof Event_1.default))
+                throw new Error(`${events[i]} isn't a Event instance.`);
+            this.player.on(evt.name, (...args) => {
+                evt.run(...args);
+            });
+        }
+        this.log(`[${i}/${events.length}] Loaded player events!`);
+    }
     async connect() {
         await this.registerCommands();
         this.registerDiscordEvents();
-        // this.registerPlayerEvents();
+        this.registerPlayerEvents();
         return this.login(process.env.TOKEN);
     }
 }

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Command_1 = __importDefault(require("../../base/Command"));
-class TCommand extends Command_1.default {
+class Base64Command extends Command_1.default {
     constructor(client) {
         super(client, {
             name: 'base64',
@@ -27,4 +27,4 @@ class TCommand extends Command_1.default {
         }
     }
 }
-exports.default = TCommand;
+exports.default = Base64Command;

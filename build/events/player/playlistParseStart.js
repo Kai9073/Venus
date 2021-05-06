@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Event_1 = __importDefault(require("../../base/Event"));
-class ReadyEvent extends Event_1.default {
+class PlaylistParseStartEvent extends Event_1.default {
     constructor(client) {
-        super(client, 'ready');
+        super(client, 'playlistParseStart');
     }
-    async run() {
-        this.client.log(`Client has logged in!`, 0);
+    async run(playlist, message) {
+        message.channel.send('<a:loading:803081781707407361> | Parsing playlist... This may take a few a few minutes or seconds...');
     }
 }
-exports.default = ReadyEvent;
+exports.default = PlaylistParseStartEvent;

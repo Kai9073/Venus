@@ -36,7 +36,7 @@ const permissions = {
     MANAGE_EMOJIS: 'Manage Emojis'
 }
 
-export default class Message extends Event {
+export default class MessageEvent extends Event {
     constructor(client: Client) {
         super(client, 'message');
     }

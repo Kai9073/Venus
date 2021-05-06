@@ -38,7 +38,7 @@ const permissions = {
     MANAGE_WEBHOOKS: 'Manage Webhooks',
     MANAGE_EMOJIS: 'Manage Emojis'
 };
-class Message extends Event_1.default {
+class MessageEvent extends Event_1.default {
     constructor(client) {
         super(client, 'message');
     }
@@ -105,4 +105,4 @@ class Message extends Event_1.default {
         }
     }
 }
-exports.default = Message;
+exports.default = MessageEvent;

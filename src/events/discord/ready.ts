@@ -1,7 +1,7 @@
 import Client from '../../base/Client';
 import Event from '../../base/Event';
 
-export default class Ready extends Event {
+export default class ReadyEvent extends Event {
     constructor(client: Client) {
         super(client, 'ready');
     }

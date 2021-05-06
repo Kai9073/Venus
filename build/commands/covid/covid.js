@@ -40,7 +40,7 @@ class CovidCommand extends Command_1.default {
                     .addField('Fatality Rate', `${(data.deaths / data.cases * 100).toFixed(4)}%`, true)
                     .addField('Critical Rate', `${(data.critical / data.cases * 100).toFixed(4)}%`, true)
                     .addField('Test Rate', `${(data.testsPerOneMillion / 10000).toFixed(4)}%`, true)
-                    .setColor(data.recovered > data.deaths ? 'GREEN' : data.deaths > data.recovered ? '#FFFF00' : 'GREEN')
+                    .setColor(data.recovered > data.deaths && data.todayCases < 1000 ? 'GREEN' : data.deaths > data.recovered || data.todayCases > 1000 ? 'RED' : 'RED')
                     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                     .setTimestamp();
                 message.reply(embed);
@@ -69,7 +69,7 @@ class CovidCommand extends Command_1.default {
                     .addField('Fatality Rate', `${(data.deaths / data.cases * 100).toFixed(4)}%`, true)
                     .addField('Critical Rate', `${(data.critical / data.cases * 100).toFixed(4)}%`, true)
                     .addField('Test Rate', `${(data.testsPerOneMillion / 10000).toFixed(4)}%`, true)
-                    .setColor(data.recovered > data.deaths ? 'GREEN' : data.deaths > data.recovered ? '#FFFF00' : 'GREEN')
+                    .setColor(data.todayRecovered > data.todayDeaths && data.todayCases < 1000 ? 'GREEN' : data.deaths > data.recovered || data.todayCases > 1000 ? 'RED' : 'RED')
                     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
                     .setTimestamp();
                 message.reply(embed);

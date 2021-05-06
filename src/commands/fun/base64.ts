@@ -2,7 +2,7 @@ import Command from '../../base/Command';
 import Discord from 'discord.js';
 import Client from '../../base/Client';
 
-export default class TCommand extends Command {
+export default class Base64Command extends Command {
     constructor(client: Client) {
         super(client, {
             name: 'base64',

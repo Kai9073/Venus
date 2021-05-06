@@ -1,5 +1,5 @@
 import Command from '../../base/Command';
-import ytsr from'youtube-sr';
+import ytsr from 'youtube-sr';
 import Discord, { MessageEmbed } from'discord.js';
 import ms from'pretty-ms';
 import Client from '../../base/Client';
