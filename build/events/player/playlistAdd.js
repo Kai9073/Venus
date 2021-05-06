@@ -12,10 +12,10 @@ class PlaylistAddEvent extends Event_1.default {
     async run(message, queue, playlist) {
         let embed = new discord_js_1.MessageEmbed()
             .setTitle('Added playlist to queue!')
+            .setDescription(`[${playlist.name}](${message.content.split(' ').slice(1)})`)
             .setThumbnail(playlist.thumbnail)
             .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
             .setTimestamp();
-        console.log(playlist);
         message.channel.send(embed);
     }
 }
