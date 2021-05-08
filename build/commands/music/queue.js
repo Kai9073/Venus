@@ -25,7 +25,7 @@ class QueueCommand extends Command_1.default {
             return message.reply(`❌ | You are currently in the wrong voice channel. Please join ${player.voiceConnection?.channel.toString()}!`);
         let embed = new discord_js_1.default.MessageEmbed()
             .setTitle(`Queue for ${message.guild?.name}`)
-            .setDescription(`**Now Playing: [${player.playing.title}](${player.playing.url})**
+            .setDescription(`**Now Playing: [${player.playing.title}](${player.playing.url})**\n
         ${player.tracks.map((track, i) => {
             return `${i}. [${track.title}](${track.url}) - ${track.requestedBy.toString()}`;
         }).slice(1, 10).join('\n') + `\n\n${player.tracks.length > 10 ? `and ${player.tracks.length - 10} other songs...` : ``}`}`)

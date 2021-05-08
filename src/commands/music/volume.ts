@@ -2,15 +2,15 @@ import Command from '../../base/Command';
 import Discord from 'discord.js';
 import Client from '../../base/Client';
 
-export default class RemoveCommand extends Command {
+export default class VolumeCommand extends Command {
     constructor(client: Client) {
         super(client, {
-            name: 'remove',
+            name: 'volume',
             aliases: [],
             category: 'music',
-            description: 'wait dont remove me pl-',
-            usage: 'remove <number>',
-            minArgs: 1,
+            description: 'never gONNA🔊GIVE🔊YOU🔊UP',
+            usage: 'volume <1-100>',
+            minArgs: 0,
             maxArgs: 1
         });
     }
@@ -21,8 +21,11 @@ export default class RemoveCommand extends Command {
         if(message.guild?.me?.voice.channel && message.guild?.me?.voice.channelID !== message.member?.voice.channelID) 
             return message.reply(`❌ | You are currently in the wrong voice channel. Please join ${player.voiceConnection?.channel.toString()}!`);
 
-        if(isNaN(parseInt(args[0]))) return message.reply('❌ | Please provide a valid track number!');
-        const track = await this.client.player.remove(message, parseInt(args[0]));
-        message.reply(`✅ | Removed track - ${track.title}.`);
+        if(!args.length) return message.reply(`🔊 | Volume: ${player.volume}%`);
+
+        if(isNaN(parseInt(args[0]))) return message.reply('❌ | Please provide a valid number!');
+        if((parseInt(args[0]) > 100) || (parseInt(args[0]) < 1)) return message.reply('❌ | Volume must be from 1-100%!');
+        const success = await this.client.player.setVolume(message, parseInt(args[0]));
+        if(success) message.reply(`✅ | Volume set to ${args[0]}%!`);
     }
 }

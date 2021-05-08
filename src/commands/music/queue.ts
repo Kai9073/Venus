@@ -26,7 +26,7 @@ export default class QueueCommand extends Command {
         .setDescription(`**Now Playing: [${player.playing.title}](${player.playing.url})**\n
         ${player.tracks.map((track, i) => {
             return `${i}. [${track.title}](${track.url}) - ${track.requestedBy.toString()}`
-        }).slice(1, 10).join('\n') + `\n\n${player.tracks.length > 10 ? `and ${player.tracks.length - 10} other songs...` : ``}`}`) 
+        }).slice(1, 10).join('\n') + `\n\n${player.tracks.length > 10 ? `and ${player.tracks.length - 10} other songs...` : ``}`}`)
         .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
