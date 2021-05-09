@@ -36,10 +36,10 @@ export default class Utils {
     timeToMs(duration: string) {
         let time = duration.split(':').reverse();
 
-        let days = parseInt(duration[3]) * 86400000 || 0;
-        let hours = parseInt(duration[2]) * 3600000 || 0;
-        let minutes = parseInt(duration[1]) * 60000 || 0;
-        let seconds = parseInt(duration[0]) * 1000 || 0;
+        let days = parseInt(time[3]) * 86400000 || 0;
+        let hours = parseInt(time[2]) * 3600000 || 0;
+        let minutes = parseInt(time[1]) * 60000 || 0;
+        let seconds = parseInt(time[0]) * 1000 || 0;
 
         return days + hours + minutes + seconds;
     }
