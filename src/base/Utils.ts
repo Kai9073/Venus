@@ -25,27 +25,21 @@ export default class Utils {
         hours: string | number = Math.floor((duration / (1000 * 60 * 60)) % 24),
         days: string | number = Math.floor((duration / (1000 * 60 * 60 * 24)) % 24);
     
-        days = (days < 10) ? `0 days` : days;
-        hours = (hours < 10) ? `0 hours` : hours;
-        minutes = (minutes < 10) ? `0 minutes` : minutes;
-        seconds = (seconds < 10) ? `0 seconds` : seconds;
+        days = (days < 10) ? `0 ${days}` : days;
+        hours = (hours < 10) ? `0 ${hours}` : hours;
+        minutes = (minutes < 10) ? `0 ${minutes}` : minutes;
+        seconds = (seconds < 10) ? `0 ${seconds}` : seconds;
     
-        if(format === 'mm:ss') {
-            return `${minutes}:${seconds}`;
-        } else if (format === 'hh:mm:ss') {
-            return `${hours}:${minutes}:${seconds}`;
-        } else if (format === 'dd:hh:mm:ss') {
-            return `${days}:${hours}:${minutes}:${seconds}`;
-        }
+        return `${days}:${hours}:${minutes}:${seconds}`
     }
 
     timeToMs(duration: string) {
-        let time = duration.split(':');
-        
-        let days = parseInt(duration[0]) * 86400000;
-        let hours = parseInt(duration[1]) * 3600000;
-        let minutes = parseInt(duration[2]) * 60000;
-        let seconds = parseInt(duration[3]) * 1000;
+        let time = duration.split(':').reverse();
+
+        let days = parseInt(duration[3]) * 86400000 || 0;
+        let hours = parseInt(duration[2]) * 3600000 || 0;
+        let minutes = parseInt(duration[1]) * 60000 || 0;
+        let seconds = parseInt(duration[0]) * 1000 || 0;
 
         return days + hours + minutes + seconds;
     }
