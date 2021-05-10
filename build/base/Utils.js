@@ -20,19 +20,19 @@ class Utils {
     }
     msToTime(format, duration) {
         let seconds = Math.floor((duration / 1000) % 60), minutes = Math.floor((duration / (1000 * 60)) % 60), hours = Math.floor((duration / (1000 * 60 * 60)) % 24), days = Math.floor((duration / (1000 * 60 * 60 * 24)) % 24);
-        days = (days < 10) ? 0 + days : days;
-        hours = (hours < 10) ? 0 + hours : hours;
-        minutes = (minutes < 10) ? 0 + minutes : minutes;
-        seconds = (seconds < 10) ? 0 + seconds : seconds;
-        if (format === 'mm:ss') {
-            return `${minutes}:${seconds}`;
-        }
-        else if (format === 'hh:mm:ss') {
-            return `${hours}:${minutes}:${seconds}`;
-        }
-        else if (format === 'dd:hh:mm:ss') {
-            return `${days}:${hours}:${minutes}:${seconds}`;
-        }
+        days = (days < 10) ? `0 ${days}` : days;
+        hours = (hours < 10) ? `0 ${hours}` : hours;
+        minutes = (minutes < 10) ? `0 ${minutes}` : minutes;
+        seconds = (seconds < 10) ? `0 ${seconds}` : seconds;
+        return `${days}:${hours}:${minutes}:${seconds}`;
+    }
+    timeToMs(duration) {
+        let time = duration.split(':').reverse();
+        let days = parseInt(time[3]) * 86400000 || 0;
+        let hours = parseInt(time[2]) * 3600000 || 0;
+        let minutes = parseInt(time[1]) * 60000 || 0;
+        let seconds = parseInt(time[0]) * 1000 || 0;
+        return days + hours + minutes + seconds;
     }
     reverse(str) {
         return str.split('').reverse().join('');
