@@ -25,23 +25,25 @@ export default class Utils {
         hours: string | number = Math.floor((duration / (1000 * 60 * 60)) % 24),
         days: string | number = Math.floor((duration / (1000 * 60 * 60 * 24)) % 24);
     
-        days = (days < 10) ? `0 ${days}` : days;
-        hours = (hours < 10) ? `0 ${hours}` : hours;
-        minutes = (minutes < 10) ? `0 ${minutes}` : minutes;
-        seconds = (seconds < 10) ? `0 ${seconds}` : seconds;
+        days = (days < 10) ? `0${days}` : days;
+        hours = (hours < 10) ? `0${hours}` : hours;
+        minutes = (minutes < 10) ? `0${minutes}` : minutes;
+        seconds = (seconds < 10) ? `0${seconds}` : seconds;
     
-        return `${days}:${hours}:${minutes}:${seconds}`
+        return format.replace('dd', `${days}`).replace('hh', `${hours}`).replace('mm', `${minutes}`).replace('ss', `${seconds}`);
     }
 
     timeToMs(duration: string) {
         let time = duration.split(':').reverse();
+        
 
-        let days = parseInt(time[3]) * 86400000 || 0;
-        let hours = parseInt(time[2]) * 3600000 || 0;
-        let minutes = parseInt(time[1]) * 60000 || 0;
-        let seconds = parseInt(time[0]) * 1000 || 0;
+        let days = parseInt(time[3]) * 86400000 || null;
+        let hours = parseInt(time[2]) * 3600000 || null;
+        let minutes = parseInt(time[1]) * 60000 || null;
+        let seconds = parseInt(time[0]) * 1000 || null;
 
-        return days + hours + minutes + seconds;
+        // @ts-ignore
+        return days + hours + minutes + seconds || null;
     }
 
     reverse(str: string) {
