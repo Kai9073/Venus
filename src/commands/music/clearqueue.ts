@@ -2,16 +2,16 @@ import Command from '../../base/Command';
 import Discord from 'discord.js';
 import Client from '../../base/Client';
 
-export default class SeekCommand extends Command {
+export default class ClearQueueCommand extends Command {
     constructor(client: Client) {
         super(client, {
-            name: 'seek',
-            aliases: ['fastforward'],
+            name: 'clearqueue',
+            aliases: ['cleanqueue'],
             category: 'music',
-            description: 'never gonna- we known each other for so long...',
-            usage: 'seek <time>',
-            minArgs: 1,
-            maxArgs: -1
+            description: 'clears queue except the currently playing song',
+            usage: 'clearqueue',
+            minArgs: 0,
+            maxArgs: 0
         });
     }
 
@@ -21,9 +21,7 @@ export default class SeekCommand extends Command {
         if(message.guild?.me?.voice.channel && message.guild?.me?.voice.channelID !== message.member?.voice.channelID) 
             return message.reply(`❌ | You are currently in the wrong voice channel. Please join ${player.voiceConnection?.channel.toString()}!`);
 
-        let seek = this.client.utils.timeToMs(args.join(' '));
-        if(typeof seek !== 'number' || seek === null) return message.reply('❌ | Wrong format/input! Example: `00:55`, `50`');
-        await this.client.player.seek(message, seek);
-        message.reply(`⏩ | Set position to ${this.client.utils.msToTime(seek)}.`);
+        const success = await this.client.player.clearQueue(message);
+        if(success) message.reply('✅ | Cleared queue!');
     }
 }

@@ -1,5 +1,5 @@
 import Command from '../../base/Command';
-import morse from '../../assets/data/morse';
+import morse from '../../data/morse';
 import Client from '../../base/Client';
 import Discord from 'discord.js';
 

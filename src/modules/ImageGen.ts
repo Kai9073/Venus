@@ -4,9 +4,9 @@ import GIFEncoder from 'gifencoder';
 import parser from '@canvacord/emoji-parser';
 
 interface GetLineOps { 
-    text: string
-    ctx: CanvasRenderingContext2D
-    maxWidth: number 
+    text: string;
+    ctx: CanvasRenderingContext2D;
+    maxWidth: number;
 }
 
 export default class ImageGen {
@@ -15,7 +15,7 @@ export default class ImageGen {
     }
 
     public static async affect(avatar: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'affect.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'affect.png'));
         const img = await Canvas.loadImage(avatar);
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -28,7 +28,7 @@ export default class ImageGen {
     }
 
     public static async changemymind(text: string) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'changemymind.jpg'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'changemymind.jpg'));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -94,7 +94,7 @@ export default class ImageGen {
     }
 
     public static async hitler(avatar: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'hitler.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'hitler.png'));
         const img = await Canvas.loadImage(avatar);
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -107,7 +107,7 @@ export default class ImageGen {
 
     public static async jail(avatar: string | Buffer) {
         let img = await Canvas.loadImage(await this.greyscale(avatar));
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'jail.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'jail.png'));
         const canvas = Canvas.createCanvas(300, 300);
         const ctx = canvas.getContext('2d');
 
@@ -118,7 +118,7 @@ export default class ImageGen {
     }
 
     public static async wanted(avatar: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'wanted.jpg'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wanted.jpg'));
         const img = await Canvas.loadImage(avatar);
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
@@ -151,7 +151,7 @@ export default class ImageGen {
     }
 
     public static async wasted(avatar: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'wasted.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'wasted.png'));
         const img = await Canvas.loadImage(await this.greyscale(avatar));
 
         const canvas = Canvas.createCanvas(img.width, img.height);
@@ -168,9 +168,9 @@ export default class ImageGen {
     }
 
     public static async clyde(text: string) {
-        let bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'clyde.png'));
+        let bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'clyde.png'));
 
-        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'MANROPE_REGULAR.ttf'), {
+        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'MANROPE_REGULAR.ttf'), {
             family: "Manrope",
             weight: "regular",
             style: "normal"
@@ -189,7 +189,7 @@ export default class ImageGen {
     }
 
     public static async trigger(avatar: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'triggered.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'triggered.png'));
         const img  = await Canvas.loadImage(avatar);
 
         const GIF = new GIFEncoder(300, 300);
@@ -220,7 +220,7 @@ export default class ImageGen {
     }
 
     public static async slap(avatar1: string | Buffer, avatar2: string | Buffer) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'slap.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'slap.png'));
         const img1 = await Canvas.loadImage(avatar1);
         const img2 = await Canvas.loadImage(avatar2);
 
@@ -286,10 +286,10 @@ export default class ImageGen {
     }
 
     public static async youtube(img: string | Buffer, username: string, text: string) {
-        const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(__dirname), 'assets', 'img', 'youtube.png')));
+        const bg = await Canvas.loadImage(await this.invert(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'youtube.png')));
         const image = await Canvas.loadImage(await this.circle(img));
 
-        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
+        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
             family: "Roboto",
             weight: "regular",
             style: "normal"
@@ -323,7 +323,7 @@ export default class ImageGen {
     }
 
     public static async presentation(text: string) {
-        const bg = await Canvas.loadImage(path.join(path.dirname(__dirname), 'assets', 'img', 'presentation.png'));
+        const bg = await Canvas.loadImage(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'img', 'presentation.png'));
 
         const canvas = Canvas.createCanvas(bg.width, bg.height);
         const ctx = canvas.getContext('2d');
@@ -387,7 +387,7 @@ export default class ImageGen {
         .replace(/\w+/g, e => e[0])
         .replace(/\s/g, "");
 
-        Canvas.registerFont(path.join(path.dirname(__dirname), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
+        Canvas.registerFont(path.join(path.dirname(path.dirname(__dirname)), 'assets', 'fonts', 'ROBOTO_REGULAR.ttf'), {
             family: "Roboto",
             weight: "regular",
             style: "normal"

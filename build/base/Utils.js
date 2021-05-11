@@ -18,13 +18,13 @@ class Utils {
             .replace(process.env.IMDB_API || '', 'N0-4Pi_f0R-U');
         return text;
     }
-    msToTime(format, duration) {
+    msToTime(duration) {
         let seconds = Math.floor((duration / 1000) % 60), minutes = Math.floor((duration / (1000 * 60)) % 60), hours = Math.floor((duration / (1000 * 60 * 60)) % 24), days = Math.floor((duration / (1000 * 60 * 60 * 24)) % 24);
         days = (days < 10) ? `0${days}` : days;
         hours = (hours < 10) ? `0${hours}` : hours;
         minutes = (minutes < 10) ? `0${minutes}` : minutes;
         seconds = (seconds < 10) ? `0${seconds}` : seconds;
-        return format.replace('dd', `${days}`).replace('hh', `${hours}`).replace('mm', `${minutes}`).replace('ss', `${seconds}`);
+        return `${days !== '00' ? `${days}:` : ''}${hours !== '00' || days !== '00' ? `${hours}:` : ''}${minutes}:${seconds}`;
     }
     timeToMs(duration) {
         let time = duration.split(':').reverse();

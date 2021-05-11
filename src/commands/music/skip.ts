@@ -4,12 +4,15 @@ import Client from '../../base/Client';
 import { Queue } from 'discord-player';
 
 interface VoteData {
-    votes: number;
-    voters: Discord.Snowflake[];
-    votesNeeded: number;
+    [ID: string]: {
+        votes: number;
+        voters: Discord.Snowflake[];
+        votesNeeded: number;
+    }
 }
 
 export default class SkipCommand extends Command {
+    private skips: VoteData | null;
     constructor(client: Client) {
         super(client, {
             name: 'skip',
@@ -20,6 +23,8 @@ export default class SkipCommand extends Command {
             minArgs: 0,
             maxArgs: 0
         });
+
+        this.skips = null;
     }
 
     async run(message: Discord.Message, args: string[]) {
@@ -32,31 +37,37 @@ export default class SkipCommand extends Command {
     }
 
     async skip(message: Discord.Message, queue: Queue) {
-        let voteData: VoteData = {
-            votes: 0,
-            voters: [],
-            votesNeeded: 0
+        // @ts-ignore
+        if( this.skips === null || this.skips[message.guild?.id as string] === null) {
+            // @ts-ignore
+            this.skips[message.guild?.id as string] = { voters: [], votes: 0, votesNeeded: 0 };
         }
 
         // @ts-ignore
-        voteData.votesNeeded = Math.round(queue.voiceConnection?.channel.members.filter(member => !member.user.bot).size / 2);
+        this.skips[message.guild?.id as string].votesNeeded = Math.round(queue.voiceConnection?.channel.members.filter(member => !member.user.bot).size / 2);
 
         // @ts-ignore
-        if(queue.voiceConnection?.channel.members.size > 2) {
-            if(voteData.voters.includes(message.author.id)) return message.reply('❌ | You already voted to skip!');
+        if(queue.voiceConnection?.channel.members.filter(member => !member.user.bot).size > 2) {
+            // @ts-ignore
+            if(this.skips[message.guild?.id as string]?.voters.includes(message.author.id)) return message.reply('❌ | You already voted to skip!');
+            // @ts-ignore
+            this.skips[message.guild?.id as string].votes++;
+            // @ts-ignore
+            this.skips[message.guild?.id as string].voters.push(message.author.id);
 
-            voteData.votes++;
-            voteData.voters.push(message.author.id);
-
-            if(voteData.votes >= voteData.votesNeeded) {
-                voteData = { votes: 0, voters: [], votesNeeded: 0 };
+            // @ts-ignore
+            if(this.skips[message.guild?.id as string].votes >= this.skips[message.guild?.id as string]?.votesNeeded) {
+                // @ts-ignore
+                this.skips[message.guild?.id as string] = null;
                 const success = await this.client.player.skip(message);
                 if(success) message.reply('⏩ | Skipped.');
             } else {
-                message.reply(`✅ | You have voted to skip! (${voteData.votes} / ${voteData.votesNeeded})`);
+                // @ts-ignore
+                message.reply(`✅ | You have voted to skip! (${this.skips[message.guild?.id as string]?.votes} / ${this.skips[message.guild?.id as string]?.votesNeeded})`);
             }
-        } else {
-            voteData = { votes: 0, voters: [], votesNeeded: 0 };
+        } else { 
+            // @ts-ignore
+            this.skips[message.guild?.id as string] = null;
             const success = await this.client.player.skip(message);
             if(success) message.reply('⏩ | Skipped.');
         }

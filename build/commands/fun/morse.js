@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Command_1 = __importDefault(require("../../base/Command"));
-const morse_1 = __importDefault(require("../../assets/data/morse"));
+const morse_1 = __importDefault(require("../../data/morse"));
 class MorseCommand extends Command_1.default {
     constructor(client) {
         super(client, {

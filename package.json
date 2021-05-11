@@ -1,16 +1,17 @@
 {
   "name": "venus-bot",
-  "version": "2.0.0-dev",
+  "version": "2.1.0-dev.1",
   "description": "A bot.",
   "main": "build/index.js",
   "scripts": {
-    "build": "tsc && node .",
+    "build": "rimraf build && tsc && node .",
     "test": "nodemon ."
   },
   "author": "theidiotcoder",
   "license": "MIT",
   "dependencies": {
     "@canvacord/emoji-parser": "^1.0.1",
+    "@discord-player/extractor": "^2.0.2",
     "@discordjs/opus": "discordjs/opus",
     "axios": "^0.21.1",
     "canvas": "^2.7.0",

@@ -11,8 +11,9 @@ export default class PlaylistAddEvent extends Event {
     async run(message: Message, queue: Queue, playlist: any) {
         let embed = new MessageEmbed()
         .setTitle('Added playlist to queue!')
-        .setDescription(`[${playlist.name}](${message.content.split(' ').slice(1)})`)
+        .setDescription(`**[${playlist.name}](${message.content.split(' ').slice(1)})**`)
         .setThumbnail(playlist.thumbnail)
+        .setColor('RANDOM')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp();
         message.channel.send(embed);
