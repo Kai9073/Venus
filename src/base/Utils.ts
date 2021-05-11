@@ -19,7 +19,7 @@ export default class Utils {
         return text;
     }
 
-    msToTime(format: TimeFormat, duration: number) {
+    msToTime(duration: number) {
         let seconds: string | number = Math.floor((duration / 1000) % 60),
         minutes: string | number = Math.floor((duration / (1000 * 60)) % 60),
         hours: string | number = Math.floor((duration / (1000 * 60 * 60)) % 24),
@@ -30,12 +30,11 @@ export default class Utils {
         minutes = (minutes < 10) ? `0${minutes}` : minutes;
         seconds = (seconds < 10) ? `0${seconds}` : seconds;
     
-        return format.replace('dd', `${days}`).replace('hh', `${hours}`).replace('mm', `${minutes}`).replace('ss', `${seconds}`);
+        return `${days !== '00' ? `${days}:` : ''}${hours !== '00' || days !== '00' ? `${hours}:` : ''}${minutes}:${seconds}`;
     }
 
     timeToMs(duration: string) {
         let time = duration.split(':').reverse();
-        
 
         let days = parseInt(time[3]) * 86400000 || null;
         let hours = parseInt(time[2]) * 3600000 || null;
