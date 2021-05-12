@@ -62,7 +62,7 @@ export default class HelpCommand extends Command {
             for(let [key, value] of Object.entries(obj)) {
                 let category = key;
                 
-                let categoryCmds = `\`${(value as string[]).join('`, `')}\``;
+                let categoryCmds = `\`${(value as string[]).sort().join('`, `')}\``;
 
                 embed.addField(`${category} Commands - [${(value as string[]).length}]`, categoryCmds);
             }
